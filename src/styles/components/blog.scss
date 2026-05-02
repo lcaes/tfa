@@ -1,4 +1,32 @@
 .blog{
-    background-color: #29265C;
-    color: #B3B6B6;
+    background-color: $c-bg-blog;
+    color: $c-text-blog;
+    margin: 2% 0;
+    h1{
+        background: $degradient-blog;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: clamp(3rem, 2.7955rem + 1.0909vw, 3.75rem);
+    }
+    h2{
+        color: $c-soustitle-blog;
+        font-size: clamp(2.5rem, 2.3295rem + 0.9091vw, 3.125rem);
+    }
+    h3{
+        color: $c-soustitle-blog;
+        font-size: clamp(1.75rem, 1.6307rem + 0.6364vw, 2.1875rem);
+    }
+    &__content{
+        margin: 0 40px;
+    }
+    @media  (min-width: $desktop-size){
+     display: grid;
+     grid-template-columns: repeat(5, 1fr);
+     margin: 100px 0;
+        &__content{
+            grid-column: 1/ span 3;
+        }
+    }
+
 }
