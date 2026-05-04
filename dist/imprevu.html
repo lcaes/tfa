@@ -5,13 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles/app.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Holtwood+One+SC&family=Koulen&family=Londrina+Solid:wght@100;300;400;900&display=swap" rel="stylesheet">
 </head>
 <body class="blog">
-    <main class="blog__content">
-    <h1>Et si nos lu@nettes rendaient finalement nos relations superficielles ?</h1>
-    <section>
+    <main class="blog__containner">
+    <h1 class="blog__title">Et si nos lunettes rendaient finalement nos relations superficielles ?</h1>
+    <div class="blog__line"></div>
+    <nav class="blog__nav">
+        <button class="blog__btn">Les autres articles</button>
+        <ul>
+            <li><a href="#">
+                <img src="assets/images/blog-lunas.jpg" alt="Lunettes Lunas, lunettes intelligentes avec écrans transparents affichant des informations de compatibilité sociale.">
+                <p>Lunas</p>
+                <div class="blog__nav--line"></div>
+            </a></li>
+            <li><a href="#">
+                <img src="assets/images/blog-monde.jpg" alt="photo des personnes qui portent les lunettes lunas">
+                <p>Le Monde avec Lunas</p>
+                <div class="blog__nav--line"></div>
+            </a></li>
+            <li><a href="#">
+                <img src="assets/images/blog-fpsl.jpg" alt="Page d'accueil du forum FAPSL">
+                <p>FAPSL</p>
+                <div class="blog__nav--line"></div>
+            </a></li>
+        </ul>
+    </nav>
+    <section class="blog__content">
     <h2>Est ce que des conversation parfait rendait nos relation superficielles ?</h2>
-    <img src="../assets/images/Eva.jpg">
+    <img src="assets/images/Eva.jpg">
     <h3>Une compatibilité parfaite</h3>
     <p>L'autre jour, lors de mon trajet habituel en train, mon regard a croisé celui d'une inconnue. Instantanément, mes lunettes « Lunas » ont passé son profil au crible : le verdict tombe, nous sommes compatibles à 90 %. Mes verres se teintent alors d'un vert rassurant.</p>
     <p>D'un simple clic sur l'onglet « Profil de la personne », la vie d'Eva n'avait plus de secret pour moi. Porté par ce signal positif, j'ai franchi le pas et j'ai osé l'aborder. Grâce à l'affichage en temps réel de nos points communs, la discussion a démarré avec une fluidité déconcertante, nous donnant l'illusion incroyable de nous connaître depuis déjà dix ans.</p>
@@ -23,11 +47,11 @@
     <p>Nous restions bloqués sur ce que nous aimions tous les deux ; dès que l’on tentait d’aller dans des chemins inconnu, les échanges perdaient tout leur naturel. Malgré les voyants verts et les scores de compatibilité, j’avais l’impression de ne pas la connaître réellement. Notre relation semblait désespérément superficielle, comme s'il manquait ce lien profond et authentique que seul l'imprévu peut créer.</p>
     </section>
 
-    <section>
+    <section class="blog__content">
         <h2>Peut-être que nos divergences rendait nos relation humaine ?</h2>
-        <img src="../assets/images/Guillaume.jpg">
+        <img src="assets/images/Guillaume.jpg" alt="Guillaume, un homme dans un bureau, souriant légèrement pendant qu'il travaille.">
         <h3>Un début chaotique.</h3>
-        <p>Un jour au boulot, je me retrouve à bosser avec Guillaume, une personne avec qui je ne suis pas du tout compatible d'après l'algorithme. Quand je le regarde, mes verres deviennent rouges, mais je n'ai pas le choix : je dois travailler avec lui.</p>
+        <p>Un jour au boulot, je me retrouve à bosser avec Guillaume, une personne avec qui je ne suis pas du tout compatible d'après l'algorithme. Quand je le regarde, mes verres deviennent rouges, mais je n'ai pas le choice : je dois travailler avec lui.</p>
         <p>Au début, c’est le blocage total. Je ne sais pas quoi lui dire en dehors des explications techniques sur la tâche que nous devons effectuer. On a même eu beaucoup de mal à se mettre d’accord sur la façon de la réaliser car nos méthodes s'opposaient</p>
         <h3>Réapprendre à connaitre quelqu’un sans les algorithmes</h3>
         <p>Les heures passent et j’ai continué de travailler avec Guillaume. Les barrières du début tombaient petit à petit. En discutant avec lui, on finissait par trouver des terrains d’entente sur notre façon de collaborer ; on y allait avec des pincettes, mais à la fin de la journée, nos interactions étaient déjà bien moins tendues qu’au départ.</p>
@@ -36,6 +60,7 @@
         <p>Au final, en apprenant à connaître Guillaume, nous avons construit une relation basée sur nos différences. Ce sont justement ces quelques divergences qui rendent notre lien authentique.</p>
         <p>Si j’avais écouté aveuglément l’algorithme, je serais passé à côté d’une rencontre précieuse. Ce n’est peut-être pas une relation "parfaite" selon les critères de mes verres, mais c’est une relation où l’on apprend l'un de l'autre. J'ai compris que les algorithmes ne pourront jamais remplacer l’imprévisibilité humaine. C’est précisément ce grain de sable, ce risque de l'inconnu, qui rend nos relations véritablement humaines.</p> 
     </section>
+    <p class="blog__signature">Le Celeon</p>
 </main>
 <footer>
     <p>Ce blog ne collecte pas vos données de compatibilité. Il n'analyse pas votre regard. Il vous demande simplement quelques minutes de votre temps pour lire une histoire humaine, une vraie.</p>

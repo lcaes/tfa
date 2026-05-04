@@ -4,40 +4,93 @@ img {
 
 p {
   font-size: clamp(1rem, 0.9318rem + 0.3636vw, 1.25rem);
-  width: 90ch;
+  max-width: 90ch;
 }
 
 .blog {
   background-color: #29265C;
   color: #ffffff;
-  margin: 2% 0;
+  font-family: "Londrina Solid";
+  line-height: 160%;
 }
-.blog h1 {
+
+.blog__content {
+  margin: 20px 5%;
+  width: 100%;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+}
+.blog__content h2 {
+  color: #00AEEF;
+  font-size: clamp(2.5rem, 2.3295rem + 0.9091vw, 3.125rem);
+  line-height: 90%;
+  margin: 0;
+}
+.blog__content h3 {
+  color: #00AEEF;
+  font-size: clamp(1.75rem, 1.6307rem + 0.6364vw, 2.1875rem);
+  line-height: 120%;
+  margin: 0;
+}
+.blog__content p {
+  margin: 0;
+}
+@media (min-width: 1040px) {
+  .blog__content {
+    grid-column: 1/4;
+  }
+}
+
+.blog__line {
+  width: 35%;
+  height: 10px;
+  background: linear-gradient(95deg, #6AD6FE 33.41%, #C24ECD 101.85%);
+  margin: auto 20px;
+  display: flex;
+  justify-self: center;
+  border-radius: 5px;
+  grid-column: 1/-1;
+  max-width: 300px;
+}
+
+.blog__title {
   background: linear-gradient(95deg, #6AD6FE 33.41%, #C24ECD 101.85%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: clamp(3rem, 2.7955rem + 1.0909vw, 3.75rem);
+  font-family: "Koulen";
+  line-height: 80%;
+  text-align: center;
+  grid-column: 1/-1;
 }
-.blog h2 {
-  color: #00AEEF;
-  font-size: clamp(2.5rem, 2.3295rem + 0.9091vw, 3.125rem);
-}
-.blog h3 {
-  color: #00AEEF;
-  font-size: clamp(1.75rem, 1.6307rem + 0.6364vw, 2.1875rem);
-}
-.blog__content {
-  margin: 0 40px;
+
+.blog__containner {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 @media (min-width: 1040px) {
-  .blog {
+  .blog__containner {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    margin: 100px 0;
+    padding: 100px 0;
+    grid-column-gap: 40px;
   }
-  .blog__content {
-    grid-column: 1/span 3;
+}
+
+.blog__signature {
+  font-size: clamp(1rem, 0.9318rem + 0.3636vw, 1.25rem);
+  font-family: "Koulen";
+  text-align: right;
+  margin: 0;
+  align-self: flex-end;
+}
+@media (min-width: 1040px) {
+  .blog__signature {
+    grid-column: 3;
   }
 }
 
