@@ -7,6 +7,15 @@ p {
   max-width: 90ch;
 }
 
+.logo {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 25px;
+  height: 25px;
+  z-index: 10;
+}
+
 .blog {
   background-color: #29265C;
   color: #ffffff;
@@ -92,6 +101,52 @@ p {
   .blog__signature {
     grid-column: 3;
   }
+}
+
+.monde {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+.monde__header {
+  margin: 0;
+  width: 100%;
+  height: 100vh;
+  background-image: url(../../assets/images/headermonde.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.monde__header h1 {
+  background-color: rgba(0, 174, 239, 0.7);
+  border-radius: 7px;
+  padding: 5px;
+  font-size: clamp(1.625rem, -0.6842rem + 8.2105vw, 6.5rem);
+  display: inline-block;
+  text-align: center;
+  margin: 5px;
+  line-height: 70%;
+}
+.fapsl {
+  margin: 0;
+}
+
+.fapsl__header {
+  background-color: #180C35;
+  margin: 0;
+}
+.fapsl__header h1 {
+  color: #DCBFFD;
+  font-family: "Diplomata SC";
+  font-size: 84px;
+  font-style: normal;
+  letter-spacing: -8.73px;
+  margin: 0;
+  text-align: center;
 }
 
 /*# sourceMappingURL=app.css.map*/

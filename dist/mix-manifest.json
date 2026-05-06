@@ -1,7 +1,10 @@
 {
     "/scripts/app.js": "/scripts/app.js",
     "/styles/app.css": "/styles/app.css",
+    "/fapl.html": "/fapl.html",
     "/imprevu.html": "/imprevu.html",
     "/index.html": "/index.html",
+    "/lunas.html": "/lunas.html",
+    "/monde.html": "/monde.html",
     "/assets/.DS_Store": "/assets/.DS_Store"
 }
