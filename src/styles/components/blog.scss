@@ -5,15 +5,9 @@
 
 }
 .blog__content{
-  
-     margin: 20px 5% ;
-    width: 100%;
-    padding: 0;
     display: flex;
     flex-direction: column;
-    row-gap: 30px;
-
-    
+    gap: 30px;
     h2{
         color: $c-soustitle-blog;
         font-size: clamp(2.5rem, 2.3295rem + 0.9091vw, 3.125rem);
@@ -61,11 +55,11 @@
 .blog__containner{
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    margin: 50px 2%;
     @media  (min-width: $desktop-size){
         display: grid;
         grid-template-columns: repeat(5, 1fr);
-        padding:100px 0;
+        margin: 50px 100px;
         grid-column-gap: 40px;
     }
 }

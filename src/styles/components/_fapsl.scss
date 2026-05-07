@@ -4,13 +4,21 @@
 .fapsl__header {
 background-color: #180C35;
 margin: 0;
-h1{
-   color: #DCBFFD;
-font-family: "Diplomata SC";
-font-size: 84px;
-font-style: normal;
-letter-spacing: -8.73px; 
-margin: 0;
-text-align: center;
-}
-}
+display: flex;
+justify-content: center;
+h1 {
+    color: #DCBFFD;
+    font-family: "Diplomata SC", serif;
+    font-size: 42px;
+    letter-spacing: -8px; 
+    margin: 0;
+    text-align: center;
+    background: radial-gradient(
+        circle, 
+        rgba(#7F34CE, 0.4) 0%, 
+        rgba(#180C35, 0) 90%
+    );
+    width: fit-content;
+    padding: 0 20px;
+    line-height: 80%;  
+}}
