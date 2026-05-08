@@ -7,7 +7,19 @@
   \****************************/
 /***/ (() => {
 
-console.info('Hello world');
+var blogBurger = document.querySelector('.blog__burger');
+var blogNav = document.querySelector('.blog__nav');
+var scroll = window.scrollY;
+console.log(scroll);
+blogBurger.addEventListener('click', opennav);
+
+function opennav() {
+  blogNav.classList.toggle('blog__nav--active');
+}
+
+function closeNavigation() {
+  blogNav.classList.remove('blog__nav--active');
+}
 
 /***/ }),
 
