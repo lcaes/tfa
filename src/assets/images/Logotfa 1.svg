@@ -1,22 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>DWMA project</title>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-  <meta name="description" content="">
-  <!-- Meta Partage -->
-  <!-- Favicon -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <link rel="stylesheet" href="styles/app.css">
-
-  <script src="scripts/app.js" defer></script>
-</head>
-<body>
-<header class="lunas__header">
-    <a href="index.html"><svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0_301_10)">
 <g filter="url(#filter0_d_301_10)">
 <path d="M68.5 13.5V68.5L13 69.5L0 58.5L1 1L50 0.5L68.5 13.5Z" fill="#C4E2EA"/>
@@ -50,49 +32,3 @@
 </clipPath>
 </defs>
 </svg>
-    </a>
-    <h1>Lunas</h1>
-    <img src="assets/images/lunette.jpg">
-    <h2>Des lunettes qui créer des relations</h2>
-    </header>
-<main class="lunas__container">
-    <section>
-    <h3>Ses commandes</h3>
-    <img src="assets/images/lunas-commande.jpg">
-</section>
-<section>
-<h3>L’interface de vos Lunas</h3>
-<button class="lunas__button">+</button>
-<img src="assets/images/lunas-interface.jpg">
-</section>
-<section>
-    <h3>Le code couleur en mode compatibilité</h3>
-    <img src="assets/images/lunas-compabili$.jpg">
-    <p>Compatible à <span class="lunas__compatibility--level">90%</span></p>
-    
-    <input type="number" min="0" max="100"class="lunas__input" placeholder="Entez un pourcentage">
-</section>
-<section>
-    <h3>Notre app</h3>
-    <p>Retrouvez l’historique quotidien de vos rencontres sur notre application. Vous pourrez accéder à toutes les informations sur les personnes croisées et même les ajouter à vos favoris.</p>
-    <img src="assets/images/lunas-app.jpg">
-    <h4>Retrouvez notre application</h4>
-    <img src="assets/images/lunas-logo.svg">
-    <ul>
-        <li><img src="assets/images/lunas-appllestore.jpg" alt="App Store"></li>
-        <li><img src="assets/images/lunas-googlestore.jpg" alt="Google Play"></li>
-    </ul>
-
-</section>
-</main>
-<footer class="lunas__footer">
-    <h2>Un problème avec vos Lunas? </h2>
-    <ul>
-        <li><a href="mailto:support@lunas.com">assistance@lunas.com</a></li>
-        <li><a href="tel:0800-00">0800-00</a></li>
-    </ul>
-    <p>Mention légale :  En utilisant Lunas, vous acceptez le partage de vos données pour le bien-être collectif.</p>
-    <small>© 2026 Lunas</small> 
-</footer>
-</body>
-</html>
