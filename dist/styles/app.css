@@ -21,6 +21,18 @@ a {
   transition: 0.2s;
 }
 
+.grid {
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 1020px) {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-column-gap: 40px;
+  }
+}
+
 .blog {
   background-color: #29265C;
   color: #ffffff;
@@ -49,7 +61,7 @@ a {
 .blog__content p {
   margin: 0;
 }
-@media (min-width: 1040px) {
+@media (min-width: 1020px) {
   .blog__content {
     grid-column: 1/4;
   }
@@ -86,7 +98,7 @@ a {
   flex-direction: column;
   margin: 20px 2% 50px 2%;
 }
-@media (min-width: 1040px) {
+@media (min-width: 1020px) {
   .blog__containner {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -102,7 +114,7 @@ a {
   margin: 0;
   align-self: flex-end;
 }
-@media (min-width: 1040px) {
+@media (min-width: 1020px) {
   .blog__signature {
     grid-column: 3;
   }
@@ -133,7 +145,7 @@ a {
 .blog__header img {
   margin-top: -15%;
 }
-@media (min-width: 1040px) {
+@media (min-width: 1020px) {
   .blog__header {
     display: flex;
     flex-direction: row-reverse;
@@ -172,7 +184,7 @@ a {
   display: flex;
   justify-self: center;
 }
-@media (min-width: 1040px) {
+@media (min-width: 1020px) {
   .blog__footer {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -204,7 +216,7 @@ a {
 .blog__burger:hover {
   background: linear-gradient(180deg, linear-gradient(142deg, #D866B0 2.06%, #2628A3 57.89%));
 }
-@media (min-width: 1040px) {
+@media (min-width: 1020px) {
   .blog__burger {
     display: none;
   }
@@ -216,7 +228,7 @@ a {
   gap: 20px;
   margin: 20px auto;
 }
-@media (min-width: 1040px) {
+@media (min-width: 1020px) {
   .blog__nav {
     display: flex;
     grid-column: 4/6;
@@ -279,6 +291,8 @@ h3 {
   display: flex;
   flex-direction: column;
   margin: 0;
+  font-family: "Bricolage Grotesque", sans-serif;
+  color: #010F17;
 }
 
 .monde__header {
@@ -296,13 +310,126 @@ h3 {
 .monde__header h1 {
   background-color: rgba(0, 174, 239, 0.7);
   border-radius: 7px;
-  padding: 5px;
+  padding: 20px 40px;
   font-size: clamp(1.625rem, -0.6842rem + 8.2105vw, 6.5rem);
   display: inline-block;
   text-align: center;
   margin: 5px;
-  line-height: 70%;
+  line-height: 90%;
+  max-width: 10ch;
+  font-family: "Inria Serif", serif;
 }
+@media (min-width: 1020px) {
+  .monde__header {
+    background-image: url(../../assets/images/headermonde-desktop.jpg);
+  }
+}
+
+.monde__container {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+}
+@media (min-width: 1020px) {
+  .monde__container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    margin: 50px 100px;
+    grid-column-gap: 40px;
+    grid-template-rows: auto;
+  }
+}
+@media (min-width: 1020px) {
+  .monde__container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    margin: 20px 0;
+    grid-column-gap: 40px;
+    grid-template-rows: auto;
+  }
+}
+
+.monde__content {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin: 20px 0;
+}
+.monde__content h2 {
+  text-align: center;
+  background-color: #00AEEF;
+  font-family: "Inria Serif", serif;
+  padding: 10px 5%;
+}
+.monde__content p {
+  margin: 20px 5%;
+}
+.monde__content ul {
+  padding-left: 20px;
+}
+.monde__content li {
+  margin: 10px 0;
+}
+@media (min-width: 1020px) {
+  .monde__content {
+    grid-column: 1/5;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .monde__content h2 {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 20px;
+    margin: 0;
+    text-align: right;
+    grid-column: 1/-1;
+    padding-left: 30%;
+  }
+  .monde__content p, .monde__content ul {
+    margin-left: 100px;
+    grid-column: 2/5;
+  }
+}
+
+.monde__footer {
+  background-color: #00AEEF;
+  text-align: center;
+  padding: 20px 5%;
+}
+.monde__footer .mention {
+  font-size: 12px;
+  margin-top: 10px;
+}
+.monde__footer small {
+  display: block;
+  margin-top: 10px;
+}
+@media (min-width: 1020px) {
+  .monde__footer {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-column-gap: 40px;
+  }
+  .monde__footer .solgan {
+    grid-column: 1/3;
+    margin: 0;
+  }
+  .monde__footer .mention {
+    font-size: 14px;
+    grid-column: 4/6;
+    justify-self: center;
+    align-self: center;
+    margin-top: 30px;
+  }
+}
+.monde__footer small {
+  grid-column: 6;
+  justify-self: end;
+  align-self: end;
+}
+
 .fapsl {
   margin: 0;
 }

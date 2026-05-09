@@ -17,3 +17,12 @@ a{
     text-decoration: none;
     transition:  0.2s ;
 }
+.grid{
+    display: flex;
+    flex-direction: column;
+    @media (min-width: $desktop-size) {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-column-gap: 40px;
+    }
+}
