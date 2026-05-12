@@ -1,5 +1,15 @@
 .fapsl{
     margin: 0;
+    font-family: "IBM Plex Sans JP", sans-serif;
+    background-color: $c-fapsl-bg;
+    color: $c-fapsl-text;
+        h3{
+        text-align: center;
+        font-size: clamp(1.125rem, 0.8906rem + 0.625vw, 1.4375rem);
+        margin: 0;
+        font-weight: bold;
+
+    }
 }
 .fapsl__header {
 background-color: #180C35;
@@ -7,9 +17,9 @@ margin: 0;
 display: flex;
 justify-content: center;
 h1 {
-    color: #DCBFFD;
+    color: $c-fapsl-title;
     font-family: "Diplomata SC", serif;
-    font-size: 42px;
+    font-size: clamp(2.75rem, 1.425rem + 5.3vw, 6.0625rem);
     letter-spacing: -8px; 
     margin: 0;
     text-align: center;
@@ -19,6 +29,75 @@ h1 {
         rgba(#180C35, 0) 90%
     );
     width: fit-content;
-    padding: 0 20px;
-    line-height: 80%;  
+    padding: 10px 0;
+    line-height: 100%; 
+    padding: 20px; 
 }}
+.fapsl__main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    margin: 40px 5%;
+    
+}
+.fapsl__name{
+    background-image: url(../../assets/images/fapsl-bg.jpg);
+    background-size: cover;
+    background-position: center;
+    border-radius: 10%;
+    padding: 40px 20px;
+    box-shadow: $fapsl-shadow;
+    h2{
+      font-family: "Diplomata SC", serif;
+        font-size: clamp(1.5625rem, 0.1563rem + 3.75vw, 3.4375rem);
+        color: $c-fapsl-title;
+        margin: 5px 0;
+        span{
+            font-size: clamp(2.375rem, -0.3906rem + 7.375vw, 6.0625rem);
+        }
+    }
+}
+.fapsl__chats{
+    background-color: $c-fapsl-bg-second;
+    border: 5px solid $c-fapsl-border;
+    border-radius: 15px;
+    padding:50px 5%;
+    box-shadow: $fapsl-shadow;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.fapsl__profile{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 30px;
+    img{
+        width: 100px;
+        border-radius: 50%;
+        border: 5px solid $c-fapsl-border;
+        margin: 0 auto;
+    }
+
+}    
+.faspsl__date{
+        color: rgba($c-fapsl-text, 0.7);
+        margin: 0;
+        font-size: clamp(0.875rem, 0.7344rem + 0.375vw, 1.0625rem);
+        text-align: right;
+    }
+.fapsl__line{
+    width: 100%;
+    height: 10px;
+    background: $c-fapsl-border;
+    margin: 0;
+    border-radius: 5px;
+}
+.fapsl__footer{
+    background: $c-fapsl-bg-footer;
+    padding: 150px 5% 0 5%;
+    color: $c-fapsl-title;
+
+}

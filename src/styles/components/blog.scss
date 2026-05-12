@@ -187,6 +187,12 @@ border: none;
         list-style: none;
         padding: 0;
         margin: 20px 4%;
+    } 
+    h3{
+        color: $c-soustitle-blog;
+        font-size: clamp(1.75rem, 1.6307rem + 0.6364vw, 2.1875rem);
+        line-height: 120%;
+        margin: 0;
     }
     &--active{
         display: flex;
@@ -229,9 +235,3 @@ border: none;
     }
 
 }
- h3{
-        color: $c-soustitle-blog;
-        font-size: clamp(1.75rem, 1.6307rem + 0.6364vw, 2.1875rem);
-        line-height: 120%;
-        margin: 0;
-    }

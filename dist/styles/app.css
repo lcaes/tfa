@@ -15,10 +15,9 @@ p {
   height: 70px;
   z-index: 10;
 }
-
-a {
-  text-decoration: none;
-  transition: 0.2s;
+.logo--fapsl {
+  width: clamp(35px, 17.5px + 4.375vw, 70px);
+  left: 10px;
 }
 
 .grid {
@@ -243,6 +242,12 @@ a {
   padding: 0;
   margin: 20px 4%;
 }
+.blog__nav h3 {
+  color: #00AEEF;
+  font-size: clamp(1.75rem, 1.6307rem + 0.6364vw, 2.1875rem);
+  line-height: 120%;
+  margin: 0;
+}
 .blog__nav--active {
   display: flex;
 }
@@ -278,13 +283,6 @@ a {
 }
 .blog__nel:hover p {
   color: #DCBFFD;
-}
-
-h3 {
-  color: #00AEEF;
-  font-size: clamp(1.75rem, 1.6307rem + 0.6364vw, 2.1875rem);
-  line-height: 120%;
-  margin: 0;
 }
 
 .monde {
@@ -432,6 +430,15 @@ h3 {
 
 .fapsl {
   margin: 0;
+  font-family: "IBM Plex Sans JP", sans-serif;
+  background-color: #B7A4C3;
+  color: #180C35;
+}
+.fapsl h3 {
+  text-align: center;
+  font-size: clamp(1.125rem, 0.8906rem + 0.625vw, 1.4375rem);
+  margin: 0;
+  font-weight: bold;
 }
 
 .fapsl__header {
@@ -443,7 +450,7 @@ h3 {
 .fapsl__header h1 {
   color: #DCBFFD;
   font-family: "Diplomata SC", serif;
-  font-size: 42px;
+  font-size: clamp(2.75rem, 1.425rem + 5.3vw, 6.0625rem);
   letter-spacing: -8px;
   margin: 0;
   text-align: center;
@@ -451,8 +458,81 @@ h3 {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  padding: 0 20px;
-  line-height: 80%;
+  padding: 10px 0;
+  line-height: 100%;
+  padding: 20px;
+}
+
+.fapsl__main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  margin: 40px 5%;
+}
+
+.fapsl__name {
+  background-image: url(../../assets/images/fapsl-bg.jpg);
+  background-size: cover;
+  background-position: center;
+  border-radius: 10%;
+  padding: 40px 20px;
+  box-shadow: 10px 15px 9.3px rgba(63, 34, 48, 0.25);
+}
+.fapsl__name h2 {
+  font-family: "Diplomata SC", serif;
+  font-size: clamp(1.5625rem, 0.1563rem + 3.75vw, 3.4375rem);
+  color: #DCBFFD;
+  margin: 5px 0;
+}
+.fapsl__name h2 span {
+  font-size: clamp(2.375rem, -0.3906rem + 7.375vw, 6.0625rem);
+}
+
+.fapsl__chats {
+  background-color: #F7EFFF;
+  border: 5px solid #AC6BF6;
+  border-radius: 15px;
+  padding: 50px 5%;
+  box-shadow: 10px 15px 9.3px rgba(63, 34, 48, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.fapsl__profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 30px;
+}
+.fapsl__profile img {
+  width: 100px;
+  border-radius: 50%;
+  border: 5px solid #AC6BF6;
+  margin: 0 auto;
+}
+
+.faspsl__date {
+  color: rgba(24, 12, 53, 0.7);
+  margin: 0;
+  font-size: clamp(0.875rem, 0.7344rem + 0.375vw, 1.0625rem);
+  text-align: right;
+}
+
+.fapsl__line {
+  width: 100%;
+  height: 10px;
+  background: #AC6BF6;
+  margin: 0;
+  border-radius: 5px;
+}
+
+.fapsl__footer {
+  background: linear-gradient(180deg, #b7a4c3, #29265c 55.77%);
+  padding: 150px 5% 0 5%;
+  color: #DCBFFD;
 }
 
 /*# sourceMappingURL=app.css.map*/

@@ -12,11 +12,12 @@ p{
     width: 70px;
     height: 70px;
     z-index: 10;
+    &--fapsl{
+       width: clamp(35px, calc(17.5px + 4.375vw), 70px);
+       left: 10px; 
+    }
 }
-a{
-    text-decoration: none;
-    transition:  0.2s ;
-}
+
 .grid{
     display: flex;
     flex-direction: column;
