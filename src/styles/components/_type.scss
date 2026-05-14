@@ -14,8 +14,15 @@ p{
     left: 5%;
     width: 70px;
     height: 70px;
-    z-index: 10;
+    z-index: 100;
        width: clamp(35px, calc(17.5px + 4.375vw), 70px);
+    &--fapsl{
+      top:1%;
+      @media (min-width:600px) {
+        transform: translateY(clamp(10px, 1vh, 100px));
+      }
+     
+    }
 
 }
 
