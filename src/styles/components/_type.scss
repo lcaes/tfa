@@ -1,3 +1,6 @@
+html{
+  scroll-behavior: smooth;
+}
 img{
   width: 100%;
 }
@@ -12,10 +15,8 @@ p{
     width: 70px;
     height: 70px;
     z-index: 10;
-    &--fapsl{
        width: clamp(35px, calc(17.5px + 4.375vw), 70px);
-       left: 10px; 
-    }
+
 }
 
 .grid{
@@ -25,5 +26,23 @@ p{
       display: grid;
       grid-template-columns: repeat(5, 1fr);
       grid-column-gap: 40px;
+    }
+}
+.btn__mobile{
+        opacity: 0;
+    visibility: hidden;
+        bottom: 5%;
+    right: 50px;
+    display: flex;
+    flex-direction: row;
+        position: fixed;
+        gap: 20px;
+        align-content: center;
+        transition: 0.4s;
+
+        &.--show {
+        opacity: 1;
+        visibility: visible;
+
     }
 }

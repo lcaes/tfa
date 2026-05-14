@@ -7,10 +7,10 @@
   \****************************/
 /***/ (() => {
 
+var lastScroll = 0;
 var blogBurger = document.querySelector('.blog__burger');
 var blogNav = document.querySelector('.blog__nav');
-var scroll = window.scrollY;
-console.log(scroll);
+var bntMobile = document.querySelector('.btn__mobile');
 blogBurger.addEventListener('click', opennav);
 
 function opennav() {
@@ -19,6 +19,22 @@ function opennav() {
 
 function closeNavigation() {
   blogNav.classList.remove('blog__nav--active');
+}
+
+window.addEventListener('scroll', showBTN);
+
+function showBTN() {
+  var scrollCurrent = window.scrollY;
+  var isMobile = window.innerWidth < 1024;
+
+  if (scrollCurrent < lastScroll && isMobile) {
+    bntMobile.classList.add("--show");
+  } else {
+    bntMobile.classList.remove("--show");
+    blogNav.classList.remove('blog__nav--active');
+  }
+
+  lastScroll = scrollCurrent;
 }
 
 /***/ }),
