@@ -81,10 +81,13 @@ h1 {
         margin: 0;
         font-size: clamp(0.875rem, 0.7344rem + 0.375vw, 1.0625rem);
         text-align: right;
+        display: flex;
+        justify-self: end;
+        align-self: flex-end;
     }
 .fapsl__line{
     width: 100%;
-    height: 10px;
+    height: 5px;
     background: $c-fapsl-border;
     margin: 0;
     border-radius: 5px;
@@ -105,6 +108,13 @@ h1 {
         }
 
     }
+}
+.fapsl__text{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 .fapsl__compte{
     display: flex;

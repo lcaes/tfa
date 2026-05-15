@@ -14,29 +14,42 @@ var bntMobile = document.querySelector('.btn__mobile');
 var fapslInput = document.getElementById('message');
 var btnSend = document.querySelector('.fapsl__send');
 var containnerChat = document.getElementById('fapsl__chats');
-btnSend.addEventListener('click', AddChat);
 
-function AddChat() {
-  var message = fapslInput.value;
+if (btnSend) {
+  var AddChat = function AddChat() {
+    var message = fapslInput.value;
+    console.log(message);
 
-  if (message.trim() !== "") {
-    var newLine = document.createElement('div');
-    var newProfil = document.createElement('div');
-    newProfil.classList.add('fapsl__profile');
-    var imgUser = document.createElement('img');
-    imgUser.src = 'assets/images/bc.png';
-    var newContent = document.createElement('div');
-    newContent.classList.add('fapsl__content');
-    var newMesssaage = createElement('p');
-    newMesssaage.textContent = "message";
-    newProfil.appendChild(imgUser);
-    newContent.appendChild(newProfil);
-    newContent.appendChild(newMesssaage);
-    containnerChat.appendChild(newContent);
-    containnerChat.appendChild(newLine);
-    fapslInput.value = "";
-    fapslInput.style.height = "auto";
-  }
+    if (message.trim() !== "") {
+      var newLine = document.createElement('div');
+      newLine.classList.add('fapsl__line');
+      var newContent = document.createElement('div');
+      var newProfil = document.createElement('div');
+      newProfil.classList.add('fapsl__profile');
+      var imgUser = document.createElement('img');
+      imgUser.src = 'assets/images/bc.png';
+      var pseudo = document.createElement('h3');
+      pseudo.textContent = "BC_05";
+      var text = document.createElement('div');
+      text.classList.add("fapsl__text");
+      var date = document.createElement('p');
+      date.classList.add('faspsl__date');
+      date.textContent = "25/04/2035";
+      var newMessage = document.createElement('p');
+      newMessage.textContent = message;
+      newContent.classList.add('fapsl__content');
+      newProfil.appendChild(imgUser);
+      newProfil.appendChild(pseudo);
+      text.appendChild(newMessage);
+      text.appendChild(date);
+      newContent.appendChild(newProfil);
+      newContent.appendChild(text);
+      containnerChat.appendChild(newLine);
+      containnerChat.appendChild(newContent);
+    }
+  };
+
+  btnSend.addEventListener('click', AddChat);
 }
 
 if (blogBurger) {
