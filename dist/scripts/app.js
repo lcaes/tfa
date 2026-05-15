@@ -14,6 +14,26 @@ var bntMobile = document.querySelector('.btn__mobile');
 var fapslInput = document.getElementById('message');
 var btnSend = document.querySelector('.fapsl__send');
 var containnerChat = document.getElementById('fapsl__chats');
+var filterCompability = document.querySelector('.filter__compability');
+var lunasInput = document.querySelector('.lunas__input');
+lunasInput.value = 90;
+
+if (lunasInput) {
+  var changeColor = function changeColor() {
+    var pourcentValue = lunasInput.value;
+    var pourcent = document.querySelector('.lunas__compatibility--level');
+    pourcent.textContent = pourcentValue;
+
+    if (0 >= pourcent <= 100) {
+      console.log(pourcent);
+      var degres = 175 * pourcentValue / 100;
+      console.log(degres);
+      filterCompability.style.backgroundColor = "hsl(".concat(degres, ", 77%, 71%)");
+    }
+  };
+
+  lunasInput.addEventListener('input', changeColor);
+}
 
 if (btnSend) {
   var AddChat = function AddChat() {
