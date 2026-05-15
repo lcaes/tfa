@@ -5,12 +5,58 @@
 /*!****************************!*\
   !*** ./src/scripts/app.js ***!
   \****************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+
+var _require = __webpack_require__(Object(function webpackMissingModule() { var e = new Error("Cannot find module 'react'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())),
+    createElement = _require.createElement;
 
 var lastScroll = 0;
 var blogBurger = document.querySelector('.blog__burger');
 var blogNav = document.querySelector('.blog__nav');
 var bntMobile = document.querySelector('.btn__mobile');
+var fapslInput = document.getElementById('message');
+var btnSend = document.querySelector('.fapsl__send');
+var containnerChat = document.querySelector('.fapsl__chats');
+btnSend.addEventListener('click', AddChat);
+
+function AddChat() {
+  var message = fapslInput.value;
+
+  if (message.trim() !== "") {
+    // 1. Créer la ligne principale (le parent)
+    var newLine = document.createElement('div');
+    newLine.classList.add('fapsl__line'); // Pas de point ici
+    // 2. Créer le bloc profil (pour l'avatar)
+
+    var newProfil = document.createElement('div');
+    newProfil.classList.add('fapsl__profile'); // 3. Créer l'image
+
+    var imgUser = document.createElement('img');
+    imgUser.src = 'assets/images/bc.png';
+    imgUser.alt = 'avatar';
+    imgUser.classList.add('fapsl__avatar'); // Optionnel, pour ton CSS
+    // 4. Créer le bloc contenu (pour le texte)
+
+    var newContent = document.createElement('div');
+    newContent.classList.add('fapsl__content');
+    var newMesssaage = createElement('p');
+    newMesssaage.textContent = message; // On injecte le texte ici !
+    // --- L'ASSEMBLAGE (L'ordre est crucial) ---
+    // On met l'image dans le profil
+
+    newProfil.appendChild(imgUser); // On met le profil ET le contenu dans la ligne
+
+    newContent.appendChild(newProfil);
+    newContent.appendChild(newMesssaage);
+    containnerChat.appendChild(newContent); // Enfin, on met la ligne complète dans le chat
+
+    containnerChat.appendChild(newLine); // Nettoyage du champ
+
+    fapslInput.value = "";
+    fapslInput.style.height = "auto";
+  }
+}
+
 blogBurger.addEventListener('click', opennav);
 
 function opennav() {

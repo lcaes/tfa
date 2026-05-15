@@ -36,7 +36,7 @@ h1 {
 .fapsl__main{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    
     gap: 40px;
     margin: 40px 5%;
     @media (min-width: $desktop-size) {
@@ -104,5 +104,92 @@ h1 {
             margin: auto;
         }
 
+    }
+}
+.fapsl__compte{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    align-self: end;
+    
+    img{
+        width: 30px;
+    }
+}
+.avatar{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    align-items: center;
+    background-color: $c-fapsl-bg-second;
+    padding: 5px 10px;
+    border-radius: 15px;
+    border: 5px solid $c-fapsl-border;
+    box-shadow: $fapsl-shadow;
+    img{
+        width: 75px;
+    }
+}
+.fapsl__message{
+    max-width: 100%;
+    height: fit-content;
+    background-color: $c-fapsl-bg-second;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    padding: 15px 50px;
+    textarea{
+        width:100%;
+        border: none;
+        background: none;
+        resize: none;
+        min-height: 30px;
+        max-height: 200px;
+    }
+
+}
+.fapsl__input-wrapper {
+    display: flex;
+    align-items: flex-end; // Aligne le bouton en bas quand le texte s'étire
+    padding: 10px;
+    border-bottom: 1px solid $c-fapsl-border; // Ou ton style de bordure
+    width: 100%;
+}
+
+.fapsl__textarea {
+    flex: 1;
+    width: 100%;
+    min-height: 30px;
+    max-height: 250px; // Limite pour ne pas casser la mise en page
+    border: none;
+    background: none;
+    resize: none;
+    overflow-y: auto;
+    font-family: inherit;
+    line-height: 1.5;
+    outline: none;
+    color: $c-text-blog;
+}
+
+.fapsl__send {
+    border: none;
+    background: none;
+    margin-left: 10px;
+    cursor: pointer;
+    padding: 5px;
+    display: flex;
+    transition: transform 0.2s ease;
+
+    svg {
+        // On définit la couleur par défaut ici
+        fill: #180C35; 
+        transition: fill 0.4s ease;
+    }
+
+    &:hover, &:focus {
+        transform: scale(1.1); 
+        outline: none;
+        svg {
+            fill: #7F34CE; 
+        }
     }
 }

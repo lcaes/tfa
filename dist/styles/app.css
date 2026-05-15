@@ -533,7 +533,6 @@ p {
 .fapsl__main {
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 40px;
   margin: 40px 5%;
 }
@@ -608,6 +607,94 @@ p {
     display: flex;
     margin: auto;
   }
+}
+
+.fapsl__compte {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  align-self: end;
+}
+.fapsl__compte img {
+  width: 30px;
+}
+
+.avatar {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  align-items: center;
+  background-color: #F7EFFF;
+  padding: 5px 10px;
+  border-radius: 15px;
+  border: 5px solid #AC6BF6;
+  box-shadow: 10px 15px 9.3px rgba(63, 34, 48, 0.25);
+}
+.avatar img {
+  width: 75px;
+}
+
+.fapsl__message {
+  max-width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  background-color: #F7EFFF;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  padding: 15px 50px;
+}
+.fapsl__message textarea {
+  width: 100%;
+  border: none;
+  background: none;
+  resize: none;
+  min-height: 30px;
+  max-height: 200px;
+}
+
+.fapsl__input-wrapper {
+  display: flex;
+  align-items: flex-end;
+  padding: 10px;
+  border-bottom: 1px solid #AC6BF6;
+  width: 100%;
+}
+
+.fapsl__textarea {
+  flex: 1;
+  width: 100%;
+  min-height: 30px;
+  max-height: 250px;
+  border: none;
+  background: none;
+  resize: none;
+  overflow-y: auto;
+  font-family: inherit;
+  line-height: 1.5;
+  outline: none;
+  color: #ffffff;
+}
+
+.fapsl__send {
+  border: none;
+  background: none;
+  margin-left: 10px;
+  cursor: pointer;
+  padding: 5px;
+  display: flex;
+  transition: transform 0.2s ease;
+}
+.fapsl__send svg {
+  fill: #180C35;
+  transition: fill 0.4s ease;
+}
+.fapsl__send:hover, .fapsl__send:focus {
+  transform: scale(1.1);
+  outline: none;
+}
+.fapsl__send:hover svg, .fapsl__send:focus svg {
+  fill: #7F34CE;
 }
 
 /*# sourceMappingURL=app.css.map*/
