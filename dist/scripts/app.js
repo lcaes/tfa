@@ -5,10 +5,7 @@
 /*!****************************!*\
   !*** ./src/scripts/app.js ***!
   \****************************/
-/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
-
-var _require = __webpack_require__(Object(function webpackMissingModule() { var e = new Error("Cannot find module 'react'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())),
-    createElement = _require.createElement;
+/***/ (() => {
 
 var lastScroll = 0;
 var blogBurger = document.querySelector('.blog__burger');
@@ -16,48 +13,35 @@ var blogNav = document.querySelector('.blog__nav');
 var bntMobile = document.querySelector('.btn__mobile');
 var fapslInput = document.getElementById('message');
 var btnSend = document.querySelector('.fapsl__send');
-var containnerChat = document.querySelector('.fapsl__chats');
+var containnerChat = document.getElementById('fapsl__chats');
 btnSend.addEventListener('click', AddChat);
 
 function AddChat() {
   var message = fapslInput.value;
 
   if (message.trim() !== "") {
-    // 1. Créer la ligne principale (le parent)
     var newLine = document.createElement('div');
-    newLine.classList.add('fapsl__line'); // Pas de point ici
-    // 2. Créer le bloc profil (pour l'avatar)
-
     var newProfil = document.createElement('div');
-    newProfil.classList.add('fapsl__profile'); // 3. Créer l'image
-
+    newProfil.classList.add('fapsl__profile');
     var imgUser = document.createElement('img');
     imgUser.src = 'assets/images/bc.png';
-    imgUser.alt = 'avatar';
-    imgUser.classList.add('fapsl__avatar'); // Optionnel, pour ton CSS
-    // 4. Créer le bloc contenu (pour le texte)
-
     var newContent = document.createElement('div');
     newContent.classList.add('fapsl__content');
     var newMesssaage = createElement('p');
-    newMesssaage.textContent = message; // On injecte le texte ici !
-    // --- L'ASSEMBLAGE (L'ordre est crucial) ---
-    // On met l'image dans le profil
-
-    newProfil.appendChild(imgUser); // On met le profil ET le contenu dans la ligne
-
+    newMesssaage.textContent = "message";
+    newProfil.appendChild(imgUser);
     newContent.appendChild(newProfil);
     newContent.appendChild(newMesssaage);
-    containnerChat.appendChild(newContent); // Enfin, on met la ligne complète dans le chat
-
-    containnerChat.appendChild(newLine); // Nettoyage du champ
-
+    containnerChat.appendChild(newContent);
+    containnerChat.appendChild(newLine);
     fapslInput.value = "";
     fapslInput.style.height = "auto";
   }
 }
 
-blogBurger.addEventListener('click', opennav);
+if (blogBurger) {
+  blogBurger.addEventListener('click', opennav);
+}
 
 function opennav() {
   blogNav.classList.toggle('blog__nav--active');
@@ -67,20 +51,22 @@ function closeNavigation() {
   blogNav.classList.remove('blog__nav--active');
 }
 
-window.addEventListener('scroll', showBTN);
+if (bntMobile) {
+  var showBTN = function showBTN() {
+    var scrollCurrent = window.scrollY;
+    var isMobile = window.innerWidth < 1024;
 
-function showBTN() {
-  var scrollCurrent = window.scrollY;
-  var isMobile = window.innerWidth < 1024;
+    if (scrollCurrent < lastScroll && isMobile) {
+      bntMobile.classList.add("--show");
+    } else {
+      bntMobile.classList.remove("--show");
+      blogNav.classList.remove('blog__nav--active');
+    }
 
-  if (scrollCurrent < lastScroll && isMobile) {
-    bntMobile.classList.add("--show");
-  } else {
-    bntMobile.classList.remove("--show");
-    blogNav.classList.remove('blog__nav--active');
-  }
+    lastScroll = scrollCurrent;
+  };
 
-  lastScroll = scrollCurrent;
+  window.addEventListener('scroll', showBTN);
 }
 
 /***/ }),
