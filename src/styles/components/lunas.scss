@@ -1,7 +1,57 @@
+.lunas{
+    background-color: $c-bg-lunas;
+    color: $c-text-lunas;
+    font-family: "figtree", sans-serif;
+
+
+
+}
+
+.lunas__header{
+    position: relative;
+    h1{
+        font-family: $font-fabulosa;
+        font-size: clamp(5.625rem, 3.4375rem + 8.75vw, 10rem);
+        line-height: 90%;
+        margin: 0;
+        position: absolute;
+        width: fit-content;
+        transform: rotate(-12deg);
+        left: 10%;
+        top: 12%;
+        color: $c-blue-lunas;
+        text-shadow: $shadow-title-lunas;
+        
+    }
+    img{
+        margin-top: -3%;
+    }
+    h2{
+        font-family: $font-fabulosa;
+        color: $c-blue-lunas;
+        text-shadow: $shadow-title-lunas;
+        font-size: clamp(4rem, 3.5rem + 2vw, 5rem);
+        line-height: 90%;
+        margin: -12% 0 0 0;
+        width: fit-content;
+        max-width: 14ch;
+
+    }
+}
+.lunas__stitle{
+        color: $c-blue-lunas;
+        margin: 40px 2%;
+        font-family: $font-fabulosa;
+        font-size: clamp(2.8125rem, 2.4375rem + 1.5vw, 3.5625rem);
+        line-height: 90%;
+        &--center{
+            text-align: center;
+        }
+}
 .filter__compability{
     width: 100%;
     height: 100%;
-    background-color: hsl(180, 77%, 71%);
+    background-color: hsl(157, 77%, 71%);
     position: absolute;
     opacity: 0.4;
     z-index: 10;
@@ -15,4 +65,40 @@
         z-index: 100;
         bottom: 10px;
     }
+}
+.lunas__input{
+    width: 50%;
+    display: flex;
+    margin: 10px auto;
+}
+.lunas__container{
+    margin: 0 2%;
+    h4{
+        font-family: $font-fabulosa;
+        font-size: clamp(2rem, 1.75rem + 1vw, 2.5rem);
+        max-width: 15ch;
+        line-height: 90%;
+        text-align: center;
+        display: flex;
+        margin: 15px auto;
+    }
+
+}
+.lunas__logo{
+    width: 100px;
+    display: flex;
+    margin: auto;
+}
+.lunas__avaible{
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    padding: 0;
+    margin: 10px 10%;
+    img{
+        width: 160px;
+        border-radius: 10px;
+
+    }
+    
 }

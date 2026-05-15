@@ -7,19 +7,29 @@ const btnSend = document.querySelector('.fapsl__send');
 const containnerChat = document.getElementById('fapsl__chats');
 const filterCompability = document.querySelector('.filter__compability');
 const lunasInput = document.querySelector('.lunas__input');
-lunasInput.value = 90;
+const pourcent = document.querySelector('.lunas__compatibility--level');
+
+pourcent.textContent= "90%"
 if(lunasInput){
     lunasInput.addEventListener('input', changeColor);
-    function changeColor (){
-        const pourcentValue = lunasInput.value
-        const pourcent = document.querySelector('.lunas__compatibility--level')
-        pourcent.textContent = pourcentValue
-        if(0 >= pourcent <= 100){
-        console.log(pourcent)
-            const degres = 175 * pourcentValue / 100;
-            console.log(degres)
-            filterCompability.style.backgroundColor = `hsl(${degres}, 77%, 71%)`
-        }
+ function changeColor() {
+    if (lunasInput.value === "") return;
+    let pourcentValue = Number(lunasInput.value);
+    if (pourcentValue > 100) {
+        pourcentValue = 100;
+        lunasInput.value = 100; 
+    } 
+    else if (pourcentValue < 0) {
+        pourcentValue = 0;
+        lunasInput.value = 0; 
+    }
+ 
+
+    const degres = (175 * pourcentValue) / 100;
+    filterCompability.style.backgroundColor = `hsl(${degres}, 77%, 71%)`;
+    if (pourcent) {
+        pourcent.textContent = pourcentValue + "%";
+    }
 }}
 
 if(btnSend){

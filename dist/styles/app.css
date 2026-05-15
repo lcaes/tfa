@@ -708,10 +708,61 @@ p {
   fill: #7F34CE;
 }
 
+.lunas {
+  background-color: #101120;
+  color: #EAFBFF;
+  font-family: "figtree", sans-serif;
+}
+
+.lunas__header {
+  position: relative;
+}
+.lunas__header h1 {
+  font-family: "fabulosa", sans-serif;
+  font-size: clamp(5.625rem, 3.4375rem + 8.75vw, 10rem);
+  line-height: 90%;
+  margin: 0;
+  position: absolute;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  transform: rotate(-12deg);
+  left: 10%;
+  top: 12%;
+  color: #69C6E2;
+  text-shadow: 9px 6px 4px rgba(145, 183, 196, 0.5);
+}
+.lunas__header img {
+  margin-top: -3%;
+}
+.lunas__header h2 {
+  font-family: "fabulosa", sans-serif;
+  color: #69C6E2;
+  text-shadow: 9px 6px 4px rgba(145, 183, 196, 0.5);
+  font-size: clamp(4rem, 3.5rem + 2vw, 5rem);
+  line-height: 90%;
+  margin: -12% 0 0 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  max-width: 14ch;
+}
+
+.lunas__stitle {
+  color: #69C6E2;
+  margin: 40px 2%;
+  font-family: "fabulosa", sans-serif;
+  font-size: clamp(2.8125rem, 2.4375rem + 1.5vw, 3.5625rem);
+  line-height: 90%;
+}
+.lunas__stitle--center {
+  text-align: center;
+}
+
 .filter__compability {
   width: 100%;
   height: 100%;
-  background-color: hsl(180deg, 77%, 71%);
+  background-color: hsl(157deg, 77%, 71%);
   position: absolute;
   opacity: 0.4;
   z-index: 10;
@@ -726,6 +777,43 @@ p {
   position: absolute;
   z-index: 100;
   bottom: 10px;
+}
+
+.lunas__input {
+  width: 50%;
+  display: flex;
+  margin: 10px auto;
+}
+
+.lunas__container {
+  margin: 0 2%;
+}
+.lunas__container h4 {
+  font-family: "fabulosa", sans-serif;
+  font-size: clamp(2rem, 1.75rem + 1vw, 2.5rem);
+  max-width: 15ch;
+  line-height: 90%;
+  text-align: center;
+  display: flex;
+  margin: 15px auto;
+}
+
+.lunas__logo {
+  width: 100px;
+  display: flex;
+  margin: auto;
+}
+
+.lunas__avaible {
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+  padding: 0;
+  margin: 10px 10%;
+}
+.lunas__avaible img {
+  width: 160px;
+  border-radius: 10px;
 }
 
 /*# sourceMappingURL=app.css.map*/

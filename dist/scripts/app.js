@@ -16,19 +16,27 @@ var btnSend = document.querySelector('.fapsl__send');
 var containnerChat = document.getElementById('fapsl__chats');
 var filterCompability = document.querySelector('.filter__compability');
 var lunasInput = document.querySelector('.lunas__input');
-lunasInput.value = 90;
+var pourcent = document.querySelector('.lunas__compatibility--level');
+pourcent.textContent = "90%";
 
 if (lunasInput) {
   var changeColor = function changeColor() {
-    var pourcentValue = lunasInput.value;
-    var pourcent = document.querySelector('.lunas__compatibility--level');
-    pourcent.textContent = pourcentValue;
+    if (lunasInput.value === "") return;
+    var pourcentValue = Number(lunasInput.value);
 
-    if (0 >= pourcent <= 100) {
-      console.log(pourcent);
-      var degres = 175 * pourcentValue / 100;
-      console.log(degres);
-      filterCompability.style.backgroundColor = "hsl(".concat(degres, ", 77%, 71%)");
+    if (pourcentValue > 100) {
+      pourcentValue = 100;
+      lunasInput.value = 100;
+    } else if (pourcentValue < 0) {
+      pourcentValue = 0;
+      lunasInput.value = 0;
+    }
+
+    var degres = 175 * pourcentValue / 100;
+    filterCompability.style.backgroundColor = "hsl(".concat(degres, ", 77%, 71%)");
+
+    if (pourcent) {
+      pourcent.textContent = pourcentValue + "%";
     }
   };
 
