@@ -64,15 +64,52 @@
         position: absolute;
         z-index: 100;
         bottom: 10px;
+        bottom: 20px;
+        color: $c-bg-lunas;
+        font-size: clamp(2rem, 1.75rem + 1vw, 2.5rem);
+        margin: 0 ;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        align-items: center;
+    }
+    span{
+        font-size: clamp(2.8125rem, 2.4375rem + 1.5vw, 3.5625rem);
+        color: rgb(61, 0, 87);
+        margin-left:10px ;
     }
 }
 .lunas__input{
-    width: 50%;
+    width: 200px;
+    padding: 10px;
+    height: 20px;
     display: flex;
     margin: 10px auto;
+    border: $c-blue-lunas 1px solid;
+    background-color: $c-bg-lunas;
+    color: $c-blue-lunas;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 20px;
+    margin-top: 20px;
+    &::placeholder{
+        color: $c-blue-lunas;
+        text-align: center;
+        font-size: 20px;
+    }
 }
 .lunas__container{
     margin: 0 2%;
+    section{
+        margin: 80px 0;
+    }
+    @media (min-width: $desktop-size) {
+        margin: 0 100px;
+    
+    }
+}
+.section__app{
+    height: fit-content;
     h4{
         font-family: $font-fabulosa;
         font-size: clamp(2rem, 1.75rem + 1vw, 2.5rem);
@@ -81,8 +118,32 @@
         text-align: center;
         display: flex;
         margin: 15px auto;
+        height: fit-content;
     }
-
+    p{
+        height: fit-content;
+    }
+    @media (min-width: $desktop-size) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+       .img__app{
+            grid-column: 2;
+            grid-row: 2 / 5;
+            height: fit-content;
+            width: auto;
+        }
+        .lunas__stitle--center{
+            margin: 0;
+        }
+        h3{
+            grid-column: 1 /-1;
+    
+        }
+    p{
+        display: flex;
+        margin: auto;
+    }}
 }
 .lunas__logo{
     width: 100px;
@@ -100,5 +161,88 @@
         border-radius: 10px;
 
     }
-    
+    @media (min-width:$desktop-size) {
+        margin: 10 0;
+    }
+}
+.lunas__footer{
+    background-color: $c-blue-lunas;
+    color: $c-bg-lunas;
+    padding: 20px 30px;
+    small{
+        display: flex;
+        justify-self: end;
+    }
+    h2{
+        margin-bottom: 0;
+    }
+    p{
+        max-width: 30ch;
+        display: flex;
+        margin: 10px auto;
+        font-size: clamp(0.75rem, 0.65rem + 0.4vw, 1rem);
+    }
+    @media (min-width: $desktop-size) {
+        padding: 20px 150px;
+    }
+}
+.lunas__contact{
+    padding: 0;
+    list-style: none;
+    margin: 10px 20px;
+    a{
+        text-decoration: none;
+        display: flex;
+        color: $c-bg-lunas;
+        transition: 0.3s;
+        margin-bottom: 8px;
+        &:hover, &:focus{
+            color: rgb(1, 97, 25);
+        }
+    }
+}
+/* From Uiverse.io by gharsh11032000 */ 
+/* The switch - the box around the slider */
+.switch {
+  font-size: 25px;
+  position: relative;
+  display: inline-block;
+  width: 3.5em;
+  height: 2em;
+  display: flex;
+  justify-self: center;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  border: 2px solid $c-blue-lunas;
+  border-radius: 50px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.4em;
+  width: 1.4em;
+  left: 0.2em;
+  bottom: 0.2em;
+  background-color: $c-blue-lunas;
+  border-radius: inherit;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.switch input:checked + .slider:before {
+  transform: translateX(1.5em);
 }

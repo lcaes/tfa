@@ -63,12 +63,21 @@
 </section>
 <section>
 <h3 class="lunas__stitle lunas__stitle--center">L’interface de vos Lunas</h3>
-<button class="lunas__button"><svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M18.75 20C19.5625 20 20.3697 20.0781 21.1719 20.2344C21.9739 20.3906 22.7499 20.625 23.4998 20.9375C23.9789 21.125 24.349 21.4321 24.6094 21.8591C24.8697 22.2861 24.9999 22.7498 25 23.2495V23.75C25 24.4404 24.4404 25 23.75 25H13.75C13.0596 25 12.5 24.4404 12.5 23.75V23.2495C12.5001 22.7498 12.6302 22.2861 12.8906 21.8591C13.151 21.4321 13.5211 21.125 14.0002 20.9375C14.7501 20.625 15.5261 20.3906 16.3281 20.2344C17.1303 20.0781 17.9375 20 18.75 20ZM16.25 0C17.6308 0 18.75 1.11929 18.75 2.5V10C17.2299 10 15.8488 10.5526 14.7631 11.6381C13.6776 12.7238 13.125 14.1049 13.125 15.625C13.125 16.5999 13.3531 17.517 13.8025 18.3361C13.5531 18.4239 13.3051 18.5191 13.0603 18.6206C12.9613 18.66 12.8653 18.7048 12.7698 18.75H2.5C1.11929 18.75 0 17.6308 0 16.25V2.5C0 1.11929 1.11929 0 2.5 0H16.25ZM18.75 12.5C19.625 12.5 20.3651 12.8016 20.9692 13.4058C21.5734 14.0099 21.875 14.75 21.875 15.625C21.875 16.5 21.5734 17.2401 20.9692 17.8442C20.3651 18.4484 19.625 18.75 18.75 18.75C17.875 18.75 17.1349 18.4484 16.5308 17.8442C15.9266 17.2401 15.625 16.5 15.625 15.625C15.625 14.75 15.9266 14.0099 16.5308 13.4058C17.1349 12.8016 17.875 12.5 18.75 12.5ZM5.625 10.625C4.93465 10.625 4.375 11.1846 4.375 11.875C4.375 12.5654 4.93465 13.125 5.625 13.125H10C10.6904 13.125 11.25 12.5654 11.25 11.875C11.25 11.1846 10.6904 10.625 10 10.625H5.625ZM5.625 5.625C4.93465 5.625 4.375 6.18465 4.375 6.875C4.375 7.56535 4.93465 8.125 5.625 8.125H13.125C13.8154 8.125 14.375 7.56535 14.375 6.875C14.375 6.18465 13.8154 5.625 13.125 5.625H5.625Z" fill="#101120"/>
-</svg>
-</button>
-<img src="assets/images/lunas-interface.jpg">
-<p>Cliquer sur le </p>
+<div class="lunas__carrousel">
+    <div class="carrousel__el carrousel__el--active">
+    <img src="assets/images/lunas-interface.jpg">
+    <p>L'interface par default</p>
+</div>
+<div class="carrousel__el">
+    <img src="assets/images/lunas-onglet.jpg">
+    <p>L'interface avec l'onglet "+" ouvert</p>
+</div>
+</div>
+<label class="switch">
+  <input type="checkbox">
+  <span class="slider"></span>
+</label>
+
 </section>
 <section>
     <h3 class="lunas__stitle">Le code couleur en mode compatibilité</h3>
@@ -79,22 +88,23 @@
     </div>
     <input type="number" min="0" max="100" class="lunas__input" value=">75" placeholder="Entez un pourcentage">
 </section>
-<section>
+<section class="section__app">
     <h3 class="lunas__stitle lunas__stitle--center">Notre app</h3>
     <p>Retrouvez l’historique quotidien de vos rencontres sur notre application. Vous pourrez accéder à toutes les informations sur les personnes croisées et même les ajouter à vos favoris.</p>
-    <img src="assets/images/lunas-app.jpg">
+    <img src="assets/images/lunas-app.jpg" class="img__app">
     <h4>Retrouvez notre application</h4>
+    <div>
     <img src="assets/images/lunas-logo.svg" class="lunas__logo">
     <ul class="lunas__avaible">
         <li><img src="assets/images/lunas-appllestore.jpg" alt="App Store"></li>
         <li><img src="assets/images/lunas-googlestore.jpg" alt="Google Play"></li>
     </ul>
-
+    </div>
 </section>
 </main>
 <footer class="lunas__footer">
     <h2>Un problème avec vos Lunas? </h2>
-    <ul>
+    <ul class="lunas__contact">
         <li><a href="mailto:support@lunas.com">assistance@lunas.com</a></li>
         <li><a href="tel:0800-00">0800-00</a></li>
     </ul>
