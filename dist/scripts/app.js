@@ -17,9 +17,12 @@ var containnerChat = document.getElementById('fapsl__chats');
 var filterCompability = document.querySelector('.filter__compability');
 var lunasInput = document.querySelector('.lunas__input');
 var pourcent = document.querySelector('.lunas__compatibility--level');
-pourcent.textContent = "90%";
 
-if (lunasInput) {
+if (pourcent) {
+  pourcent.textContent = "90%";
+}
+
+if (lunasInput && filterCompability) {
   var changeColor = function changeColor() {
     if (lunasInput.value === "") return;
     var pourcentValue = Number(lunasInput.value);
@@ -43,44 +46,47 @@ if (lunasInput) {
   lunasInput.addEventListener('input', changeColor);
 }
 
-if (btnSend) {
-  var AddChat = function AddChat() {
-    var message = fapslInput.value;
-    console.log(message);
-
-    if (message.trim() !== "") {
-      var newLine = document.createElement('div');
-      newLine.classList.add('fapsl__line');
-      var newContent = document.createElement('div');
-      var newProfil = document.createElement('div');
-      newProfil.classList.add('fapsl__profile');
-      var imgUser = document.createElement('img');
-      imgUser.src = 'assets/images/bc.png';
-      var pseudo = document.createElement('h3');
-      pseudo.textContent = "BC_05";
-      var text = document.createElement('div');
-      text.classList.add("fapsl__text");
-      var date = document.createElement('p');
-      date.classList.add('faspsl__date');
-      date.textContent = "25/04/2035";
-      var newMessage = document.createElement('p');
-      newMessage.textContent = message;
-      newContent.classList.add('fapsl__content');
-      newProfil.appendChild(imgUser);
-      newProfil.appendChild(pseudo);
-      text.appendChild(newMessage);
-      text.appendChild(date);
-      newContent.appendChild(newProfil);
-      newContent.appendChild(text);
-      containnerChat.appendChild(newLine);
-      containnerChat.appendChild(newContent);
-    }
-  };
-
+if (btnSend && fapslInput && containnerChat) {
   btnSend.addEventListener('click', AddChat);
 }
 
-if (blogBurger) {
+function AddChat() {
+  var message = fapslInput.value;
+
+  if (message.trim() !== "") {
+    var newLine = document.createElement('div');
+    newLine.classList.add('fapsl__line');
+    var newContent = document.createElement('div');
+    newContent.classList.add('fapsl__content');
+    var newProfil = document.createElement('div');
+    newProfil.classList.add('fapsl__profile');
+    var imgUser = document.createElement('img');
+    imgUser.src = 'assets/images/bc.png';
+    imgUser.alt = 'avatar';
+    var pseudo = document.createElement('h3');
+    pseudo.textContent = "BC_05";
+    var text = document.createElement('div');
+    text.classList.add("fapsl__text");
+    var date = document.createElement('p');
+    date.classList.add('faspsl__date');
+    date.textContent = "25/04/2035";
+    var newMessage = document.createElement('p');
+    newMessage.textContent = message;
+    newProfil.appendChild(imgUser);
+    newProfil.appendChild(pseudo);
+    text.appendChild(newMessage);
+    text.appendChild(date);
+    newContent.appendChild(newProfil);
+    newContent.appendChild(text);
+    containnerChat.appendChild(newContent);
+    containnerChat.appendChild(newLine);
+    fapslInput.value = "";
+    fapslInput.style.height = "auto";
+    containnerChat.scrollTop = containnerChat.scrollHeight;
+  }
+}
+
+if (blogBurger && blogNav) {
   blogBurger.addEventListener('click', opennav);
 }
 
@@ -97,11 +103,18 @@ if (bntMobile) {
     var scrollCurrent = window.scrollY;
     var isMobile = window.innerWidth < 1024;
 
+    if (scrollCurrent < 50) {
+      bntMobile.classList.remove("--show");
+      if (blogNav) blogNav.classList.remove('blog__nav--active');
+      lastScroll = scrollCurrent;
+      return;
+    }
+
     if (scrollCurrent < lastScroll && isMobile) {
       bntMobile.classList.add("--show");
     } else {
       bntMobile.classList.remove("--show");
-      blogNav.classList.remove('blog__nav--active');
+      if (blogNav) blogNav.classList.remove('blog__nav--active');
     }
 
     lastScroll = scrollCurrent;

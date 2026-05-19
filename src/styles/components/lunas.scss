@@ -37,6 +37,13 @@
         max-width: 14ch;
 
     }
+    @media (min-width: $desktop-size) {
+        h2{
+            position: absolute;
+            right: 1%;
+            bottom: 5%;
+        }
+    }
 }
 .lunas__stitle{
         color: $c-blue-lunas;
@@ -153,7 +160,9 @@
 .lunas__avaible{
     display: flex;
     list-style: none;
-    justify-content: space-between;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
     padding: 0;
     margin: 10px 10%;
     img{
@@ -162,7 +171,8 @@
 
     }
     @media (min-width:$desktop-size) {
-        margin: 10 0;
+        margin: 10px 0;
+        
     }
 }
 .lunas__footer{
