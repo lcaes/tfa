@@ -147,23 +147,20 @@ h1 {
     display: grid;
     grid-template-columns: 1fr auto;
     padding: 15px 50px;
+    box-shadow: $fapsl-shadow;
+    border: 5px solid $c-fapsl-border;
+    border-radius: 25px;
     textarea{
         width:100%;
         border: none;
         background: none;
-        resize: none;
+        field-sizing: content;
         min-height: 30px;
         max-height: 200px;
     }
 
 }
-.fapsl__input-wrapper {
-    display: flex;
-    align-items: flex-end; // Aligne le bouton en bas quand le texte s'étire
-    padding: 10px;
-    border-bottom: 1px solid $c-fapsl-border; // Ou ton style de bordure
-    width: 100%;
-}
+
 
 .fapsl__textarea {
     min-height: 30px;
@@ -200,4 +197,14 @@ h1 {
             fill: #7F34CE; 
         }
     }
+}
+.fapsl__button--nav{
+    background-color: #29265c;
+    border-radius: 35px;
+    border: $c-fapsl-border solid 2px;
+    color: white; 
+    padding:10px 15px;
+    display: flex;
+    margin: 20px auto;
+    font-size: clamp(1.75rem, 1.6307rem + 0.6364vw, 2.1875rem);
 }

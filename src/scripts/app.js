@@ -1,4 +1,11 @@
+import { gsap } from "gsap";
+    
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 let lastScroll = 0;
+
 const blogBurger = document.querySelector('.blog__burger');
 const blogNav = document.querySelector('.blog__nav');
 const bntMobile = document.querySelector('.btn__mobile');
@@ -8,7 +15,55 @@ const containnerChat = document.getElementById('fapsl__chats');
 const filterCompability = document.querySelector('.filter__compability');
 const lunasInput = document.querySelector('.lunas__input');
 const pourcent = document.querySelector('.lunas__compatibility--level');
+const pageHome = document.querySelector('.home');
+const homeLogo = document.querySelector('.home__logo');
+const homeTitle = document.querySelector('.home__title')
+const homeHeader = document.querySelector('.home__header');
+const homeExplication = document.querySelector('.home__main');
 
+
+if (pageHome) {
+  
+    const introTl = gsap.timeline();
+
+    introTl.from(homeLogo, {
+        x: '-200%',
+        rotate: 0,
+        opacity: 0,
+        duration: 1,
+        ease: "power2.out"
+    })
+    .to(homeLogo, { x: '15%', rotate: 25, duration: 0.3 })
+    .to(homeLogo, { x: '-5%', rotate: -5, duration: 0.2 })
+    .to(homeLogo, { x: '0%', rotate: 0, duration: 0.2 });
+
+    introTl.from(homeTitle, {
+        x: '200%',
+        opacity: 0,
+        duration: 1,
+        ease: "power2.out"
+    }, 0); 
+    
+    const scrollTl = gsap.timeline({
+        scrollTrigger: {
+            trigger: homeHeader,
+            start: "top top",   
+            end: "bottom 90%",  
+            markers: true,    
+            scrub: 3,
+         
+        }
+    });
+
+    scrollTl.from(homeHeader, { height: '100vh' })
+            .from(homeTitle, { fontSize: '5.5rem' }, "<")  
+            .from(homeLogo, { width: '103px' }, "<")
+            .from(homeExplication, { opacity: 0, y: 50,scale: 0, duration: 1 }, +1);
+
+    
+      
+     
+}
 if (pourcent) {
     pourcent.textContent = "90%";
 }
@@ -77,8 +132,8 @@ function AddChat() {
         newContent.appendChild(newProfil);
         newContent.appendChild(text);
         
-        containnerChat.appendChild(newContent);
         containnerChat.appendChild(newLine);
+        containnerChat.appendChild(newContent);
         
         fapslInput.value = "";
         fapslInput.style.height = "auto";

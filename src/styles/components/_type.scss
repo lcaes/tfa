@@ -1,5 +1,6 @@
 body{
   margin: 0;
+  max-width: 100%;
 }
 html{
   scroll-behavior: smooth;
@@ -27,9 +28,7 @@ p{
       }
      
     }
-    &--home{
-      position: static;
-    }
+
     &:hover, &:focus{
       transform: rotateY(180deg);
     }

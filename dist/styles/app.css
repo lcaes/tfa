@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  max-width: 100%;
 }
 
 html {
@@ -32,9 +33,6 @@ p {
   .logo--fapsl {
     transform: translateY(clamp(10px, 1vh, 100px));
   }
-}
-.logo--home {
-  position: static;
 }
 .logo:hover, .logo:focus {
   transform: rotateY(180deg);
@@ -666,22 +664,17 @@ p {
   display: grid;
   grid-template-columns: 1fr auto;
   padding: 15px 50px;
+  box-shadow: 10px 15px 9.3px rgba(63, 34, 48, 0.25);
+  border: 5px solid #AC6BF6;
+  border-radius: 25px;
 }
 .fapsl__message textarea {
   width: 100%;
   border: none;
   background: none;
-  resize: none;
+  field-sizing: content;
   min-height: 30px;
   max-height: 200px;
-}
-
-.fapsl__input-wrapper {
-  display: flex;
-  align-items: flex-end;
-  padding: 10px;
-  border-bottom: 1px solid #AC6BF6;
-  width: 100%;
 }
 
 .fapsl__textarea {
@@ -716,6 +709,17 @@ p {
 }
 .fapsl__send:hover svg, .fapsl__send:focus svg {
   fill: #7F34CE;
+}
+
+.fapsl__button--nav {
+  background-color: #29265c;
+  border-radius: 35px;
+  border: #AC6BF6 solid 2px;
+  color: white;
+  padding: 10px 15px;
+  display: flex;
+  margin: 20px auto;
+  font-size: clamp(1.75rem, 1.6307rem + 0.6364vw, 2.1875rem);
 }
 
 .lunas {
@@ -758,10 +762,16 @@ p {
   max-width: 14ch;
 }
 @media (min-width: 1020px) {
+  .lunas__header h1 {
+    top: 10%;
+  }
   .lunas__header h2 {
     position: absolute;
     right: 1%;
-    bottom: 5%;
+    bottom: 15%;
+  }
+  .lunas__header img {
+    margin-top: -15%;
   }
 }
 
@@ -1012,14 +1022,41 @@ p {
 .home {
   background-color: #2B2626;
   font-family: "din-2014", sans-serif;
+  color: #F7EFFF;
 }
 
 .home__header {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
   gap: 15px;
-  color: #DCBFFD;
+  color: #7D6DF7;
+  width: 100%;
+  z-index: 100;
+  background-color: #2B2626;
+  box-sizing: border-box;
+  padding: 0;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+.home__title {
+  font-family: "gnar", sans-serif;
+  letter-spacing: 1px;
+  line-height: 80%;
+  will-change: transform, opacity;
+  font-size: clamp(2.0625rem, 1.2188rem + 3.375vw, 3.75rem);
+  margin: 0;
+}
+
+.home__logo {
+  will-change: transform, opacity;
+  width: clamp(35px, 17.5px + 4.375vw, 70px);
 }
 
 .home__nav {
@@ -1029,9 +1066,18 @@ p {
   flex-direction: column;
   padding: 0;
   gap: 50px;
+  justify-self: center;
+}
+@media (min-width: 600px) {
+  .home__nav {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
 }
 @media (min-width: 1020px) {
   .home__nav {
+    display: flex;
     flex-direction: row;
     margin: 50px 100px;
   }
@@ -1049,43 +1095,51 @@ p {
 .home__el img {
   transition: filter 0.4s ease;
 }
-.home__el .link {
+.home__el div {
   position: absolute;
   z-index: 10;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   opacity: 0;
+  transition: opacity 0.4s ease;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.home__el:hover img, .home__el:focus img {
+  filter: blur(4px);
+}
+.home__el:hover div, .home__el:focus div {
+  opacity: 1;
+}
+
+.link {
+  position: relative;
   text-decoration: none;
   color: #DCBFFD;
   background-color: #2B2626;
   padding: 5px 15px;
   border-radius: 5px;
-  transition: opacity 0.4s ease;
-  isolation: isolate;
   text-align: center;
+  display: block;
+  min-width: 15ch;
 }
-.home__el .link:hover::before, .home__el .link:focus::before {
+.link:hover::before, .link:focus::before {
   content: "";
   position: absolute;
   z-index: -1;
-  background: conic-gradient(from var(--angle), transparent 50%, #4000EF);
+  background: conic-gradient(from var(--angle), transparent 80%, #4000EF);
   width: 100%;
   height: 100%;
   padding: 5px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  opacity: 0.7;
+  opacity: 1;
   border-radius: 5px;
   -webkit-animation: nav__home 1.5s linear infinite;
           animation: nav__home 1.5s linear infinite;
-}
-.home__el:hover img, .home__el:focus img {
-  filter: blur(4px);
-}
-.home__el:hover .link, .home__el:focus .link {
-  opacity: 1;
 }
 
 @-webkit-keyframes nav__home {
@@ -1104,6 +1158,18 @@ p {
   to {
     --angle: 360deg;
   }
+}
+.home__explication {
+  margin: 20px auto;
+  max-width: 50ch;
+  font-size: clamp(1.5rem, 0.9375rem + 2.25vw, 2.625rem);
+}
+
+.home__main {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /*# sourceMappingURL=app.css.map*/
