@@ -69,13 +69,15 @@
 
     img {
         transition: filter 0.4s ease;
+        filter: blur(8px);
+
     }
     div{
         position: absolute;
         z-index: 10;
-        top: 50%;
+        bottom:  10%;
         left: 50%;
-        transform: translate(-50%, -50%); 
+        transform: translateX(-50%); 
         opacity: 0;
         transition: opacity 0.4s ease;
         width: fit-content;
@@ -83,7 +85,7 @@
 
     &:hover, &:focus {
         img {
-            filter: blur(4px);
+            filter: blur(0px);
         }
         div {
             opacity: 1;
@@ -138,4 +140,50 @@
     justify-content: center;
 
     
+}
+.home__footer{
+    display: flex;
+    padding-bottom: 20px;
+    flex-direction: column;
+    small{
+        text-align: right;
+    }
+    a{
+        text-decoration: none;
+        text-align: center;
+        transition: 0.3s;
+        &:hover{
+            color: $c-fapsl-title;
+        }
+    }
+    
+
+
+}
+.home__contact{
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    width: fit-content;
+    margin-left: 5%;
+    h2{
+        margin: 0;
+    }
+
+   ul{
+        display: flex;
+        list-style: none;
+        padding: 0;
+        justify-content: center;
+        margin: 0;
+    }
+    li{
+        margin: 0 10px;
+    }
+    svg{
+        width: 25px;
+        &:hover{
+            color: $c-fapsl-title;
+        }
+    }
 }

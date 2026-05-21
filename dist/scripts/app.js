@@ -41,15 +41,15 @@ if (pageHome) {
   }).to(homeLogo, {
     x: '15%',
     rotate: 25,
-    duration: 0.3
+    duration: 0.2
   }).to(homeLogo, {
     x: '-5%',
     rotate: -5,
-    duration: 0.2
+    duration: 0.1
   }).to(homeLogo, {
     x: '0%',
     rotate: 0,
-    duration: 0.2
+    duration: 0.1
   });
   introTl.from(homeTitle, {
     x: '200%',
@@ -63,7 +63,8 @@ if (pageHome) {
       start: "top top",
       end: "bottom 90%",
       markers: true,
-      scrub: 3
+      scrub: 3,
+      toggleActions: "reeset play reverse play"
     }
   });
   scrollTl.from(homeHeader, {
@@ -76,7 +77,7 @@ if (pageHome) {
     opacity: 0,
     y: 50,
     scale: 0,
-    duration: 1
+    duration: 2
   }, +1);
 }
 

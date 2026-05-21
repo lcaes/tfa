@@ -33,9 +33,9 @@ if (pageHome) {
         duration: 1,
         ease: "power2.out"
     })
-    .to(homeLogo, { x: '15%', rotate: 25, duration: 0.3 })
-    .to(homeLogo, { x: '-5%', rotate: -5, duration: 0.2 })
-    .to(homeLogo, { x: '0%', rotate: 0, duration: 0.2 });
+    .to(homeLogo, { x: '15%', rotate: 25, duration: 0.2 })
+    .to(homeLogo, { x: '-5%', rotate: -5, duration: 0.1 })
+    .to(homeLogo, { x: '0%', rotate: 0, duration: 0.1});
 
     introTl.from(homeTitle, {
         x: '200%',
@@ -51,6 +51,7 @@ if (pageHome) {
             end: "bottom 90%",  
             markers: true,    
             scrub: 3,
+            toggleActions:"reeset play reverse play",
          
         }
     });
@@ -58,7 +59,7 @@ if (pageHome) {
     scrollTl.from(homeHeader, { height: '100vh' })
             .from(homeTitle, { fontSize: '5.5rem' }, "<")  
             .from(homeLogo, { width: '103px' }, "<")
-            .from(homeExplication, { opacity: 0, y: 50,scale: 0, duration: 1 }, +1);
+            .from(homeExplication, { opacity: 0, y: 50,scale: 0, duration: 2}, +1);
 
     
       

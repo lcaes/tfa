@@ -25,12 +25,16 @@
     p{
         margin: 0;
     }
-
+    &--2{
+        margin-top: 30px;
+    }
     @media  (min-width: $desktop-size){
  
             grid-column: 1/ 4;
      
-        
+        &--1{
+            grid-row: 3;
+        }
     }}
  
 .blog__line{
@@ -197,8 +201,9 @@ img{
      @media (min-width: $desktop-size) {
         opacity: 1;
         grid-column: 4/6;
-        grid-row: 3;
         pointer-events: auto;
+        position: sticky;
+        top: 100px;
    
     }
     
