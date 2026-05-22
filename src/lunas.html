@@ -17,7 +17,20 @@
 </head>
 <body class="lunas">
 <header class="lunas__header">
-    <a href="index.html"><svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <button id="menu-toggle" class="lunas__burger">
+        <div class="menu-toggle-bar menu-toggle-bar--top"></div>
+        <div class="menu-toggle-bar menu-toggle-bar--middle"></div>
+        <div class="menu-toggle-bar menu-toggle-bar--bottom"></div>
+    </button>
+    <nav class="lunas__nav">
+        
+        <ul>
+            <li><a href="monde.html">Un monde avec Lunas</a></li>
+            <li><a href="imprevu.html">Le Caméléon</a></li>
+            <li><a href="fapl.html">FAPSL</a></li>
+        </ul>
+    </nav>
+    <a href="index.html"><svg class="logo" width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0_301_10)">
 <g filter="url(#filter0_d_301_10)">
 <path d="M68.5 13.5V68.5L13 69.5L0 58.5L1 1L50 0.5L68.5 13.5Z" fill="#C4E2EA"/>
@@ -66,17 +79,16 @@
 <div class="lunas__carrousel">
     <div class="carrousel__el carrousel__el--active">
     <img src="assets/images/lunas-interface.jpg">
-    <p>L'interface par default</p>
+    <p>L'interface par défaut</p>
 </div>
 <div class="carrousel__el">
     <img src="assets/images/lunas-onglet.jpg">
-    <p>L'interface avec l'onglet "+" ouvert</p>
+    <p>L'interface avec l'onglet « + » ouver</p>
 </div>
 </div>
-<label class="switch">
-  <input type="checkbox">
-  <span class="slider"></span>
-</label>
+<button class="interupteur"> 
+    <div class="interupteur__default"></div>
+</button>
 
 </section>
 <section>

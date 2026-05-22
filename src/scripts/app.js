@@ -20,6 +20,36 @@ const homeLogo = document.querySelector('.home__logo');
 const homeTitle = document.querySelector('.home__title')
 const homeHeader = document.querySelector('.home__header');
 const homeExplication = document.querySelector('.home__explication');
+const btnCarrousel = document.querySelector('.interupteur');
+const btnCarrouselEtat = document.querySelector('.interupteur__default');
+
+
+if (btnCarrousel) {
+    btnCarrousel.addEventListener('click', carroussel);
+
+    function carroussel() {
+        
+        const currentActive = document.querySelector('.carrousel__el--active');
+        
+        if (btnCarrouselEtat.classList.contains('change')) {
+            btnCarrouselEtat.classList.remove('change');
+            const previousEl = currentActive.previousElementSibling;
+            
+            if (previousEl && previousEl.classList.contains('carrousel__el')) {
+                previousEl.classList.add('carrousel__el--active');
+                currentActive.classList.remove('carrousel__el--active');
+            }
+        } else {
+            btnCarrouselEtat.classList.add('change');
+            const nextEl = currentActive.nextElementSibling;
+            
+            if (nextEl && nextEl.classList.contains('carrousel__el')) {
+                nextEl.classList.add('carrousel__el--active');
+                currentActive.classList.remove('carrousel__el--active');
+            }
+        }
+    }
+}
 
 
 if (pageHome) {

@@ -29,6 +29,34 @@ var homeLogo = document.querySelector('.home__logo');
 var homeTitle = document.querySelector('.home__title');
 var homeHeader = document.querySelector('.home__header');
 var homeExplication = document.querySelector('.home__explication');
+var btnCarrousel = document.querySelector('.interupteur');
+var btnCarrouselEtat = document.querySelector('.interupteur__default');
+
+if (btnCarrousel) {
+  var carroussel = function carroussel() {
+    var currentActive = document.querySelector('.carrousel__el--active');
+
+    if (btnCarrouselEtat.classList.contains('change')) {
+      btnCarrouselEtat.classList.remove('change');
+      var previousEl = currentActive.previousElementSibling;
+
+      if (previousEl && previousEl.classList.contains('carrousel__el')) {
+        previousEl.classList.add('carrousel__el--active');
+        currentActive.classList.remove('carrousel__el--active');
+      }
+    } else {
+      btnCarrouselEtat.classList.add('change');
+      var nextEl = currentActive.nextElementSibling;
+
+      if (nextEl && nextEl.classList.contains('carrousel__el')) {
+        nextEl.classList.add('carrousel__el--active');
+        currentActive.classList.remove('carrousel__el--active');
+      }
+    }
+  };
+
+  btnCarrousel.addEventListener('click', carroussel);
+}
 
 if (pageHome) {
   var introTl = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline();
