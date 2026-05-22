@@ -96,7 +96,31 @@ h1 {
     background: $c-fapsl-bg-footer;
     padding: 200px 5% 0 5%;
     color: $c-fapsl-title;
-
+    .fapsl__disclaimer{
+        font-size: clamp(1rem, 0.9318rem + 0.3636vw, 1.25rem);
+        margin: 20px auto;
+        max-width: 600px;
+    }
+    h3{
+        font-size: clamp(1.75rem, 1.6307rem + 0.6364vw, 2.1875rem);
+    }
+    @media (min-width: $desktop-size) {
+        padding: 200px 150px 0 150px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        h3{
+            grid-column: 1/ -1;
+        }
+     .fapsl__disclaimer{
+            grid-column: 1/ 3;
+            margin: 20px 0;
+    }
+    small{
+        grid-column: 3;
+        justify-self: end;
+        align-self: end;
+    }
+}
 }
 .fapsl__content{
     @media (min-width: $desktop-size){
@@ -207,4 +231,10 @@ h1 {
     display: flex;
     margin: 20px auto;
     font-size: clamp(1.75rem, 1.6307rem + 0.6364vw, 2.1875rem);
+    transition: all 0.5s ease;
+    &:hover, &:focus {
+        background-color: $c-fapsl-border;
+        color: #29265c;
+
+    }
 }

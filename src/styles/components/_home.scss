@@ -132,6 +132,8 @@
     margin: 20px auto;
     max-width: 50ch;
     font-size: clamp(1.5rem, 0.9375rem + 2.25vw, 2.625rem);
+    padding-top: 50px;
+ 
 }
 .home__main{
     height: 100vh;
@@ -147,6 +149,7 @@
     flex-direction: column;
     small{
         text-align: right;
+        margin: 0 5%;
     }
     a{
         text-decoration: none;

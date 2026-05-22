@@ -19,7 +19,7 @@ const pageHome = document.querySelector('.home');
 const homeLogo = document.querySelector('.home__logo');
 const homeTitle = document.querySelector('.home__title')
 const homeHeader = document.querySelector('.home__header');
-const homeExplication = document.querySelector('.home__main');
+const homeExplication = document.querySelector('.home__explication');
 
 
 if (pageHome) {
@@ -48,20 +48,34 @@ if (pageHome) {
         scrollTrigger: {
             trigger: homeHeader,
             start: "top top",   
-            end: "bottom 90%",  
-            markers: true,    
+            end: "bottom 90%",   
             scrub: 3,
             toggleActions:"reeset play reverse play",
-         
+           
         }
     });
 
-    scrollTl.from(homeHeader, { height: '100vh' })
+    scrollTl.from(homeHeader, { height: '100vh', position: 'absolute', top: 0})
             .from(homeTitle, { fontSize: '5.5rem' }, "<")  
-            .from(homeLogo, { width: '103px' }, "<")
-            .from(homeExplication, { opacity: 0, y: 50,scale: 0, duration: 2}, +1);
+            .from(homeLogo, { width: '103px' }, "<");
 
-    
+   if (homeExplication) {
+    gsap.from(homeExplication, {
+        scrollTrigger: {
+            trigger: homeExplication, 
+            markers: true,            
+            start: "-150% 70%",         
+            //end: "bottom 20%",
+            //toggleActions: "play none none reverse",
+       
+
+        },
+        opacity: 0,             
+        //y: 30,                       
+        duration: 3,                           
+    });
+
+} 
       
      
 }

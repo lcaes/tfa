@@ -8,14 +8,10 @@
 .monde__header {
     margin: 0;
     width: 100%;
-    height: 100vh;
-    background-image: url(../../assets/images/headermonde.jpg);
-    background-size: cover; 
-    background-position: center;
-    background-repeat: no-repeat;
     display: flex;
     align-items: center;  
     justify-content: center; 
+    position: relative;
 
     h1 {
         background-color: rgba($color-monde, 0.7);
@@ -28,9 +24,8 @@
         line-height: 90%;
         max-width: 10ch;
         font-family: "Inria Serif", serif;
-    }
-    @media (min-width: $desktop-size){
-      background-image: url(../../assets/images/headermonde-desktop.jpg);
+        position: absolute;
+        z-index: 1;
     }
 }
 .monde__container{
