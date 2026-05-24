@@ -29,69 +29,82 @@
     }
 }
 .monde__container{
-    display: flex;
-    flex-direction: column;
     margin: 20px 0 ;
-     @media (min-width: $desktop-size){
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        margin: 50px 100px;
-        grid-column-gap: 40px;
-        grid-template-rows: auto;
-    }
+
     @media (min-width: $desktop-size){
         display: grid;
         grid-template-columns: repeat(6, 1fr);
        margin: 20px 0;
         grid-column-gap: 40px;
-        grid-template-rows: auto;
+        grid-template-rows: 1fr;
     }
 }
 .monde__content{
     height: fit-content;
     margin: 20px 0;
     h2{
-        text-align: center;
         background-color: $color-monde;
         font-family: "Inria Serif", serif;
         padding: 10px 5%;
+        font-size: clamp(2.25rem, 2rem + 1vw, 2.875rem);
+         text-align: right; 
+
+    }
+    h3{
+        font-size: clamp(1.625rem, 1.475rem + 0.6vw, 2rem);
     }
     p{
         margin: 20px 5%;
     }
     ul{
-        padding-left: 20px;
+        padding-left: 0px;
     }
     li{
-        margin: 10px 0;
+        margin: 20px 10px;
+        font-size: clamp(1.625rem, 1.475rem + 0.6vw, 2rem);
+        line-height: 110%;
     }
+   
     @media (min-width: $desktop-size){
         grid-column: 1/ 5;
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-row: 1;
+         section{
+       display: grid;
+        grid-template-columns: repeat(4, 1fr);    
+    }
+        
         h2 {
-    height: 100px;
+    height: fit-content;
     display: flex;
-    align-items: center;   
+    align-content: center;   
     justify-content: flex-end; 
     padding-right: 20px; 
     margin: 0;
-    text-align: right; 
-    grid-column: 1 / -1;
-   padding-left: 30%;
+    grid-column: 1 / 5;
+    padding-left: 25pc;
+   max-width: 20ch;
+   width: 100%;
+            display: flex;
+            justify-self: end;
+   
+ 
     }
 
-        p, ul{
+        p, h3{
             margin-left: 100px;
             grid-column: 2 / 5;
         }}
+        ul{
+            grid-column: 2 / 5;
+            margin-left: 85px;
+        }
 }
 .monde__footer{
     background-color: $color-monde;
-    text-align: center;
+    
     padding: 20px 5%;
     .mention{
-        font-size: 12px;
+        font-size: 1§px;
         margin-top: 10px;
     }
     small{
@@ -110,9 +123,10 @@
         .mention{
             font-size: 14px;
             grid-column: 4/ 6;
-            justify-self: center;
+            justify-self: left;
             align-self: center;
             margin-top: 30px;
+
         }
     }
         small{
@@ -122,3 +136,102 @@
         }
     }
     
+.monde__nav {
+    background-color: #C9DAEE;
+    height: fit-content;
+    padding: 10px;
+    border-radius: 10px;
+    transition: all 0.5s ease; 
+    max-width: 300px;
+    opacity: 0;
+    visibility: hidden;
+    position: fixed; 
+    z-index: 1000;
+    pointer-events: none;
+    scale: 0;
+   bottom: 20%;
+        left: 50%;
+        transform: translate(-50%);
+        width: fit-content;
+
+    h2 {
+        text-align: center;
+        margin: 0;
+        padding: 10px;
+        min-width: 15ch;
+    }
+
+    ul {
+        display: flex;
+        list-style: none;
+        flex-direction: column;
+        padding: 10px 20px;
+        margin: 0;
+        gap: 5px;
+    }
+
+    a {
+        text-decoration: none;
+        color: #2968EE;
+        transition: 0.3s;
+        &:hover, &:focus {
+            color: $color-monde;
+        }
+    }
+
+    @media (min-width: $desktop-size) {
+        opacity: 1;
+        visibility: visible;
+        position: sticky;
+        top: 70px;
+        grid-column: 5 / -1;
+        scale: 1;
+        pointer-events: auto;
+        display: flex;
+        flex-direction: column;
+        justify-self: center;
+        transform: translate(0);
+    }
+
+    &--active {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        scale: 1;
+    }
+}
+
+.monde__btt{
+    transition: 0.3s;
+    svg{
+        width: 30px;
+        background-color: $color-monde;
+        border-radius: 50%;
+       
+    }
+    &:hover{
+        svg{
+            fill: white;
+        }
+    }
+}
+.monde__burger{
+        background-color: $color-monde;
+        padding: 3px;
+        border-radius: 10px;
+        height: fit-content;
+  button{
+    background-color: $color-monde;
+border-radius: 10px;
+transition: 0.3s;
+  background-clip: padding-box;
+  padding: 5px 10px ;
+  margin: 0;
+  border: $c-font-monde solid 1px;
+  color: $c-font-monde;
+  transition: 0.3s;
+&:hover{
+    color: white;
+     border: white solid 1px;
+}}
+}

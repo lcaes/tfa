@@ -22,8 +22,45 @@ const homeHeader = document.querySelector('.home__header');
 const homeExplication = document.querySelector('.home__explication');
 const btnCarrousel = document.querySelector('.interupteur');
 const btnCarrouselEtat = document.querySelector('.interupteur__default');
+const btnOpenNavFapsl = document.querySelector ('.fapsl__button--nav');
+const btnCloseNavFapsl = document.querySelector('.btn__close');
+const navFapsl= document.querySelector('.fapsl__nav');
+const hearderFapsl = document.querySelector('.fapsl__header')
+const lunasBurger = document.querySelector('.lunas__burger');
+const pageLunas =document.querySelector('.lunas');
+const lunasNav =document.querySelector('.lunas__nav');
+const mondeBtns = document.querySelector('.monde__btns');
+const navMonde= document.querySelector('.monde__nav')
+const burgerMonde =document.querySelector('.monde__burger')
 
+if (lunasBurger) {
+    lunasBurger.addEventListener('click', openNavLunas)
+    function openNavLunas(){
+        lunasBurger.classList.toggle('open');
+        lunasNav.classList.toggle('open');
+    };
+}
 
+if(burgerMonde){
+    burgerMonde.addEventListener('click', opennavMonde);
+    function opennavMonde(){
+        navMonde.classList.toggle('monde__nav--active')
+    }
+}
+if(btnOpenNavFapsl){
+btnOpenNavFapsl.addEventListener('click', opennavFapsl)
+function opennavFapsl(){
+    navFapsl.classList.add('active')
+    hearderFapsl.classList.add('show')
+}
+}
+if(btnCloseNavFapsl){
+    btnCloseNavFapsl.addEventListener('click', closenavFapsl)
+    function closenavFapsl(){
+        navFapsl.classList.remove('active')
+        hearderFapsl.classList.remove('show')
+    }
+}
 if (btnCarrousel) {
     btnCarrousel.addEventListener('click', carroussel);
 
@@ -85,7 +122,7 @@ if (pageHome) {
         }
     });
 
-    scrollTl.from(homeHeader, { height: '100vh', position: 'absolute', top: 0})
+    scrollTl.from(homeHeader, { height: '100vh', top: 0})
             .from(homeTitle, { fontSize: '5.5rem' }, "<")  
             .from(homeLogo, { width: '103px' }, "<");
 
@@ -194,9 +231,6 @@ function opennav() {
     blogNav.classList.toggle('blog__nav--active');
 }
 
-function closeNavigation() {
-    blogNav.classList.remove('blog__nav--active');
-}
 
 if (bntMobile) {
     window.addEventListener('scroll', showBTN);
@@ -204,10 +238,16 @@ if (bntMobile) {
     function showBTN() {
         const scrollCurrent = window.scrollY;
         const isMobile = window.innerWidth < 1024;
-
+                    if (blogNav){ blogNav.classList.remove('blog__nav--active')};
+            if(navMonde.classList.contains('monde__nav--active')){
+                navMonde.classList.remove('monde__nav--active')
+            if(blogNav.classList.contains('blog__nav--active')){
+                blogNav.classList.remove('blog__nav--active');
+            }
+            }
         if (scrollCurrent < 50) {
             bntMobile.classList.remove("--show");
-            if (blogNav) blogNav.classList.remove('blog__nav--active');
+
             lastScroll = scrollCurrent;
             return;
         }
@@ -216,7 +256,6 @@ if (bntMobile) {
             bntMobile.classList.add("--show");
         } else {
             bntMobile.classList.remove("--show");
-            if (blogNav) blogNav.classList.remove('blog__nav--active');
         }
         
         lastScroll = scrollCurrent;

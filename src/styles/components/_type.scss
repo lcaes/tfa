@@ -1,6 +1,9 @@
 body{
   margin: 0;
-  max-width: 100%;
+  max-width: 1500px;
+  width: 100%;
+  
+  
 }
 html{
   scroll-behavior: smooth;
@@ -35,15 +38,8 @@ p{
 
 }
 
-.grid{
-    display: flex;
-    flex-direction: column;
-    @media (min-width: $desktop-size) {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      grid-column-gap: 40px;
-    }
-}
+
+
 .btn__mobile{
         opacity: 0;
     visibility: hidden;
@@ -55,6 +51,7 @@ p{
         gap: 20px;
         align-content: center;
         transition: 0.4s;
+        z-index: 100;
 
         &.--show {
         opacity: 1;
