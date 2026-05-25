@@ -15,11 +15,11 @@ const containnerChat = document.getElementById('fapsl__chats');
 const filterCompability = document.querySelector('.filter__compability');
 const lunasInput = document.querySelector('.lunas__input');
 const pourcent = document.querySelector('.lunas__compatibility--level');
-const pageHome = document.querySelector('.home');
-const homeLogo = document.querySelector('.home__logo');
-const homeTitle = document.querySelector('.home__title')
-const homeHeader = document.querySelector('.home__header');
-const homeExplication = document.querySelector('.home__explication');
+const pageimprevisible = document.querySelector('.imprevisible');
+const imprevisibleLogo = document.querySelector('.imprevisible__logo');
+const imprevisibleTitle = document.querySelector('.imprevisible__title')
+const imprevisibleHeader = document.querySelector('.imprevisible__header--home');
+const imprevisibleExplication = document.querySelector('.imprevisible__explication');
 const btnCarrousel = document.querySelector('.interupteur');
 const btnCarrouselEtat = document.querySelector('.interupteur__default');
 const btnOpenNavFapsl = document.querySelector ('.fapsl__button--nav');
@@ -89,22 +89,22 @@ if (btnCarrousel) {
 }
 
 
-if (pageHome) {
+if (imprevisibleHeader) {
   
     const introTl = gsap.timeline();
 
-    introTl.from(homeLogo, {
+    introTl.from(imprevisibleLogo, {
         x: '-200%',
         rotate: 0,
         opacity: 0,
         duration: 1,
         ease: "power2.out"
     })
-    .to(homeLogo, { x: '15%', rotate: 25, duration: 0.2 })
-    .to(homeLogo, { x: '-5%', rotate: -5, duration: 0.1 })
-    .to(homeLogo, { x: '0%', rotate: 0, duration: 0.1});
+    .to(imprevisibleLogo, { x: '15%', rotate: 25, duration: 0.2 })
+    .to(imprevisibleLogo, { x: '-5%', rotate: -5, duration: 0.1 })
+    .to(imprevisibleLogo, { x: '0%', rotate: 0, duration: 0.1});
 
-    introTl.from(homeTitle, {
+    introTl.from(imprevisibleTitle, {
         x: '200%',
         opacity: 0,
         duration: 1,
@@ -113,7 +113,7 @@ if (pageHome) {
     
     const scrollTl = gsap.timeline({
         scrollTrigger: {
-            trigger: homeHeader,
+            trigger: imprevisibleHeader,
             start: "top top",   
             end: "bottom 90%",   
             scrub: 3,
@@ -122,9 +122,9 @@ if (pageHome) {
         }
     });
 
-    scrollTl.from(homeHeader, { height: '100vh', top: 0})
-            .from(homeTitle, { fontSize: '5.5rem' }, "<")  
-            .from(homeLogo, { width: '103px' }, "<");
+    scrollTl.from(imprevisibleHeader, { height: '100vh', top: 0})
+            .from(imprevisibleTitle, { fontSize: '5.5rem' }, "<")  
+            .from(imprevisibleLogo, { width: '103px' }, "<");
 
 
 

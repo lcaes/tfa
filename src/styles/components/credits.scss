@@ -1,0 +1,7 @@
+.credits__logo{
+    position: absolute;
+    transition: 0.3s;
+        &:hover, &:focus{
+      transform: rotateY(180deg);
+    }
+}

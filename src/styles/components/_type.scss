@@ -31,7 +31,9 @@ p{
       }
      
     }
-
+    &o--credits{
+      position: unset;
+    }
     &:hover, &:focus{
       transform: rotateY(180deg);
     }

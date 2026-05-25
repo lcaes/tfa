@@ -19,7 +19,7 @@
   "bugs": {
     "url": "https://github.com/dwmaj/workflow/issues"
   },
-  "homepage": "https://github.com/dwmaj/workflow#readme",
+  "imprevisiblepage": "https://github.com/dwmaj/workflow#readme",
   "devDependencies": {
     "browser-sync": "^2.27.7",
     "browser-sync-webpack-plugin": "^2.3.0",

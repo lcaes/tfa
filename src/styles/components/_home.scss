@@ -1,9 +1,9 @@
-.home{
-    background-color: $c-bg-home;
+.imprevisible{
+    background-color: $c-bg-imprevisible;
     font-family: "din-2014", sans-serif;
     color: $c-fapsl-bg-second;
 }
-.home__header {
+.imprevisible__header {
     display: flex;
     flex-direction: row; 
     justify-content: center; 
@@ -12,7 +12,7 @@
     color: #7D6DF7;
     width: 100%;
     z-index: 100;
-    background-color: $c-bg-home;
+    background-color: $c-bg-imprevisible;
     box-sizing: border-box; 
     padding: 0; 
     height: fit-content;
@@ -20,7 +20,7 @@
     top: 0;
 }
 
-.home__title {
+.imprevisible__title {
     font-family: "gnar", sans-serif;
     letter-spacing: 1px;
     line-height: 80%;
@@ -29,11 +29,11 @@
     margin: 0; 
 }
 
-.home__logo {
+.imprevisible__logo {
     will-change: transform, opacity;
     width: clamp(35px, calc(17.5px + 4.375vw), 70px);
 }
-.home__nav{
+.imprevisible__nav{
     margin: 80px 3%;
         display: flex;
         list-style: none;
@@ -63,7 +63,7 @@
     inherits: false;
 }
 
-.home__el {
+.imprevisible__el {
     max-width: 300px;
     position: relative;
 
@@ -96,7 +96,7 @@
     position: relative;
     text-decoration: none;
     color: $c-fapsl-title;
-    background-color: $c-bg-home;
+    background-color: $c-bg-imprevisible;
     padding: 5px 15px;
     border-radius: 5px;
     text-align: center;
@@ -116,11 +116,11 @@
             transform: translate(-50%, -50%);
             opacity: 1;
             border-radius: 5px;
-            animation: nav__home 1.5s linear infinite; 
+            animation: nav__imprevisible 1.5s linear infinite; 
         }
     }
 }
-@keyframes nav__home {
+@keyframes nav__imprevisible {
     from {
         --angle: 0deg;
     } 
@@ -128,14 +128,14 @@
         --angle: 360deg;
     }  
 }
-.home__explication{
+.imprevisible__explication{
     margin: 20px auto;
     max-width: 50ch;
     font-size: clamp(1.5rem, 0.9375rem + 2.25vw, 2.625rem);
     padding-top: 50px;
  
 }
-.home__main{
+.imprevisible__main{
     height: 100vh;
     display: flex;
     align-items: center;
@@ -143,7 +143,7 @@
 
     
 }
-.home__footer{
+.imprevisible__footer{
     display: flex;
     padding-bottom: 20px;
     flex-direction: column;
@@ -163,7 +163,7 @@
 
 
 }
-.home__contact{
+.imprevisible__contact{
     display: flex;
     flex-direction: column;
     justify-content: center; 

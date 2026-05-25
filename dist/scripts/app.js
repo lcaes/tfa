@@ -24,11 +24,11 @@ var containnerChat = document.getElementById('fapsl__chats');
 var filterCompability = document.querySelector('.filter__compability');
 var lunasInput = document.querySelector('.lunas__input');
 var pourcent = document.querySelector('.lunas__compatibility--level');
-var pageHome = document.querySelector('.home');
-var homeLogo = document.querySelector('.home__logo');
-var homeTitle = document.querySelector('.home__title');
-var homeHeader = document.querySelector('.home__header');
-var homeExplication = document.querySelector('.home__explication');
+var pageimprevisible = document.querySelector('.imprevisible');
+var imprevisibleLogo = document.querySelector('.imprevisible__logo');
+var imprevisibleTitle = document.querySelector('.imprevisible__title');
+var imprevisibleHeader = document.querySelector('.imprevisible__header--home');
+var imprevisibleExplication = document.querySelector('.imprevisible__explication');
 var btnCarrousel = document.querySelector('.interupteur');
 var btnCarrouselEtat = document.querySelector('.interupteur__default');
 var btnOpenNavFapsl = document.querySelector('.fapsl__button--nav');
@@ -104,28 +104,28 @@ if (btnCarrousel) {
   btnCarrousel.addEventListener('click', carroussel);
 }
 
-if (pageHome) {
+if (imprevisibleHeader) {
   var introTl = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline();
-  introTl.from(homeLogo, {
+  introTl.from(imprevisibleLogo, {
     x: '-200%',
     rotate: 0,
     opacity: 0,
     duration: 1,
     ease: "power2.out"
-  }).to(homeLogo, {
+  }).to(imprevisibleLogo, {
     x: '15%',
     rotate: 25,
     duration: 0.2
-  }).to(homeLogo, {
+  }).to(imprevisibleLogo, {
     x: '-5%',
     rotate: -5,
     duration: 0.1
-  }).to(homeLogo, {
+  }).to(imprevisibleLogo, {
     x: '0%',
     rotate: 0,
     duration: 0.1
   });
-  introTl.from(homeTitle, {
+  introTl.from(imprevisibleTitle, {
     x: '200%',
     opacity: 0,
     duration: 1,
@@ -133,19 +133,19 @@ if (pageHome) {
   }, 0);
   var scrollTl = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
     scrollTrigger: {
-      trigger: homeHeader,
+      trigger: imprevisibleHeader,
       start: "top top",
       end: "bottom 90%",
       scrub: 3,
       toggleActions: "reeset play reverse play"
     }
   });
-  scrollTl.from(homeHeader, {
+  scrollTl.from(imprevisibleHeader, {
     height: '100vh',
     top: 0
-  }).from(homeTitle, {
+  }).from(imprevisibleTitle, {
     fontSize: '5.5rem'
-  }, "<").from(homeLogo, {
+  }, "<").from(imprevisibleLogo, {
     width: '103px'
   }, "<");
 }
