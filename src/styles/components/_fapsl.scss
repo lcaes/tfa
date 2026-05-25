@@ -48,9 +48,55 @@ h1 {
     
 }
 .fapsl__name{
-   border-radius: 20%;
-   box-shadow: $fapsl-shadow;
+    background-image: url(../../assets/images/fapsl-bg.jpg);
+    background-size: cover;
+    background-position: center;
+    border-radius: 30px;
+    padding: 40px 20px;
+    box-shadow: $fapsl-shadow;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    h2{
+      font-family: "Diplomata SC", serif;
+        font-size: clamp(1.5625rem, 0.1563rem + 3.75vw, 3.4375rem);
+        color: $c-fapsl-title;
+        margin: 0;
+        span{
+            font-size: clamp(2.375rem, -0.3906rem + 7.375vw, 6.0625rem);
+        }
+    }
+    @media (min-width: $tablet-size) {
+        display: grid;
+        grid-template-columns: repeat(5, 50px) 1fr;
+        grid-template-rows: repeat(5,1fr);
+        padding:70px;
+        h2{
+            line-height: 90%;
+        }
+        .A{
+            grid-column: 2 /-1;
+            grid-row: 2;
+        }
+        .P{
+            grid-column: 3 /-1;
+            grid-row: 3;
+        }
+        .S{
+            grid-column: 4 /-1;
+            grid-row: 4;
+        }
+        .L{
+            grid-column: 5 /-1;
+            grid-row: 5;
+        }
+    }
+    @media (min-width: $desktop-size) {
+        padding: 70px 150px;
+    }
 }
+
 .fapsl__chats{
     background-color: $c-fapsl-bg-second;
     border: 5px solid $c-fapsl-border;

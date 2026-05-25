@@ -665,8 +665,57 @@ p {
 }
 
 .fapsl__name {
-  border-radius: 20%;
+  background-image: url(../../assets/images/fapsl-bg.jpg);
+  background-size: cover;
+  background-position: center;
+  border-radius: 30px;
+  padding: 40px 20px;
   box-shadow: 10px 15px 9.3px rgba(63, 34, 48, 0.25);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+}
+.fapsl__name h2 {
+  font-family: "Diplomata SC", serif;
+  font-size: clamp(1.5625rem, 0.1563rem + 3.75vw, 3.4375rem);
+  color: #DCBFFD;
+  margin: 0;
+}
+.fapsl__name h2 span {
+  font-size: clamp(2.375rem, -0.3906rem + 7.375vw, 6.0625rem);
+}
+@media (min-width: 600px) {
+  .fapsl__name {
+    display: grid;
+    grid-template-columns: repeat(5, 50px) 1fr;
+    grid-template-rows: repeat(5, 1fr);
+    padding: 70px;
+  }
+  .fapsl__name h2 {
+    line-height: 90%;
+  }
+  .fapsl__name .A {
+    grid-column: 2/-1;
+    grid-row: 2;
+  }
+  .fapsl__name .P {
+    grid-column: 3/-1;
+    grid-row: 3;
+  }
+  .fapsl__name .S {
+    grid-column: 4/-1;
+    grid-row: 4;
+  }
+  .fapsl__name .L {
+    grid-column: 5/-1;
+    grid-row: 5;
+  }
+}
+@media (min-width: 1020px) {
+  .fapsl__name {
+    padding: 70px 150px;
+  }
 }
 
 .fapsl__chats {

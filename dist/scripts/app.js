@@ -148,21 +148,6 @@ if (pageHome) {
   }, "<").from(homeLogo, {
     width: '103px'
   }, "<");
-
-  if (homeExplication) {
-    gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.from(homeExplication, {
-      scrollTrigger: {
-        trigger: homeExplication,
-        markers: true,
-        start: "-150% 70%" //end: "bottom 20%",
-        //toggleActions: "play none none reverse",
-
-      },
-      opacity: 0,
-      //y: 30,                       
-      duration: 3
-    });
-  }
 }
 
 if (pourcent) {
