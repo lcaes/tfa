@@ -8,7 +8,7 @@
 .blog__allcontent{
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 150px;
         @media  (min-width: $desktop-size){
  
             grid-column: 1/ 4;
@@ -143,11 +143,22 @@ img{
         justify-content: space-around;
         padding: 0;
         margin: 0 35%;
+        justify-items: center;
+        align-items: center;
     }
     small{
         display: flex;
         justify-self: center;
     }
+    svg{
+        fill: white;
+        transition: 0.3;
+        width: 30px;
+    &:hover, &:focus{
+        fill:#F708FF;
+    }}
+        
+    
     @media (min-width: $desktop-size) {
         display: grid;
         grid-template-columns: repeat(5, 1fr);
@@ -269,7 +280,7 @@ img{
         height: 3px;
         background: $degradient-blog;
         border-radius: 5px;
-        transition: 0,5s ease-in;
+        transition: 0.5s ease-in;
         
     }
     &:hover, &:focus {

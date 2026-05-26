@@ -149,6 +149,9 @@
     p{
         height: fit-content;
     }
+    .lunas__stitle--center{
+        margin-bottom: 30px;
+    }
     @media (min-width: $desktop-size) {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -159,9 +162,7 @@
             height: fit-content;
             width: auto;
         }
-        .lunas__stitle--center{
-            margin: 0;
-        }
+        
         h3{
             grid-column: 1 /-1;
     

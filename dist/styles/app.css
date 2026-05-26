@@ -19,9 +19,6 @@ p {
 }
 
 .logo {
-  position: absolute;
-  top: 10px;
-  left: 5%;
   width: 70px;
   height: 70px;
   z-index: 100;
@@ -72,7 +69,7 @@ p {
 .blog__allcontent {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 150px;
 }
 @media (min-width: 1020px) {
   .blog__allcontent {
@@ -216,10 +213,20 @@ p {
   justify-content: space-around;
   padding: 0;
   margin: 0 35%;
+  justify-items: center;
+  align-items: center;
 }
 .blog__footer small {
   display: flex;
   justify-self: center;
+}
+.blog__footer svg {
+  fill: white;
+  transition: 0.3;
+  width: 30px;
+}
+.blog__footer svg:hover, .blog__footer svg:focus {
+  fill: #F708FF;
 }
 @media (min-width: 1020px) {
   .blog__footer {
@@ -349,7 +356,7 @@ p {
   height: 3px;
   background: linear-gradient(95deg, #6AD6FE 33.41%, #C24ECD 101.85%);
   border-radius: 5px;
-  transition: 0, 5s ease-in;
+  transition: 0.5s ease-in;
 }
 .blog__nel:hover .blog__nav--line, .blog__nel:focus .blog__nav--line {
   width: 70%;
@@ -462,11 +469,10 @@ p {
     display: flex;
     align-content: center;
     justify-content: flex-end;
-    padding-right: 20px;
+    padding: 30px 20px 30px 25pc;
     margin: 0;
     grid-column: 1/5;
-    padding-left: 25pc;
-    max-width: 20ch;
+    max-width: 25ch;
     width: 100%;
     display: flex;
     justify-self: end;
@@ -637,6 +643,11 @@ p {
   background-color: #180C35;
   margin: 0;
   width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
 }
 .fapsl__header h1 {
   display: flex;
@@ -644,7 +655,7 @@ p {
   font-family: "Diplomata SC", serif;
   font-size: clamp(2.75rem, 1.425rem + 5.3vw, 6.0625rem);
   letter-spacing: -8px;
-  margin: 0 auto;
+  margin: 0;
   text-align: center;
   background: radial-gradient(circle, rgba(127, 52, 206, 0.4) 0%, rgba(24, 12, 53, 0) 90%);
   width: -webkit-fit-content;
@@ -779,7 +790,7 @@ p {
   margin: 20px auto;
   max-width: 600px;
 }
-.fapsl__footer h3 {
+.fapsl__footer h2 {
   font-size: clamp(1.75rem, 1.6307rem + 0.6364vw, 2.1875rem);
 }
 @media (min-width: 1020px) {
@@ -927,6 +938,22 @@ p {
   transform: translateY(-100%);
   top: 0;
   transition: 0.4s ease;
+}
+.fapsl__nav h2 {
+  display: flex;
+  color: #DCBFFD;
+  font-family: "Diplomata SC", serif;
+  font-size: clamp(2.75rem, 1.425rem + 5.3vw, 6.0625rem);
+  letter-spacing: -8px;
+  margin: 0 auto;
+  text-align: center;
+  background: radial-gradient(circle, rgba(127, 52, 206, 0.4) 0%, rgba(24, 12, 53, 0) 90%);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 10px 0;
+  line-height: 100%;
+  padding: 20px;
 }
 .fapsl__nav .btn__close {
   background: none;
@@ -1161,6 +1188,9 @@ p {
   height: -moz-fit-content;
   height: fit-content;
 }
+.section__app .lunas__stitle--center {
+  margin-bottom: 30px;
+}
 @media (min-width: 1020px) {
   .section__app {
     display: grid;
@@ -1175,9 +1205,6 @@ p {
     height: -moz-fit-content;
     height: fit-content;
     width: auto;
-  }
-  .section__app .lunas__stitle--center {
-    margin: 0;
   }
   .section__app h3 {
     grid-column: 1/-1;
