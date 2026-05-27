@@ -134,18 +134,25 @@ if (imprevisibleHeader) {
   var scrollTl = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
     scrollTrigger: {
       trigger: imprevisibleHeader,
-      start: "top top",
-      end: "bottom 90%",
+      start: "+=100",
+      end: "+=15",
       scrub: 3,
-      toggleActions: "reeset play reverse play"
+      pinSpacing: true,
+      markers: true,
+      endTrigger: imprevisibleExplication,
+      onLeave: function onLeave() {
+        imprevisibleHeader.classList.add('sticky');
+      },
+      onEnterBack: function onEnterBack() {
+        imprevisibleHeader.classList.remove('sticky');
+      }
     }
   });
-  scrollTl.from(imprevisibleHeader, {
-    height: '100vh',
-    top: 0
-  }).from(imprevisibleTitle, {
+  scrollTl.from(".imprevisible__header", {
+    height: '100vh'
+  }, 0).from(".imprevisible__title", {
     fontSize: '5.5rem'
-  }, "<").from(imprevisibleLogo, {
+  }, "<").from(".imprevisible__logo", {
     width: '103px'
   }, "<");
 }
@@ -184,11 +191,10 @@ if (btnSend && fapslInput && containnerChat) {
 
 function AddChat() {
   var message = fapslInput.value;
+  console.log(message);
 
   if (message.trim() !== "") {
-    var newLine = document.createElement('div');
-    newLine.classList.add('fapsl__line');
-    var newContent = document.createElement('div');
+    var newContent = document.createElement('li');
     newContent.classList.add('fapsl__content');
     var newProfil = document.createElement('div');
     newProfil.classList.add('fapsl__profile');
@@ -210,7 +216,6 @@ function AddChat() {
     text.appendChild(date);
     newContent.appendChild(newProfil);
     newContent.appendChild(text);
-    containnerChat.appendChild(newLine);
     containnerChat.appendChild(newContent);
     fapslInput.value = "";
     fapslInput.style.height = "auto";
@@ -231,15 +236,15 @@ if (bntMobile) {
     var scrollCurrent = window.scrollY;
     var isMobile = window.innerWidth < 1024;
 
-    if (blogNav) {
-      blogNav.classList.remove('blog__nav--active');
+    if (navMonde) {
+      if (navMonde.classList.contains('monde__nav--active')) {
+        navMonde.classList.remove('monde__nav--active');
+      }
+
+      ;
     }
 
-    ;
-
-    if (navMonde.classList.contains('monde__nav--active')) {
-      navMonde.classList.remove('monde__nav--active');
-
+    if (blogNav) {
       if (blogNav.classList.contains('blog__nav--active')) {
         blogNav.classList.remove('blog__nav--active');
       }

@@ -52,6 +52,7 @@
     }
     h3{
         font-size: clamp(1.625rem, 1.475rem + 0.6vw, 2rem);
+        margin: 20px 5%;
     }
     p{
         margin: 20px 5%;
@@ -174,7 +175,7 @@
         color: #2968EE;
         transition: 0.3s;
         &:hover, &:focus {
-            color: $color-monde;
+            color: #007981;
         }
     }
 

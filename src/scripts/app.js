@@ -111,25 +111,32 @@ if (imprevisibleHeader) {
         ease: "power2.out"
     }, 0); 
     
-    const scrollTl = gsap.timeline({
-        scrollTrigger: {
-            trigger: imprevisibleHeader,
-            start: "top top",   
-            end: "bottom 90%",   
-            scrub: 3,
-            toggleActions:"reeset play reverse play",
-           
-        }
-    });
+const scrollTl = gsap.timeline({
+    scrollTrigger: {
+        trigger: imprevisibleHeader,
+        start: "+=100",   
+        end: "+=15",      
+        scrub: 3,       
+        pinSpacing: true,  
+        markers: true,
+        endTrigger: imprevisibleExplication,
 
-    scrollTl.from(imprevisibleHeader, { height: '100vh', top: 0})
-            .from(imprevisibleTitle, { fontSize: '5.5rem' }, "<")  
-            .from(imprevisibleLogo, { width: '103px' }, "<");
+  onLeave:() =>{
+            imprevisibleHeader.classList.add('sticky');
+        }, 
+        onEnterBack:() =>{
+            imprevisibleHeader.classList.remove('sticky');
+        },
+    }
+});
 
-
-
-} 
-      
+scrollTl
+    .from(".imprevisible__header", 
+        { height: '100vh' }, 0) 
+    .from(".imprevisible__title", 
+        { fontSize: '5.5rem' }, "<")  
+    .from(".imprevisible__logo", 
+        { width: '103px' }, "<")}
      
 
 if (pourcent) {
@@ -164,11 +171,10 @@ if (btnSend && fapslInput && containnerChat) {
 
 function AddChat() {
     const message = fapslInput.value;
+    console.log(message);
     if (message.trim() !== "") {
-        const newLine = document.createElement('div');
-        newLine.classList.add('fapsl__line');
         
-        const newContent = document.createElement('div');
+        const newContent = document.createElement('li');
         newContent.classList.add('fapsl__content');
         
         const newProfil = document.createElement('div');
@@ -199,14 +205,14 @@ function AddChat() {
         
         newContent.appendChild(newProfil);
         newContent.appendChild(text);
-        
-        containnerChat.appendChild(newLine);
+
         containnerChat.appendChild(newContent);
         
         fapslInput.value = "";
         fapslInput.style.height = "auto";
         containnerChat.scrollTop = containnerChat.scrollHeight;
     }
+ 
 }
 
 if (blogBurger && blogNav) {
@@ -224,13 +230,15 @@ if (bntMobile) {
     function showBTN() {
         const scrollCurrent = window.scrollY;
         const isMobile = window.innerWidth < 1024;
-                    if (blogNav){ blogNav.classList.remove('blog__nav--active')};
+        if(navMonde){
             if(navMonde.classList.contains('monde__nav--active')){
-                navMonde.classList.remove('monde__nav--active')
+                navMonde.classList.remove('monde__nav--active')}
+                ;}
+        if(blogNav){
             if(blogNav.classList.contains('blog__nav--active')){
                 blogNav.classList.remove('blog__nav--active');
-            }
-            }
+            }}
+            
         if (scrollCurrent < 50) {
             bntMobile.classList.remove("--show");
 

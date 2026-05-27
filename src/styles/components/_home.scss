@@ -2,6 +2,9 @@
     background-color: $c-bg-imprevisible;
     font-family: "din-2014", sans-serif;
     color: $c-fapsl-bg-second;
+    a{
+        text-decoration: none;
+    }
 }
 .imprevisible__header {
     display: flex;
@@ -16,8 +19,12 @@
     box-sizing: border-box; 
     padding: 0; 
     height: fit-content;
-    position: sticky;
-    top: 0;
+    transition: 0.3s;
+    
+    &.sticky{position: sticky;
+        width: 100%;
+        height: fit-content;
+    top: 0;}
 }
 
 .imprevisible__title {
@@ -155,6 +162,7 @@
         text-decoration: none;
         text-align: center;
         transition: 0.3s;
+        color: white;
         &:hover{
             color: $c-fapsl-title;
         }
@@ -185,8 +193,9 @@
     }
     svg{
         width: 25px;
+        fill: white;
         &:hover{
-            color: $c-fapsl-title;
+            fill: $c-fapsl-title;
         }
     }
 }
