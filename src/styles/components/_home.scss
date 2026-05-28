@@ -2,8 +2,15 @@
     background-color: $c-bg-imprevisible;
     font-family: "din-2014", sans-serif;
     color: $c-fapsl-bg-second;
-    a{
+
+     a{
         text-decoration: none;
+        text-align: center;
+        transition: 0.3s;
+        color: white;
+        &:hover{
+            color: $c-fapsl-title;
+        }
     }
 }
 .imprevisible__header {
@@ -18,13 +25,10 @@
     background-color: $c-bg-imprevisible;
     box-sizing: border-box; 
     padding: 0; 
-    height: fit-content;
-    transition: 0.3s;
-    
-    &.sticky{position: sticky;
-        width: 100%;
-        height: fit-content;
-    top: 0;}
+    height: 100vh;
+    position: fixed;
+    height: 100px;
+    top: 0;
 }
 
 .imprevisible__title {
@@ -140,7 +144,10 @@
     max-width: 50ch;
     font-size: clamp(1.5rem, 0.9375rem + 2.25vw, 2.625rem);
     padding-top: 50px;
- 
+    opacity: 1;
+    scale: 1;
+    visibility: visible;
+    padding-top: 500px
 }
 .imprevisible__main{
     height: 100vh;
@@ -150,44 +157,15 @@
 
     
 }
-.imprevisible__footer{
-    display: flex;
-    padding-bottom: 20px;
-    flex-direction: column;
-    small{
-        text-align: right;
-        margin: 0 5%;
-    }
-    a{
-        text-decoration: none;
-        text-align: center;
-        transition: 0.3s;
-        color: white;
-        &:hover{
-            color: $c-fapsl-title;
-        }
-    }
-    
 
-
-}
 .imprevisible__contact{
-    display: flex;
-    flex-direction: column;
-    justify-content: center; 
-    width: fit-content;
-    margin-left: 5%;
-    h2{
-        margin: 0;
-    }
-
-   ul{
-        display: flex;
+   display: flex;
         list-style: none;
         padding: 0;
         justify-content: center;
-        margin: 0;
-    }
+       
+    margin-left: 5%;
+    
     li{
         margin: 0 10px;
     }

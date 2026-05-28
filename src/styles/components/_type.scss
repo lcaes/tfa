@@ -71,8 +71,60 @@ p{
     p{
         font-size: clamp(1rem, 0.9318rem + 0.3636vw, 1.25rem);
         margin: 20px auto;
-        max-width: 600px; 
+        max-width: 50ch; 
 }
     h2{
         font-size: clamp(1.75rem, 1.6307rem + 0.6364vw, 2.1875rem);
-    }}}
+    }}
+  &--monde{
+    background: $color-monde;
+        padding: 20px 5%;
+    .mention{
+        font-size: 15px;
+        margin-top: 10px;
+        max-width: 40ch;
+    }
+    small{
+        display: block;
+        margin-top: 10px;
+    
+    }}
+  &--lunas{
+background-color: $c-blue-lunas;
+    color: $c-bg-lunas;
+    padding: 20px 30px;
+    small{
+        display: flex;
+        justify-self: end;
+        align-self: flex-end;
+    }
+    h2{
+        margin-bottom: 0;
+    }
+    p{
+        max-width: 30ch;
+        display: flex;
+        margin: 10px auto;
+        font-size: clamp(0.75rem, 0.65rem + 0.4vw, 1rem);
+        align-self: center;
+    }
+    div{
+        margin: 0;
+    }}
+
+  @media (min-width: $desktop-size) {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 50px 5%;
+    align-items: flex-start;
+    &--fapsl{
+        padding: 200px 5% 10px 5%;
+        flex-direction: column;
+        h2{
+          align-self: center;
+        }
+        
+    }}
+  :last-child{
+    align-self: flex-end;
+  }}

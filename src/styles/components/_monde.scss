@@ -96,51 +96,14 @@
         }}
         ul{
             grid-column: 2 / 5;
-            margin-left: 85px;
+            margin-left: 80px;
         }
 }
-.monde__footer{
-    background-color: $color-monde;
-    
-    padding: 20px 5%;
-    .mention{
-        font-size: 1§px;
-        margin-top: 10px;
-    }
-    small{
-        display: block;
-        margin-top: 10px;
-    
-    }
-    @media (min-width: $desktop-size){
-        display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        grid-column-gap: 40px;
-        .solgan{
-            grid-column: 1/ 3;
-            margin: 0;
-        }
-        .mention{
-            font-size: 14px;
-            grid-column: 4/ 6;
-            justify-self: left;
-            align-self: center;
-            margin-top: 30px;
 
-        }
-    }
-        small{
-            grid-column: 6;
-            justify-self: end;
-            align-self: end;
-        }
-    }
-    
 .monde__nav {
     background-color: #C9DAEE;
     height: fit-content;
     padding: 10px;
-    border-radius: 10px;
     transition: all 0.5s ease; 
     max-width: 300px;
     opacity: 0;

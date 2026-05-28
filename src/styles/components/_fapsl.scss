@@ -159,14 +159,6 @@ h1 {
         justify-self: end;
         align-self: flex-end;
     }
-.fapsl__line{
-    width: 100%;
-    height: 5px;
-    background: $c-fapsl-border;
-    margin: 0;
-    border-radius: 5px;
-}
-
 
 
 .fapsl__text{
@@ -201,28 +193,22 @@ h1 {
     }
 }
 .fapsl__message{
-    max-width: 100%;
+    max-width: fit-content;
     height: fit-content;
     background-color: $c-fapsl-bg-second;
-    display: grid;
-    grid-template-columns: 1fr auto;
+   display: flex;
+   flex-direction: row;
+    gap: 10px; 
+    justify-content: center;
+    align-items: center;
+     margin: 0 auto;
     padding: 15px 50px;
     box-shadow: $fapsl-shadow;
     border: 5px solid $c-fapsl-border;
     border-radius: 25px;
+    padding: 10px;
+
     textarea{
-        width:100%;
-        border: none;
-        background: none;
-        field-sizing: content;
-        min-height: 30px;
-        max-height: 200px;
-    }
-
-}
-
-
-.fapsl__textarea {
     min-height: 30px;
     max-height: 250px; 
     border: none;
@@ -231,9 +217,20 @@ h1 {
     overflow-y: auto;
     font-family: inherit;
     line-height: 1.5;
-    outline: none;
     color: $c-text-blog;
+    font-size: clamp(0.875rem, 0.7344rem + 0.375vw, 1.0625rem);
+    max-width: 50ch;
+    resize: none; 
+    padding: 8px 12px;
+    width: 50ch;
+    margin: auto;
+    color: $c-fapsl-text;
+    &::placeholder{
+        color: rgba($c-fapsl-text, 0.7);
+
 }
+
+}}
 
 .fapsl__send {
     border: none;
@@ -245,7 +242,6 @@ h1 {
     transition: transform 0.2s ease;
 
     svg {
-        // On définit la couleur par défaut ici
         fill: #180C35; 
         transition: fill 0.4s ease;
     }
@@ -280,10 +276,11 @@ h1 {
     z-index: 100; // 
     background-color: $c-fapsl-bg;
     width: 100%;
-    transform: translateY(-100%);
     top: 0;
-    transition: 0.4s ease;
-
+    opacity: 0;
+    visibility: hidden; 
+    transform: translateY(-100%);
+    transition: transform 0.4s ease, opacity 0.4s ease, visibility 0.4s;
     h2{
     display: flex;
     color: $c-fapsl-title;
@@ -301,6 +298,7 @@ h1 {
     padding: 10px 0;
     line-height: 100%; 
     padding: 20px; 
+
 }
     .btn__close {
         background: none;
@@ -328,6 +326,8 @@ h1 {
         flex-direction: column;
         gap: 25px;
         justify-self: center;
+        padding: 0 5%;
+
     }
 
     a {
@@ -341,7 +341,12 @@ h1 {
     li{
         text-align: center;
       font-size: clamp(2.5rem, 1.5rem + 4vw, 5rem);
-    }
+      border-bottom: 5px solid $c-fapsl-border;
+        padding-bottom: 10px;
+                &:last-child{
+            border-bottom: none;
+      }}
+    
 
     &.active {
         opacity: 1;

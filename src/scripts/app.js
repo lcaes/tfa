@@ -11,7 +11,7 @@ const blogNav = document.querySelector('.blog__nav');
 const bntMobile = document.querySelector('.btn__mobile');
 const fapslInput = document.getElementById('message');
 const btnSend = document.querySelector('.fapsl__send');
-const containnerChat = document.getElementById('fapsl__chats');
+const containnerChat = document.querySelector('.fapsl__chats');
 const filterCompability = document.querySelector('.filter__compability');
 const lunasInput = document.querySelector('.lunas__input');
 const pourcent = document.querySelector('.lunas__compatibility--level');
@@ -19,7 +19,7 @@ const pageimprevisible = document.querySelector('.imprevisible');
 const imprevisibleLogo = document.querySelector('.imprevisible__logo');
 const imprevisibleTitle = document.querySelector('.imprevisible__title')
 const imprevisibleHeader = document.querySelector('.imprevisible__header--home');
-const imprevisibleExplication = document.querySelector('.imprevisible__explication');
+const imprevisibleExplication = document.querySelector(' .imprevisible__explication');
 const btnCarrousel = document.querySelector('.interupteur');
 const btnCarrouselEtat = document.querySelector('.interupteur__default');
 const btnOpenNavFapsl = document.querySelector ('.fapsl__button--nav');
@@ -32,6 +32,7 @@ const lunasNav =document.querySelector('.lunas__nav');
 const mondeBtns = document.querySelector('.monde__btns');
 const navMonde= document.querySelector('.monde__nav')
 const burgerMonde =document.querySelector('.monde__burger')
+const imprevisibleMain = document.querySelector('.imprevisible__main');
 
 if (lunasBurger) {
     lunasBurger.addEventListener('click', openNavLunas)
@@ -114,21 +115,13 @@ if (imprevisibleHeader) {
 const scrollTl = gsap.timeline({
     scrollTrigger: {
         trigger: imprevisibleHeader,
-        start: "+=100",   
-        end: "+=15",      
+        start: "+=50",   
+        end: "+=50",      
         scrub: 3,       
         pinSpacing: true,  
-        markers: true,
-        endTrigger: imprevisibleExplication,
+        toggleActions: "play none none reverse",
 
-  onLeave:() =>{
-            imprevisibleHeader.classList.add('sticky');
-        }, 
-        onEnterBack:() =>{
-            imprevisibleHeader.classList.remove('sticky');
-        },
-    }
-});
+    }});
 
 scrollTl
     .from(".imprevisible__header", 
@@ -136,8 +129,8 @@ scrollTl
     .from(".imprevisible__title", 
         { fontSize: '5.5rem' }, "<")  
     .from(".imprevisible__logo", 
-        { width: '103px' }, "<")}
-     
+        { width: '103px' }, "<")};
+
 
 if (pourcent) {
     pourcent.textContent = "90%";
@@ -169,7 +162,8 @@ if (btnSend && fapslInput && containnerChat) {
     btnSend.addEventListener('click', AddChat);
 }
 
-function AddChat() {
+function AddChat(e) {
+    e.preventDefault();
     const message = fapslInput.value;
     console.log(message);
     if (message.trim() !== "") {

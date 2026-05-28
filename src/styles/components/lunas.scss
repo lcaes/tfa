@@ -201,35 +201,7 @@
         
     }
 }
-.lunas__footer{
-    background-color: $c-blue-lunas;
-    color: $c-bg-lunas;
-    padding: 20px 30px;
-    small{
-        display: flex;
-        justify-self: end;
-        align-self: flex-end;
-    }
-    h2{
-        margin-bottom: 0;
-    }
-    p{
-        max-width: 30ch;
-        display: flex;
-        margin: 10px auto;
-        font-size: clamp(0.75rem, 0.65rem + 0.4vw, 1rem);
-        align-self: center;
-    }
-    div{
-        margin: 0;
-    }
-    @media (min-width: $desktop-size) {
-        padding: 20px 150px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
-}
+
 .lunas__contact{
     padding: 0;
     list-style: none;

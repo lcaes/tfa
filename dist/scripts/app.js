@@ -20,7 +20,7 @@ var blogNav = document.querySelector('.blog__nav');
 var bntMobile = document.querySelector('.btn__mobile');
 var fapslInput = document.getElementById('message');
 var btnSend = document.querySelector('.fapsl__send');
-var containnerChat = document.getElementById('fapsl__chats');
+var containnerChat = document.querySelector('.fapsl__chats');
 var filterCompability = document.querySelector('.filter__compability');
 var lunasInput = document.querySelector('.lunas__input');
 var pourcent = document.querySelector('.lunas__compatibility--level');
@@ -28,7 +28,7 @@ var pageimprevisible = document.querySelector('.imprevisible');
 var imprevisibleLogo = document.querySelector('.imprevisible__logo');
 var imprevisibleTitle = document.querySelector('.imprevisible__title');
 var imprevisibleHeader = document.querySelector('.imprevisible__header--home');
-var imprevisibleExplication = document.querySelector('.imprevisible__explication');
+var imprevisibleExplication = document.querySelector(' .imprevisible__explication');
 var btnCarrousel = document.querySelector('.interupteur');
 var btnCarrouselEtat = document.querySelector('.interupteur__default');
 var btnOpenNavFapsl = document.querySelector('.fapsl__button--nav');
@@ -41,6 +41,7 @@ var lunasNav = document.querySelector('.lunas__nav');
 var mondeBtns = document.querySelector('.monde__btns');
 var navMonde = document.querySelector('.monde__nav');
 var burgerMonde = document.querySelector('.monde__burger');
+var imprevisibleMain = document.querySelector('.imprevisible__main');
 
 if (lunasBurger) {
   var openNavLunas = function openNavLunas() {
@@ -134,18 +135,11 @@ if (imprevisibleHeader) {
   var scrollTl = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
     scrollTrigger: {
       trigger: imprevisibleHeader,
-      start: "+=100",
-      end: "+=15",
+      start: "+=50",
+      end: "+=50",
       scrub: 3,
       pinSpacing: true,
-      markers: true,
-      endTrigger: imprevisibleExplication,
-      onLeave: function onLeave() {
-        imprevisibleHeader.classList.add('sticky');
-      },
-      onEnterBack: function onEnterBack() {
-        imprevisibleHeader.classList.remove('sticky');
-      }
+      toggleActions: "play none none reverse"
     }
   });
   scrollTl.from(".imprevisible__header", {
@@ -156,6 +150,8 @@ if (imprevisibleHeader) {
     width: '103px'
   }, "<");
 }
+
+;
 
 if (pourcent) {
   pourcent.textContent = "90%";
@@ -189,7 +185,8 @@ if (btnSend && fapslInput && containnerChat) {
   btnSend.addEventListener('click', AddChat);
 }
 
-function AddChat() {
+function AddChat(e) {
+  e.preventDefault();
   var message = fapslInput.value;
   console.log(message);
 
