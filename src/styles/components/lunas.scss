@@ -64,12 +64,19 @@
 }
 .filter__compability{
     width: 100%;
-    height: 100%;
-    background-color: hsl(157, 77%, 71%);
+    height: 99%;
+    background-color: hsl(157, 100%, 25%);
     position: absolute;
-    opacity: 0.4;
+    opacity: 0.5;
     z-index: 10;
     top: 0;
+    mask-image: url('../../assets/images/lunas-compabili$.svg');
+    mask-repeat: no-repeat; 
+    mask-position: 64%;
+    mask-size: contain;
+    mask-composite: intersect;
+    filter: blur(150px);
+    
 }
 .lunas__compability{
     position: relative;
@@ -86,13 +93,22 @@
         transform: translateX(-50%);
         display: flex;
         align-items: center;
+        flex-direction: column;
+        gap: 10px;
+        min-width: 30ch;
     }
     span{
         font-size: clamp(2.8125rem, 2.4375rem + 1.5vw, 3.5625rem);
         color: rgb(61, 0, 87);
         margin-left:10px ;
     }
-}
+    @media (min-width: $desktop-size) {
+        p{
+            bottom: 30px;
+            flex-direction: row;
+            justify-content: center;
+        }
+}}
 .lunas__input{
     width: 220px;
     padding: 10px;
@@ -244,11 +260,17 @@
     flex-direction: row-reverse;
 }
 .carrousel__el{
+    opacity: 0;
     display: none;
+    visibility: hidden;
+    transition: 0.5s;   
     position: relative;
     width: 100%;
     &--active{
         display: block;
+        opacity: 1;
+        visibility: visible;
+        z-index: 10;
     }
    
     p{

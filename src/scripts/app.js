@@ -151,7 +151,7 @@ if (lunasInput && filterCompability) {
         }
 
         const degres = (175 * pourcentValue) / 100;
-        filterCompability.style.backgroundColor = `hsl(${degres}, 77%, 71%)`;
+        filterCompability.style.backgroundColor = `hsl(${degres}, 100%, 25%)`;
         if (pourcent) {
             pourcent.textContent = pourcentValue + "%";
         }
