@@ -484,6 +484,9 @@ p {
   position: absolute;
   z-index: 1;
 }
+.monde__header .monde__header--img {
+  margin: 1% 2%;
+}
 
 .monde__container {
   margin: 20px 0;
@@ -536,7 +539,7 @@ p {
   justify-self: center;
 }
 .monde__content ul {
-  max-width: 60%;
+  max-width: 62%;
   justify-self: center;
   margin-left: 0;
   list-style-position: outside;
@@ -571,11 +574,11 @@ p {
     grid-column: 2/5;
     max-width: 90ch;
   }
-}
-.monde__content ul {
-  grid-column: 2/5;
-  margin-left: 80px;
-  max-width: 90ch;
+  .monde__content ul {
+    grid-column: 2/5;
+    margin-left: 80px;
+    max-width: 90ch;
+  }
 }
 
 .monde__nav {
