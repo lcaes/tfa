@@ -7,8 +7,11 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="styles/app.css">
-    <script src="scripts/app.js" defer></script>
-    <link rel="stylesheet" href="https://use.typekit.net/qwp4wze.css">
+        <script src="scripts/app.js" defer></script>
+        <link rel="stylesheet" href="https://use.typekit.net/qwp4wze.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     </head>
     <body class="lunas">
         <div class="lunas__burger">
@@ -19,7 +22,7 @@
         <nav class="lunas__nav">  
             <ul>
                 <li>
-                    <a href="index.html">Accueil</a>
+                    <a href="index.html">Imprévisible</a>
                 </li>
                 <li>
                     <a href="monde.html">Un monde avec Lunas</a>
@@ -37,10 +40,10 @@
         </nav>
         <header class="lunas__header">
             <a href="index.html">
-                <img class="logo logo--monde" src="assets/images/logo-lunas.svg">
+                <img class="logo logo--monde" src="assets/images/logo-lunas.svg" alt="logo imprévisible">
             </a>
             <h1>Lunas</h1>
-            <img class="lunas__lunette" src="assets/images/lunette.png" alt="image de lumettes">
+            <img class="lunas__lunette" src="assets/images/lunette.webp" alt="image de lumettes">
             <h2>Des lunettes qui créent des relations</h2>
         </header>
         <main class="lunas__container">
@@ -51,14 +54,14 @@
             <section>
                 <h3 class="lunas__stitle lunas__stitle--center">L’interface de vos Lunas</h3>
                 <div class="lunas__carrousel">
-                    <div class="carrousel__el carrousel__el--active">
+                    <div class="carrousel__fixe">
                     <img src="assets/images/lunas-interface.jpg" alt="la vue a travers lunette quand vous aviez quelqu'un en face de vous et rien n'est active">
                     <p>L'interface par défaut</p>
-                </div>
-                <div class="carrousel__el">
-                    <img src="assets/images/lunas-onglet.jpg" alt="la vue a travers lunette quand vous aviez quelqu'un en face de vous et onglet + est ouvert">
-                    <p>L'interface avec l'onglet « profil de la personne » ouvert</p>
-                </div>
+                    </div>
+                    <div class="carrousel__anim">
+                        <img src="assets/images/lunas-onglet.jpg" alt="la vue a travers lunette quand vous aviez quelqu'un en face de vous et onglet + est ouvert">
+                        <p>L'interface avec l'onglet « profil de la personne » ouvert</p>
+                    </div>
                 </div>
                 <div class="interupteur"> 
                     <div class="interupteur__default"></div>
@@ -77,9 +80,8 @@
             </section>
             <section class="section__app">
                 <h3 class="lunas__stitle lunas__stitle--center">Notre app</h3>
-                <p>Retrouvez l’historique quotidien de vos rencontres sur notre application. Vous pourrez accéder à toutes les informations sur les personnes croisées et même les ajouter à vos favoris.</p>
-                <img src="assets/images/lunas-app.jpg" class="img__app" alt="capture d'ecran de l'application Lunas">
                 <div>
+                    <p>Retrouvez l’historique quotidien de vos rencontres sur notre application. Vous pourrez accéder à toutes les informations sur les personnes croisées et même les ajouter à vos favoris.</p>
                     <h4>Retrouvez notre application</h4>
                     <img src="assets/images/lunas-logo.svg" class="lunas__logo" alt="logo Lunas, illustration de lunettes avec un fond bleu clair">
                     <ul class="lunas__avaible">
@@ -87,6 +89,7 @@
                         <li><img src="assets/images/lunas-googlestore.jpg" alt="Google Play"></li>
                     </ul>
                 </div>
+                <img src="assets/images/lunas-app.webp" class="img__app" alt="capture d'ecran de l'application Lunas">
             </section>
         </main>
         <footer class="footer footer--lunas">

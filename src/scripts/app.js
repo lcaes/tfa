@@ -67,25 +67,10 @@ if (btnCarrousel) {
 
     function carroussel() {
         
-        const currentActive = document.querySelector('.carrousel__el--active');
-        
-        if (btnCarrouselEtat.classList.contains('change')) {
-            btnCarrouselEtat.classList.remove('change');
-            const previousEl = currentActive.previousElementSibling;
-            
-            if (previousEl && previousEl.classList.contains('carrousel__el')) {
-                previousEl.classList.add('carrousel__el--active');
-                currentActive.classList.remove('carrousel__el--active');
-            }
-        } else {
-            btnCarrouselEtat.classList.add('change');
-            const nextEl = currentActive.nextElementSibling;
-            
-            if (nextEl && nextEl.classList.contains('carrousel__el')) {
-                nextEl.classList.add('carrousel__el--active');
-                currentActive.classList.remove('carrousel__el--active');
-            }
-        }
+        const currentAnim = document.querySelector('.carrousel__anim');
+        currentAnim.classList.toggle('active');
+        btnCarrouselEtat.classList.toggle('active');
+       
     }
 }
 
@@ -102,7 +87,7 @@ if (imprevisibleHeader) {
         ease: "power2.out"
     })
     .to(imprevisibleLogo, { x: '15%', rotate: 25, duration: 0.2 })
-    .to(imprevisibleLogo, { x: '-5%', rotate: -5, duration: 0.1 })
+    .to(imprevisibleLogo, { x: '-5%', rotate: -5, duration: 0.1 },"<")
     .to(imprevisibleLogo, { x: '0%', rotate: 0, duration: 0.1});
 
     introTl.from(imprevisibleTitle, {
@@ -125,11 +110,11 @@ const scrollTl = gsap.timeline({
 
 scrollTl
     .from(".imprevisible__header", 
-        { height: '100vh' }, 0) 
+        { height: '100vh' }, "<") 
     .from(".imprevisible__title", 
-        { fontSize: '5.5rem' }, "<")  
+        { fontSize: 'clamp(3.4375rem, 2.8625rem + 2.3vw, 4.875rem);' }, "<")  
     .from(".imprevisible__logo", 
-        { width: '103px' }, "<")};
+        { width: 'clamp(3.4375rem, 1.9375rem + 6vw, 7.1875rem);' }, "<")};
 
 
 if (pourcent) {
@@ -223,7 +208,7 @@ if (bntMobile) {
 
     function showBTN() {
         const scrollCurrent = window.scrollY;
-        const isMobile = window.innerWidth < 1024;
+        const isMobile = window.innerWidth < 1200;
         if(navMonde){
             if(navMonde.classList.contains('monde__nav--active')){
                 navMonde.classList.remove('monde__nav--active')}

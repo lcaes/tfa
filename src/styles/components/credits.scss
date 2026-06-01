@@ -5,3 +5,43 @@
       transform: rotateY(180deg);
     }
 }
+.credits__main{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+   margin: 100px ;
+   width: fit-content;
+   justify-self: center;
+   
+
+  ul{
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-self: center;
+  }
+  h2{
+    text-align: center;
+     font-size: clamp(2.1875rem, 1.9625rem + 0.9vw, 2.75rem);
+      font-family: "Diphylleia", serif;
+
+    } 
+  h3{
+    font-family: "Diphylleia", serif;
+    text-align: center;
+    border-left: 10px double white;
+    border-top: 10px double white;
+    border-bottom: 5px solid white;
+    border-right: 5px solid white;
+    border-radius: 10px;
+    margin: 0;
+    padding: 10px;
+    display: flex;
+    align-self: center;
+    width: 100%;
+    justify-content: center;
+     font-size: clamp(1.5625rem, 1.4125rem + 0.6vw, 1.9375rem);
+  }
+  }

@@ -81,25 +81,9 @@ if (btnCloseNavFapsl) {
 
 if (btnCarrousel) {
   var carroussel = function carroussel() {
-    var currentActive = document.querySelector('.carrousel__el--active');
-
-    if (btnCarrouselEtat.classList.contains('change')) {
-      btnCarrouselEtat.classList.remove('change');
-      var previousEl = currentActive.previousElementSibling;
-
-      if (previousEl && previousEl.classList.contains('carrousel__el')) {
-        previousEl.classList.add('carrousel__el--active');
-        currentActive.classList.remove('carrousel__el--active');
-      }
-    } else {
-      btnCarrouselEtat.classList.add('change');
-      var nextEl = currentActive.nextElementSibling;
-
-      if (nextEl && nextEl.classList.contains('carrousel__el')) {
-        nextEl.classList.add('carrousel__el--active');
-        currentActive.classList.remove('carrousel__el--active');
-      }
-    }
+    var currentAnim = document.querySelector('.carrousel__anim');
+    currentAnim.classList.toggle('active');
+    btnCarrouselEtat.classList.toggle('active');
   };
 
   btnCarrousel.addEventListener('click', carroussel);
@@ -121,7 +105,7 @@ if (imprevisibleHeader) {
     x: '-5%',
     rotate: -5,
     duration: 0.1
-  }).to(imprevisibleLogo, {
+  }, "<").to(imprevisibleLogo, {
     x: '0%',
     rotate: 0,
     duration: 0.1
@@ -144,10 +128,10 @@ if (imprevisibleHeader) {
   });
   scrollTl.from(".imprevisible__header", {
     height: '100vh'
-  }, 0).from(".imprevisible__title", {
-    fontSize: '5.5rem'
+  }, "<").from(".imprevisible__title", {
+    fontSize: 'clamp(3.4375rem, 2.8625rem + 2.3vw, 4.875rem);'
   }, "<").from(".imprevisible__logo", {
-    width: '103px'
+    width: 'clamp(3.4375rem, 1.9375rem + 6vw, 7.1875rem);'
   }, "<");
 }
 
@@ -231,7 +215,7 @@ function opennav() {
 if (bntMobile) {
   var showBTN = function showBTN() {
     var scrollCurrent = window.scrollY;
-    var isMobile = window.innerWidth < 1024;
+    var isMobile = window.innerWidth < 1200;
 
     if (navMonde) {
       if (navMonde.classList.contains('monde__nav--active')) {

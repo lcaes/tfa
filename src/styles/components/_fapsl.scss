@@ -56,11 +56,12 @@ h1 {
     background-size: cover;
     background-position: center;
     border-radius: 30px;
-    padding: 40px 20px;
+    padding: 40px 20%;
     box-shadow: $fapsl-shadow;
     display: flex;
     justify-content: center;
     flex-direction: column;
+    width: fit-content;
     gap: 5px;
       font-family: "Diplomata SC", serif;
         font-size: clamp(1.5625rem, 0.1563rem + 3.75vw, 3.4375rem);
@@ -76,7 +77,8 @@ h1 {
         display: grid;
         grid-template-columns: repeat(5, 50px) 1fr;
         grid-template-rows: repeat(5,1fr);
-        padding:70px;
+        padding:70px 15%;
+        margin: 40px auto;
         span{
             line-height: 90%;
         }
@@ -97,8 +99,11 @@ h1 {
             grid-row: 5;
         }
     }
-    @media (min-width: $desktop-size) {
-        padding: 70px 150px;
+    @media (min-width: 1450px) {
+        grid-template-columns: repeat(5, 100px) 1fr;
+        grid-template-rows: repeat(5, 1fr);
+        row-gap: 20px;
+        column-gap: 10px;
     }
 }
 

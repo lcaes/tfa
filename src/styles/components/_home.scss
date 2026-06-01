@@ -140,7 +140,7 @@
     }  
 }
 .imprevisible__explication{
-    margin: 20px auto;
+    margin: 20px 2%;
     max-width: 50ch;
     font-size: clamp(1.5rem, 0.9375rem + 2.25vw, 2.625rem);
     padding-top: 50px;
@@ -148,16 +148,8 @@
     scale: 1;
     visibility: visible;
     padding-top: 500px
-}
-.imprevisible__main{
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
     
 }
-
 .imprevisible__contact{
    display: flex;
         list-style: none;
