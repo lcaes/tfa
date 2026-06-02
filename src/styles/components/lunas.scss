@@ -22,7 +22,7 @@
         left: clamp(3.125rem, 0.625rem + 10vw, 9.375rem);
         color: $c-blue-lunas;
         text-shadow: $shadow-title-lunas;
-        top: clamp(0.0625rem, -8.625rem + 15.4444vw, 8.75rem)
+        top: clamp(0.0625rem, -1.1625rem + 4.9vw, 3.125rem);
     }
     .lunas__lunette{
         margin: clamp(-200px, calc(66px - 19vw), -10px) 0 0;
@@ -258,7 +258,7 @@
     }
 .lunas__carrousel{
     position: relative;
-    height: 400px;
+    min-height: clamp(12.5rem, 0rem + 50vw, 43.75rem);
     p{
     position: absolute;
     z-index: 10;

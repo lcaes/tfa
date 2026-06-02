@@ -725,7 +725,7 @@ p {
 }
 
 .fapsl__name {
-  background-image: url(../../assets/images/fapsl-bg.jpg);
+  background: url(../assets/images/fapsl-bg.jpg);
   background-size: cover;
   background-position: center;
   border-radius: 30px;
@@ -1068,7 +1068,7 @@ p {
   left: clamp(3.125rem, 0.625rem + 10vw, 9.375rem);
   color: #69C6E2;
   text-shadow: 9px 6px 4px rgba(145, 183, 196, 0.5);
-  top: clamp(0.0625rem, -8.625rem + 15.4444vw, 8.75rem);
+  top: clamp(0.0625rem, -1.1625rem + 4.9vw, 3.125rem);
 }
 .lunas__header .lunas__lunette {
   margin: clamp(-200px, 66px - 19vw, -10px) 0 0;
@@ -1104,8 +1104,8 @@ p {
   opacity: 0.5;
   z-index: 10;
   top: 0;
-  -webkit-mask-image: url("../../assets/images/lunas-compabili$.svg");
-          mask-image: url("../../assets/images/lunas-compabili$.svg");
+  -webkit-mask-image: url("../assets/images/lunas-compabili$.svg");
+          mask-image: url("../assets/images/lunas-compabili$.svg");
   -webkit-mask-repeat: no-repeat;
           mask-repeat: no-repeat;
   -webkit-mask-position: 64%;
@@ -1342,7 +1342,7 @@ p {
 
 .lunas__carrousel {
   position: relative;
-  height: 400px;
+  min-height: clamp(12.5rem, 0rem + 50vw, 43.75rem);
 }
 .lunas__carrousel p {
   position: absolute;
