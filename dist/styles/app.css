@@ -729,7 +729,7 @@ p {
   background-size: cover;
   background-position: center;
   border-radius: 30px;
-  padding: 40px 20%;
+  padding: clamp(40px, 28px + 3vw, 70px) clamp(10px, -66px + 19vw, 200px);
   box-shadow: 10px 15px 9.3px rgba(63, 34, 48, 0.25);
   display: flex;
   justify-content: center;
@@ -738,6 +738,7 @@ p {
   width: -moz-fit-content;
   width: fit-content;
   gap: 5px;
+  align-self: center;
   font-family: "Diplomata SC", serif;
   font-size: clamp(1.5625rem, 0.1563rem + 3.75vw, 3.4375rem);
   color: #DCBFFD;
@@ -751,7 +752,6 @@ p {
     display: grid;
     grid-template-columns: repeat(5, 50px) 1fr;
     grid-template-rows: repeat(5, 1fr);
-    padding: 70px 15%;
     margin: 40px auto;
   }
   .fapsl__name span {
@@ -776,7 +776,7 @@ p {
 }
 @media (min-width: 1450px) {
   .fapsl__name {
-    grid-template-columns: repeat(5, 100px) 1fr;
+    grid-template-columns: repeat(5, 75px) 1fr;
     grid-template-rows: repeat(5, 1fr);
     row-gap: 20px;
     -moz-column-gap: 10px;
