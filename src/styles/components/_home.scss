@@ -8,6 +8,7 @@
         text-align: center;
         transition: 0.3s;
         color: white;
+        width: fit-content;
         &:hover{
             color: $c-fapsl-title;
         }
@@ -143,11 +144,11 @@
     margin: 20px 2%;
     max-width: 50ch;
     font-size: clamp(1.5rem, 0.9375rem + 2.25vw, 2.625rem);
-    padding-top: 50px;
-    opacity: 1;
-    scale: 1;
-    visibility: visible;
-    padding-top: 500px
+    padding: 400px 50px 100px 50px;
+    display: flex;
+    align-self: center;
+    justify-self: center;
+
     
 }
 .imprevisible__contact{
