@@ -106,7 +106,7 @@ if (imprevisibleHeader) {
         scrub: 1,       
         pinSpacing: true,  
         toggleActions: "play none none reverse",
-        markers: true,
+       
 
     }});
       scrollTl
@@ -125,8 +125,6 @@ if (imprevisibleHeader) {
         scrub: 2,       
         pinSpacing: true,  
         toggleActions: "play none none reverse",
-        markers: true,
-    
 
     }});
       scrollTl
