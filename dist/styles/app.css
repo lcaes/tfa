@@ -209,7 +209,7 @@ p {
 .blog__content h2 {
   color: #00AEEF;
   font-size: clamp(2.5rem, 2.3295rem + 0.9091vw, 3.125rem);
-  line-height: 90%;
+  line-height: 100%;
   margin: 0;
 }
 .blog__content h3 {
@@ -1244,6 +1244,7 @@ p {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+  color: #69C6E2;
 }
 .section__app p {
   display: flex;
