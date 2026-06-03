@@ -738,7 +738,7 @@ p {
 }
 
 .fapsl__name {
-  background: url(../../assets/images/fapsl-bg.jpg);
+  background: url(../assets/images/fapsl-bg.jpg);
   background-size: cover;
   background-position: center;
   border-radius: 30px;
@@ -1117,8 +1117,8 @@ p {
   opacity: 0.5;
   z-index: 10;
   top: 0;
-  -webkit-mask-image: url("../../assets/images/lunas-compabili$.svg");
-          mask-image: url("../../assets/images/lunas-compabili$.svg");
+  -webkit-mask-image: url("../assets/images/lunas-compabili$.svg");
+          mask-image: url("../assets/images/lunas-compabili$.svg");
   -webkit-mask-repeat: no-repeat;
           mask-repeat: no-repeat;
   -webkit-mask-position: 64%;
