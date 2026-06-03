@@ -116,26 +116,51 @@ if (imprevisibleHeader) {
     duration: 1,
     ease: "power2.out"
   }, 0);
-  var scrollTl = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
-    scrollTrigger: {
-      trigger: imprevisibleHeader,
-      start: "+=50",
-      end: "+=50",
-      scrub: 3,
-      pinSpacing: true,
-      toggleActions: "play none none reverse"
-    }
-  });
-  scrollTl.from(".imprevisible__header", {
-    height: '100vh'
-  }, "<").from(".imprevisible__title", {
-    fontSize: 'clamp(3.4375rem, 2.8625rem + 2.3vw, 4.875rem);'
-  }, "<").from(".imprevisible__logo", {
-    width: 'clamp(3.4375rem, 1.9375rem + 6vw, 7.1875rem);'
-  }, "<");
-}
+  var mobile = window.innerWidth < 600;
 
-;
+  if (mobile) {
+    var scrollTl = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
+      scrollTrigger: {
+        trigger: imprevisibleHeader,
+        start: "+=100",
+        end: "+=100",
+        scrub: 1,
+        pinSpacing: true,
+        toggleActions: "play none none reverse",
+        markers: true
+      }
+    });
+    scrollTl.from(".imprevisible__header", {
+      height: '100vh'
+    }, "<").from(".imprevisible__title", {
+      scale: 1.3
+    }, "<").from(".imprevisible__logo", {
+      scale: 1.3,
+      paddingRight: '3%'
+    }, "<");
+  } else {
+    var _scrollTl = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
+      scrollTrigger: {
+        trigger: imprevisibleHeader,
+        start: "+=50",
+        end: "+=50",
+        scrub: 2,
+        pinSpacing: true,
+        toggleActions: "play none none reverse",
+        markers: true
+      }
+    });
+
+    _scrollTl.from(".imprevisible__header", {
+      height: '100vh'
+    }, "<").from(".imprevisible__title", {
+      scale: 1.3
+    }, "<").from(".imprevisible__logo", {
+      scale: 1.3,
+      paddingRight: '4%'
+    }, "<");
+  }
+}
 
 if (pourcent) {
   pourcent.textContent = "90%";
@@ -601,7 +626,7 @@ _removeProperty = function _removeProperty(target, property) {
 _convertToUnit = function _convertToUnit(target, property, value, unit) {
   var curValue = parseFloat(value) || 0,
       curUnit = (value + "").trim().substr((curValue + "").length) || "px",
-      // some browsers leave extra whitespace at the beginning of CSS variables, hence the need to trim()
+      // some browsers leave extra $c-fapsl-bg-secondspace at the beginning of CSS variables, hence the need to trim()
   style = _tempDiv.style,
       horizontal = _horizontalExp.test(property),
       isRootSVG = target.tagName.toLowerCase() === "svg",
@@ -2946,7 +2971,7 @@ _pointerDownHandler = function _pointerDownHandler() {
       parent = useFixedPosition ? _body : container.tagName === "IFRAME" ? container.contentDocument.body : container,
       isStart = type.indexOf("start") !== -1,
       color = isStart ? startColor : endColor,
-      css = "border-color:" + color + ";font-size:" + fontSize + ";color:" + color + ";font-weight:" + fontWeight + ";pointer-events:none;white-space:nowrap;font-family:sans-serif,Arial;z-index:1000;padding:4px 8px;border-width:0;border-style:solid;";
+      css = "border-color:" + color + ";font-size:" + fontSize + ";color:" + color + ";font-weight:" + fontWeight + ";pointer-events:none;$c-fapsl-bg-second-space:nowrap;font-family:sans-serif,Arial;z-index:1000;padding:4px 8px;border-width:0;border-style:solid;";
 
   css += "position:" + ((isScroller || containerAnimation) && useFixedPosition ? "fixed;" : "absolute;");
   (isScroller || containerAnimation || !useFixedPosition) && (css += (direction === _Observer_js__WEBPACK_IMPORTED_MODULE_0__._vertical ? _right : _bottom) + ":" + (offset + parseFloat(indent)) + "px;");
@@ -6463,7 +6488,7 @@ _255 = 255,
   teal: [0, 128, 128],
   blue: [0, 0, _255],
   navy: [0, 0, 128],
-  white: [_255, _255, _255],
+  $c-fapsl-bg-second: [_255, _255, _255],
   olive: [128, 128, 0],
   yellow: [_255, _255, 0],
   orange: [_255, 165, 0],
@@ -6477,7 +6502,7 @@ _255 = 255,
 },
     // possible future idea to replace the hard-coded color name values - put this in the ticker.wake() where we set the _doc:
 // let ctx = _doc.createElement("canvas").getContext("2d");
-// _forEachName("aqua,lime,silver,black,maroon,teal,blue,navy,white,olive,yellow,orange,gray,purple,green,red,pink,cyan", color => {ctx.fillStyle = color; _colorLookup[color] = splitColor(ctx.fillStyle)});
+// _forEachName("aqua,lime,silver,black,maroon,teal,blue,navy,$c-fapsl-bg-second,olive,yellow,orange,gray,purple,green,red,pink,cyan", color => {ctx.fillStyle = color; _colorLookup[color] = splitColor(ctx.fillStyle)});
 _hue = function _hue(h, m1, m2) {
   h += h < 0 ? 1 : h > 1 ? -1 : 0;
   return (h * 6 < 1 ? m1 + (m2 - m1) * h * 6 : h < .5 ? m2 : h * 3 < 2 ? m1 + (m2 - m1) * (2 / 3 - h) * 6 : m1) * _255 + .5 | 0;

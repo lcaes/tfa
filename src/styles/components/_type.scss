@@ -61,6 +61,16 @@ p{
   align-items: center;
   gap: 20px;
   padding: 50px 20px;
+   a{
+        text-decoration: none;
+        text-align: center;
+        transition: 0.3s;
+        color: $c-fapsl-bg-second;
+        width: fit-content;
+        &:hover{
+            color: $c-fapsl-title;
+        }
+    }
   &--fapsl{
     background: $c-fapsl-bg-footer;
     color: $c-fapsl-title;
@@ -135,7 +145,7 @@ background-color: $c-blue-lunas;
         justify-self: center;
     }
     svg{
-        fill: white;
+        fill: $c-fapsl-bg-second;
         transition: 0.3;
         width: 30px;
     &:hover, &:focus{

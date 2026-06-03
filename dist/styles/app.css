@@ -63,6 +63,18 @@ p {
   gap: 20px;
   padding: 50px 20px;
 }
+.footer a {
+  text-decoration: none;
+  text-align: center;
+  transition: 0.3s;
+  color: #F7EFFF;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.footer a:hover {
+  color: #DCBFFD;
+}
 .footer--fapsl {
   background: linear-gradient(180deg, #b7a4c3, #29265c 50%);
   color: #DCBFFD;
@@ -77,7 +89,7 @@ p {
   font-size: clamp(1.75rem, 1.6307rem + 0.6364vw, 2.1875rem);
 }
 .footer--monde {
-  background: #00AEEF;
+  background: #6AD6FE;
   padding: 20px 5%;
 }
 .footer--monde .mention {
@@ -113,7 +125,7 @@ p {
   margin: 0;
 }
 .footer--blog {
-  background: linear-gradient(142deg, #D866B0 2.06%, #2628A3 57.89%);
+  background: linear-gradient(142deg, #F708FF 2.06%, #2628A3 57.89%);
   padding-top: 20px;
 }
 .footer--blog p {
@@ -140,7 +152,7 @@ p {
   justify-self: center;
 }
 .footer--blog svg {
-  fill: white;
+  fill: #F7EFFF;
   transition: 0.3;
   width: 30px;
 }
@@ -213,7 +225,7 @@ p {
 .blog__line {
   width: 35%;
   height: 10px;
-  background: linear-gradient(95deg, #6AD6FE 33.41%, #C24ECD 101.85%);
+  background: linear-gradient(95deg, #6AD6FE 33.41%, #F708FF 101.85%);
   margin: 5px auto;
   display: flex;
   justify-self: center;
@@ -224,7 +236,7 @@ p {
 }
 
 .blog__title {
-  background: linear-gradient(95deg, #6AD6FE 33.41%, #C24ECD 101.85%);
+  background: linear-gradient(95deg, #6AD6FE 33.41%, #F708FF 101.85%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -264,7 +276,7 @@ p {
 }
 
 .blog__header {
-  background: linear-gradient(142deg, #D866B0 2.06%, #2628A3 57.89%);
+  background: linear-gradient(142deg, #F708FF 2.06%, #2628A3 57.89%);
   padding-top: 20px;
   padding-bottom: 0;
   display: flex;
@@ -412,7 +424,7 @@ p {
   align-self: start;
   width: 50%;
   height: 3px;
-  background: linear-gradient(95deg, #6AD6FE 33.41%, #C24ECD 101.85%);
+  background: linear-gradient(95deg, #6AD6FE 33.41%, #F708FF 101.85%);
   border-radius: 5px;
   transition: 0.5s ease-in;
 }
@@ -446,6 +458,7 @@ p {
   margin: 0;
   font-family: "Bricolage Grotesque", sans-serif;
   color: #010F17;
+  background-color: #EDF9FF;
 }
 
 .monde__header {
@@ -457,7 +470,7 @@ p {
   position: relative;
 }
 .monde__header h1 {
-  background-color: rgba(0, 174, 239, 0.7);
+  background-color: rgba(106, 214, 254, 0.7);
   border-radius: 7px;
   padding: 20px 40px;
   font-size: clamp(1.625rem, -0.6842rem + 8.2105vw, 6.5rem);
@@ -496,7 +509,7 @@ p {
   margin: 20px 0;
 }
 .monde__content h2 {
-  background-color: #00AEEF;
+  background-color: #6AD6FE;
   font-family: "Inria Serif", serif;
   padding: 10px 5%;
   font-size: clamp(2.25rem, 2rem + 1vw, 2.875rem);
@@ -641,15 +654,15 @@ p {
 }
 .monde__btt svg {
   width: 30px;
-  background-color: #00AEEF;
+  background-color: #6AD6FE;
   border-radius: 50%;
 }
 .monde__btt:hover svg {
-  fill: white;
+  fill: #EDF9FF;
 }
 
 .monde__burger {
-  background-color: #00AEEF;
+  background-color: #6AD6FE;
   padding: 3px;
   border-radius: 10px;
   height: -webkit-fit-content;
@@ -657,7 +670,7 @@ p {
   height: fit-content;
 }
 .monde__burger button {
-  background-color: #00AEEF;
+  background-color: #6AD6FE;
   border-radius: 10px;
   transition: 0.3s;
   background-clip: padding-box;
@@ -668,8 +681,8 @@ p {
   transition: 0.3s;
 }
 .monde__burger button:hover {
-  color: white;
-  border: white solid 1px;
+  color: #F7EFFF;
+  border: #F7EFFF solid 1px;
 }
 
 .fapsl {
@@ -725,7 +738,7 @@ p {
 }
 
 .fapsl__name {
-  background: url(../assets/images/fapsl-bg.jpg);
+  background: url(../../assets/images/fapsl-bg.jpg);
   background-size: cover;
   background-position: center;
   border-radius: 30px;
@@ -951,7 +964,7 @@ p {
   background-color: #29265c;
   border-radius: 35px;
   border: #AC6BF6 solid 2px;
-  color: white;
+  color: #F7EFFF;
   padding: 10px 15px;
   display: flex;
   margin: 20px auto;
@@ -1104,8 +1117,8 @@ p {
   opacity: 0.5;
   z-index: 10;
   top: 0;
-  -webkit-mask-image: url("../assets/images/lunas-compabili$.svg");
-          mask-image: url("../assets/images/lunas-compabili$.svg");
+  -webkit-mask-image: url("../../assets/images/lunas-compabili$.svg");
+          mask-image: url("../../assets/images/lunas-compabili$.svg");
   -webkit-mask-repeat: no-repeat;
           mask-repeat: no-repeat;
   -webkit-mask-position: 64%;
@@ -1458,18 +1471,6 @@ p {
   font-family: "din-2014", sans-serif;
   color: #F7EFFF;
 }
-.imprevisible a {
-  text-decoration: none;
-  text-align: center;
-  transition: 0.3s;
-  color: white;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-}
-.imprevisible a:hover {
-  color: #DCBFFD;
-}
 
 .imprevisible__header {
   display: flex;
@@ -1511,6 +1512,18 @@ p {
   padding: 0;
   gap: 50px;
   justify-self: center;
+}
+.imprevisible__nav a {
+  text-decoration: none;
+  text-align: center;
+  transition: 0.3s;
+  color: #F7EFFF;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.imprevisible__nav a:hover {
+  color: #DCBFFD;
 }
 @media (min-width: 700px) {
   .imprevisible__nav {
@@ -1570,6 +1583,28 @@ p {
   display: block;
   min-width: 15ch;
 }
+.link--credits {
+  margin: 20px auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: #7D6DF7;
+  font-size: clamp(1.5625rem, 1.4125rem + 0.6vw, 1.9375rem);
+  padding: 10px 20px;
+  color: #F7EFFF;
+}
+.link--credits:hover, .link--credits:focus {
+  color: rgb(242, 234, 234);
+}
+.link--credits:hover::before, .link--credits:focus::before {
+  padding: 10px;
+}
+.link--home:hover, .link--home:focus {
+  color: #DCBFFD;
+}
+.link--home:hover::before, .link--home:focus::before {
+  padding: 5px;
+}
 .link:hover::before, .link:focus::before {
   content: "";
   position: absolute;
@@ -1577,7 +1612,6 @@ p {
   background: conic-gradient(from var(--angle), transparent 80%, #4000EF);
   width: 100%;
   height: 100%;
-  padding: 5px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -1608,10 +1642,20 @@ p {
   margin: 20px 2%;
   max-width: 50ch;
   font-size: clamp(1.5rem, 0.9375rem + 2.25vw, 2.625rem);
-  padding: 400px 50px 100px 50px;
+  padding: 80% 50px 100px 50px;
   display: flex;
   align-self: center;
   justify-self: center;
+}
+@media (min-width: 700px) {
+  .imprevisible__explication {
+    padding: 60% 50px 100px 50px;
+  }
+}
+@media (min-width: 1200px) {
+  .imprevisible__explication {
+    padding: 30% 50px 100px 50px;
+  }
 }
 
 .imprevisible__contact {
@@ -1626,7 +1670,7 @@ p {
 }
 .imprevisible__contact svg {
   width: 25px;
-  fill: white;
+  fill: #F7EFFF;
 }
 .imprevisible__contact svg:hover {
   fill: #DCBFFD;
@@ -1658,6 +1702,18 @@ p {
   gap: 10px;
   justify-self: center;
 }
+.credits__main ul a {
+  text-decoration: none;
+  text-align: center;
+  transition: 0.3s;
+  color: #F7EFFF;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.credits__main ul a:hover {
+  color: #DCBFFD;
+}
 .credits__main h2 {
   text-align: center;
   font-size: clamp(2.1875rem, 1.9625rem + 0.9vw, 2.75rem);
@@ -1666,10 +1722,10 @@ p {
 .credits__main h3 {
   font-family: "Diphylleia", serif;
   text-align: center;
-  border-left: 10px double white;
-  border-top: 10px double white;
-  border-bottom: 5px solid white;
-  border-right: 5px solid white;
+  border-left: 10px double #F7EFFF;
+  border-top: 10px double #F7EFFF;
+  border-bottom: 5px solid #F7EFFF;
+  border-right: 5px solid #F7EFFF;
   border-radius: 10px;
   margin: 0;
   padding: 10px;

@@ -4,6 +4,7 @@
     margin: 0;
     font-family: "Bricolage Grotesque", sans-serif;
     color: $c-font-monde;
+    background-color: $c-bg-monde;
 }
 .monde__header {
     margin: 0;
@@ -196,7 +197,7 @@
     }
     &:hover{
         svg{
-            fill: white;
+            fill: $c-bg-monde;
         }
     }
 }
@@ -216,7 +217,7 @@ transition: 0.3s;
   color: $c-font-monde;
   transition: 0.3s;
 &:hover{
-    color: white;
-     border: white solid 1px;
+    color: $c-fapsl-bg-second;
+     border: $c-fapsl-bg-second solid 1px;
 }}
 }

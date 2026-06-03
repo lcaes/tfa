@@ -96,25 +96,48 @@ if (imprevisibleHeader) {
         duration: 1,
         ease: "power2.out"
     }, 0); 
-    
-const scrollTl = gsap.timeline({
+    const mobile = window.innerWidth < 600;
+    if (mobile) {
+    const scrollTl = gsap.timeline({
+    scrollTrigger: {
+        trigger: imprevisibleHeader,
+        start: "+=100",   
+        end: "+=100",      
+        scrub: 1,       
+        pinSpacing: true,  
+        toggleActions: "play none none reverse",
+        markers: true,
+
+    }});
+      scrollTl
+    .from(".imprevisible__header", 
+        { height: '100vh' }, "<") 
+    .from(".imprevisible__title", 
+        { scale: 1.3}, "<")  
+    .from(".imprevisible__logo", 
+        { scale: 1.3, paddingRight: '3%' }, "<");}
+    else {
+           const scrollTl = gsap.timeline({
     scrollTrigger: {
         trigger: imprevisibleHeader,
         start: "+=50",   
         end: "+=50",      
-        scrub: 3,       
+        scrub: 2,       
         pinSpacing: true,  
         toggleActions: "play none none reverse",
+        markers: true,
+    
 
     }});
-
-scrollTl
+      scrollTl
     .from(".imprevisible__header", 
         { height: '100vh' }, "<") 
     .from(".imprevisible__title", 
-        { fontSize: 'clamp(3.4375rem, 2.8625rem + 2.3vw, 4.875rem);' }, "<")  
+        { scale: 1.3}, "<")  
     .from(".imprevisible__logo", 
-        { width: 'clamp(3.4375rem, 1.9375rem + 6vw, 7.1875rem);' }, "<")};
+        { scale: 1.3, paddingRight: '4%' }, "<");}
+
+  }
 
 
 if (pourcent) {
