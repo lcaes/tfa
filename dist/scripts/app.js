@@ -42,6 +42,36 @@ var mondeBtns = document.querySelector('.monde__btns');
 var navMonde = document.querySelector('.monde__nav');
 var burgerMonde = document.querySelector('.monde__burger');
 var imprevisibleMain = document.querySelector('.imprevisible__main');
+var btnPopup = document.querySelector('.btn__pop--discu');
+var btnPopuDiscu = document.querySelector('.btn__pop--notif');
+var backgroundPopup = document.querySelector('.popup__background');
+
+function showPopup() {
+  backgroundPopup.classList.add('show');
+}
+
+function closePopup() {
+  backgroundPopup.classList.remove('show');
+}
+
+if (btnPopup && btnPopuDiscu) {
+  btnPopup.addEventListener('click', showPopup);
+  btnPopuDiscu.addEventListener('click', showPopup);
+}
+
+if (backgroundPopup) {
+  backgroundPopup.addEventListener('click', function (e) {
+    if (e.target === backgroundPopup) {
+      closePopup();
+    }
+  });
+}
+
+window.addEventListener('scroll', function () {
+  if (backgroundPopup.classList.contains('show')) {
+    closePopup();
+  }
+});
 
 if (lunasBurger) {
   var openNavLunas = function openNavLunas() {
@@ -165,7 +195,8 @@ if (pourcent) {
 }
 
 if (lunasInput && filterCompability) {
-  var changeColor = function changeColor() {
+  var changeColor = function changeColor(e) {
+    e.preventDefault();
     if (lunasInput.value === "") return;
     var pourcentValue = Number(lunasInput.value);
 
@@ -237,7 +268,6 @@ function opennav() {
 
 if (bntMobile) {
   var showBTN = function showBTN() {
-    var scrollCurrent = window.scrollY;
     var isMobile = window.innerWidth < 1200;
 
     if (navMonde) {

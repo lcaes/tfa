@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   margin: 0;
 }
@@ -179,6 +180,30 @@ p {
 }
 .footer :last-child {
   align-self: flex-end;
+}
+
+.zone--click {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  z-index: 1000;
+  opacity: 0;
+  transition: 0.3s;
+  visibility: hidden;
+  top: 0;
+}
+.zone--click.show {
+  opacity: 1;
+  visibility: visible;
+}
+@media (min-widtn: 1200px) {
+  .zone--click {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
 .blog {
@@ -1056,6 +1081,43 @@ p {
   transform: translateY(0%);
 }
 
+.popup__background {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  z-index: 1000;
+  opacity: 0;
+  transition: 0.3s;
+  visibility: hidden;
+  top: 0;
+}
+.popup__background.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: #F7EFFF;
+  position: fixed;
+  top: 22%;
+  right: 20px;
+  padding: 15px 50px;
+  box-shadow: 10px 15px 9.3px rgba(63, 34, 48, 0.25);
+  border: 5px solid #AC6BF6;
+  border-radius: 25px;
+}
+.popup p {
+  max-width: 35ch;
+}
+
+.btn__pop {
+  background: none;
+  border: none;
+}
+
 .lunas {
   background-color: #101120;
   color: #EAFBFF;
@@ -1686,6 +1748,11 @@ p {
   fill: #DCBFFD;
 }
 
+… .btn__close {
+  background: none;
+  border: none;
+}
+
 .credits__logo {
   position: absolute;
   transition: 0.3s;
@@ -1703,6 +1770,7 @@ p {
   width: -moz-fit-content;
   width: fit-content;
   justify-self: center;
+  margin: 20px auto;
 }
 .credits__main ul {
   list-style: none;

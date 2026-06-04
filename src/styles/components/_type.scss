@@ -172,3 +172,23 @@ background-color: $c-blue-lunas;
   :last-child{
     align-self: flex-end;
   }}
+
+  .zone--click{
+        width: 100%;
+    height: 100vh;
+    position: absolute;
+    z-index: 1000;
+    opacity: 0;
+    transition: 0.3s;
+    visibility: hidden;
+    top:0;
+    &.show{
+        opacity: 1;
+        visibility: visible ;
+    }
+    @media (min-widtn: $desktop-size) {
+      width: fit-content;
+      opacity: 1;
+      visibility: visible;
+    }
+  }

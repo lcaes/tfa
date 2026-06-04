@@ -33,6 +33,37 @@ const mondeBtns = document.querySelector('.monde__btns');
 const navMonde= document.querySelector('.monde__nav')
 const burgerMonde =document.querySelector('.monde__burger')
 const imprevisibleMain = document.querySelector('.imprevisible__main');
+const btnPopup =document.querySelector('.btn__pop--discu');
+const btnPopuDiscu =document.querySelector('.btn__pop--notif');
+const backgroundPopup =document.querySelector('.popup__background')
+
+function showPopup() {
+  backgroundPopup.classList.add('show');
+}
+
+function closePopup() {
+  backgroundPopup.classList.remove('show');
+}
+
+if (btnPopup && btnPopuDiscu) {
+  btnPopup.addEventListener('click', showPopup);
+  btnPopuDiscu.addEventListener('click', showPopup);
+}
+
+if (backgroundPopup) {
+  backgroundPopup.addEventListener('click', function (e) {
+    if (e.target === backgroundPopup) {
+      closePopup();
+    }
+  });
+}
+
+window.addEventListener('scroll', function () {
+  if (backgroundPopup.classList.contains('show')) {
+    closePopup();
+  }
+});
+
 
 if (lunasBurger) {
     lunasBurger.addEventListener('click', openNavLunas)
@@ -145,7 +176,8 @@ if (pourcent) {
 if (lunasInput && filterCompability) {
     lunasInput.addEventListener('input', changeColor);
     
-    function changeColor() {
+    function changeColor(e) {
+        e.preventDefault();
         if (lunasInput.value === "") return;
         let pourcentValue = Number(lunasInput.value);
         if (pourcentValue > 100) {
@@ -228,7 +260,7 @@ if (bntMobile) {
     window.addEventListener('scroll', showBTN);
 
     function showBTN() {
-        const scrollCurrent = window.scrollY;
+        
         const isMobile = window.innerWidth < 1200;
         if(navMonde){
             if(navMonde.classList.contains('monde__nav--active')){
