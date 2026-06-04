@@ -73,7 +73,7 @@ p {
   width: fit-content;
 }
 .footer a:hover {
-  color: #DCBFFD;
+  color: #EA00FF;
 }
 .footer--fapsl {
   background: linear-gradient(180deg, #b7a4c3, #29265c 50%);
@@ -1060,6 +1060,7 @@ p {
   background-color: #101120;
   color: #EAFBFF;
   font-family: "figtree", sans-serif;
+  width: 100%;
 }
 .lunas.open {
   overflow: hidden;
@@ -1096,6 +1097,8 @@ p {
   display: flex;
   justify-self: end;
   margin: clamp(-350px, 70px - 30vw, -50px) clamp(1px, -58.6px + 14.9vw, 150px) 0 0;
+  position: absolute;
+  right: 0;
 }
 
 .lunas__stitle {
@@ -1282,6 +1285,7 @@ p {
     height: -moz-fit-content;
     height: fit-content;
     width: 50%;
+    height: auto;
   }
   .section__app h3 {
     grid-column: 1/-1;
@@ -1389,8 +1393,7 @@ p {
 }
 
 .lunas__burger {
-  position: -webkit-sticky;
-  position: sticky;
+  position: fixed;
   top: 50px;
   right: 50px;
   height: 40px;
@@ -1469,7 +1472,7 @@ p {
 
 .imprevisible {
   background-color: #2B2626;
-  font-family: "din-2014", sans-serif;
+  font-family: "'din-2014'", sans-serif;
   color: #F7EFFF;
 }
 
@@ -1531,6 +1534,11 @@ p {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
+  }
+  .imprevisible__nav li {
+    display: flex;
+    justify-self: center;
+    align-self: center;
   }
 }
 @media (min-width: 1200px) {
@@ -1651,6 +1659,7 @@ p {
 @media (min-width: 700px) {
   .imprevisible__explication {
     padding: 60% 50px 100px 50px;
+    margin: 20px auto;
   }
 }
 @media (min-width: 1200px) {
@@ -1713,7 +1722,7 @@ p {
   width: fit-content;
 }
 .credits__main ul a:hover {
-  color: #DCBFFD;
+  color: #EA00FF;
 }
 .credits__main h2 {
   text-align: center;

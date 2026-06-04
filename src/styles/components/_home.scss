@@ -56,6 +56,11 @@
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 30px;
+            li{
+              display: flex;
+              justify-self: center;
+              align-self: center;
+            }
         }
     
     @media (min-width: $desktop-size) {
@@ -169,6 +174,7 @@
     justify-self: center;
         @media (min-width: $tablet-size) {
             padding: 60% 50px 100px 50px;
+            margin: 20px auto;
         }
         @media (min-width: $desktop-size) {
             padding: 30% 50px 100px 50px;

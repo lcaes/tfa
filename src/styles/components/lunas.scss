@@ -2,6 +2,7 @@
     background-color: $c-bg-lunas;
     color: $c-text-lunas;
     font-family: "figtree", sans-serif;
+    width: 100%;
     &.open{
         overflow: hidden;
     }
@@ -37,6 +38,8 @@
         display: flex;
         justify-self: end;
         margin: clamp(-350px, calc(70px - 30vw), -50px) clamp(1px, calc(-58.6px + 14.9vw), 150px) 0 0;
+        position: absolute;
+        right: 0;
 
 }}
 .lunas__stitle{
@@ -57,7 +60,7 @@
     opacity: 0.5;
     z-index: 10;
     top: 0;
-    mask-image: url('../../assets/images/lunas-compabili$.svg');
+    mask-image: url('../assets/images/lunas-compabili$.svg');
     mask-repeat: no-repeat; 
     mask-position: 64%;
     mask-size: contain;
@@ -184,6 +187,7 @@
             grid-column: 2;
             height: fit-content;
             width: 50%;
+            height: auto;
         }
         
         h3{
@@ -289,7 +293,7 @@ position: absolute;
 
 }
 .lunas__burger {
-    position: sticky;
+    position: fixed;
     top: 50px;
     right: 50px;
     height: 40px;
@@ -300,6 +304,7 @@ position: absolute;
     z-index: 10000;
     display: flex;
     justify-self: end;
+
       &:hover{
         .menu-toggle-bar{
         background-color: $c-lunas-hover;
@@ -307,6 +312,7 @@ position: absolute;
     }
 
     &.open {
+
         .menu-toggle-bar--top {
             transform: translateY(0) rotate(45deg);
         }
