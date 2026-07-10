@@ -1,7 +1,3 @@
-
-
-let lastScroll = 0;
-
 const blogBurger = document.querySelector('.blog__burger');
 const blogNav = document.querySelector('.blog__nav');
 const bntMobile = document.querySelector('.btn__mobile');
@@ -11,11 +7,6 @@ const containnerChat = document.querySelector('.fapsl__chats');
 const filterCompability = document.querySelector('.filter__compability');
 const lunasInput = document.querySelector('.lunas__input');
 const pourcent = document.querySelector('.lunas__compatibility--level');
-const pageimprevisible = document.querySelector('.imprevisible');
-const imprevisibleLogo = document.querySelector('.imprevisible__logo');
-const imprevisibleTitle = document.querySelector('.imprevisible__title')
-const imprevisibleHeader = document.querySelector('.imprevisible__header--home');
-const imprevisibleExplication = document.querySelector(' .imprevisible__explication');
 const btnCarrousel = document.querySelector('.interupteur');
 const btnCarrouselEtat = document.querySelector('.interupteur__default');
 const btnOpenNavFapsl = document.querySelector ('.fapsl__button--nav');
@@ -108,10 +99,8 @@ function AddChat(e) {
     const message = fapslInput.value;
     console.log(message);
     if (message.trim() !== "") {
-        
         const newContent = document.createElement('li');
-        newContent.classList.add('fapsl__content');
-        
+        newContent.classList.add('fapsl__content'); 
         const newProfil = document.createElement('div');
         newProfil.classList.add('fapsl__profile');
         

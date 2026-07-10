@@ -845,7 +845,7 @@ p {
     padding: 50px 20px;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 1000px) {
   .fapsl__chats {
     padding: 50px 100px;
   }
@@ -917,9 +917,10 @@ p {
 }
 
 .fapsl__message {
-  max-width: -webkit-fit-content;
-  max-width: -moz-fit-content;
-  max-width: fit-content;
+  max-width: 500px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -950,8 +951,8 @@ p {
   max-width: 50ch;
   resize: none;
   padding: 8px 12px;
-  width: 50ch;
-  margin: auto;
+  max-width: 50ch;
+  margin: 0;
   color: #180C35;
 }
 .fapsl__message textarea::-moz-placeholder {
@@ -1002,7 +1003,8 @@ p {
 }
 
 .fapsl__nav {
-  height: 100vh;
+  height: 100%;
+  max-height: 200vh;
   position: fixed;
   z-index: 100;
   background-color: #B7A4C3;
@@ -1019,7 +1021,7 @@ p {
   font-family: "Diplomata SC", serif;
   font-size: clamp(2.75rem, 1.425rem + 5.3vw, 6.0625rem);
   letter-spacing: -8px;
-  margin: 0 auto;
+  margin: 0;
   text-align: center;
   background: radial-gradient(circle, rgba(127, 52, 206, 0.4) 0%, rgba(24, 12, 53, 0) 90%);
   width: -webkit-fit-content;
@@ -1048,15 +1050,14 @@ p {
 .fapsl__nav ul {
   list-style: none;
   padding: 0;
-  margin: 20px 50px;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   display: flex;
+  margin: -60px auto 0 auto;
+  text-align: center;
   flex-direction: column;
-  gap: 25px;
-  justify-self: center;
-  padding: 0 5%;
+  justify-content: center;
 }
 .fapsl__nav a {
   text-decoration: none;
@@ -1079,6 +1080,15 @@ p {
   opacity: 1;
   visibility: visible;
   transform: translateY(0%);
+}
+.fapsl__nav .el--active {
+  color: rgb(106, 13, 227);
+}
+
+.fapsl__fonction {
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 .lunas {

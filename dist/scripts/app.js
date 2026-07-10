@@ -7,7 +7,6 @@
   \****************************/
 /***/ (() => {
 
-var lastScroll = 0;
 var blogBurger = document.querySelector('.blog__burger');
 var blogNav = document.querySelector('.blog__nav');
 var bntMobile = document.querySelector('.btn__mobile');
@@ -17,11 +16,6 @@ var containnerChat = document.querySelector('.fapsl__chats');
 var filterCompability = document.querySelector('.filter__compability');
 var lunasInput = document.querySelector('.lunas__input');
 var pourcent = document.querySelector('.lunas__compatibility--level');
-var pageimprevisible = document.querySelector('.imprevisible');
-var imprevisibleLogo = document.querySelector('.imprevisible__logo');
-var imprevisibleTitle = document.querySelector('.imprevisible__title');
-var imprevisibleHeader = document.querySelector('.imprevisible__header--home');
-var imprevisibleExplication = document.querySelector(' .imprevisible__explication');
 var btnCarrousel = document.querySelector('.interupteur');
 var btnCarrouselEtat = document.querySelector('.interupteur__default');
 var btnOpenNavFapsl = document.querySelector('.fapsl__button--nav');
