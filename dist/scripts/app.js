@@ -1,19 +1,12 @@
 /******/ (() => { // webpackBootstrap
-/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./src/scripts/app.js":
 /*!****************************!*\
   !*** ./src/scripts/app.js ***!
   \****************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ (() => {
 
-__webpack_require__.r(__webpack_exports__);
-Object(function webpackMissingModule() { var e = new Error("Cannot find module 'gsap'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
-Object(function webpackMissingModule() { var e = new Error("Cannot find module 'gsap/ScrollTrigger'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
-
-
-Object(function webpackMissingModule() { var e = new Error("Cannot find module 'gsap'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())(Object(function webpackMissingModule() { var e = new Error("Cannot find module 'gsap/ScrollTrigger'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 var lastScroll = 0;
 var blogBurger = document.querySelector('.blog__burger');
 var blogNav = document.querySelector('.blog__nav');
@@ -87,77 +80,6 @@ if (btnCarrousel) {
   };
 
   btnCarrousel.addEventListener('click', carroussel);
-}
-
-if (imprevisibleHeader) {
-  var introTl = Object(function webpackMissingModule() { var e = new Error("Cannot find module 'gsap'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())();
-  introTl.from(imprevisibleLogo, {
-    x: '-200%',
-    rotate: 0,
-    opacity: 0,
-    duration: 1,
-    ease: "power2.out"
-  }).to(imprevisibleLogo, {
-    x: '15%',
-    rotate: 25,
-    duration: 0.2
-  }).to(imprevisibleLogo, {
-    x: '-5%',
-    rotate: -5,
-    duration: 0.1
-  }, "<").to(imprevisibleLogo, {
-    x: '0%',
-    rotate: 0,
-    duration: 0.1
-  });
-  introTl.from(imprevisibleTitle, {
-    x: '200%',
-    opacity: 0,
-    duration: 1,
-    ease: "power2.out"
-  }, 0);
-  var mobile = window.innerWidth < 600;
-
-  if (mobile) {
-    var scrollTl = Object(function webpackMissingModule() { var e = new Error("Cannot find module 'gsap'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())({
-      scrollTrigger: {
-        trigger: imprevisibleHeader,
-        start: "+=100",
-        end: "+=100",
-        scrub: 1,
-        pinSpacing: true,
-        toggleActions: "play none none reverse"
-      }
-    });
-    scrollTl.from(".imprevisible__header", {
-      height: '100vh'
-    }, "<").from(".imprevisible__title", {
-      scale: 1.3
-    }, "<").from(".imprevisible__logo", {
-      scale: 1.3,
-      paddingRight: '3%'
-    }, "<");
-  } else {
-    var _scrollTl = Object(function webpackMissingModule() { var e = new Error("Cannot find module 'gsap'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())({
-      scrollTrigger: {
-        trigger: imprevisibleHeader,
-        start: "+=50",
-        end: "+=50",
-        scrub: 2,
-        pinSpacing: true,
-        toggleActions: "play none none reverse"
-      }
-    });
-
-    _scrollTl.from(".imprevisible__header", {
-      height: '100vh'
-    }, "<").from(".imprevisible__title", {
-      scale: 1.3
-    }, "<").from(".imprevisible__logo", {
-      scale: 1.3,
-      paddingRight: '4%'
-    }, "<");
-  }
 }
 
 if (pourcent) {
@@ -280,6 +202,7 @@ if (bntMobile) {
   \*****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 

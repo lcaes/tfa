@@ -1,8 +1,4 @@
-import { gsap } from "gsap";
-    
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger);
 
 let lastScroll = 0;
 
@@ -74,68 +70,6 @@ if (btnCarrousel) {
     }
 }
 
-
-if (imprevisibleHeader) {
-  
-    const introTl = gsap.timeline();
-
-    introTl.from(imprevisibleLogo, {
-        x: '-200%',
-        rotate: 0,
-        opacity: 0,
-        duration: 1,
-        ease: "power2.out"
-    })
-    .to(imprevisibleLogo, { x: '15%', rotate: 25, duration: 0.2 })
-    .to(imprevisibleLogo, { x: '-5%', rotate: -5, duration: 0.1 },"<")
-    .to(imprevisibleLogo, { x: '0%', rotate: 0, duration: 0.1});
-
-    introTl.from(imprevisibleTitle, {
-        x: '200%',
-        opacity: 0,
-        duration: 1,
-        ease: "power2.out"
-    }, 0); 
-    const mobile = window.innerWidth < 600;
-    if (mobile) {
-    const scrollTl = gsap.timeline({
-    scrollTrigger: {
-        trigger: imprevisibleHeader,
-        start: "+=100",   
-        end: "+=100",      
-        scrub: 1,       
-        pinSpacing: true,  
-        toggleActions: "play none none reverse",
-       
-
-    }});
-      scrollTl
-    .from(".imprevisible__header", 
-        { height: '100vh' }, "<") 
-    .from(".imprevisible__title", 
-        { scale: 1.3}, "<")  
-    .from(".imprevisible__logo", 
-        { scale: 1.3, paddingRight: '3%' }, "<");}
-    else {
-           const scrollTl = gsap.timeline({
-    scrollTrigger: {
-        trigger: imprevisibleHeader,
-        start: "+=50",   
-        end: "+=50",      
-        scrub: 2,       
-        pinSpacing: true,  
-        toggleActions: "play none none reverse",
-
-    }});
-      scrollTl
-    .from(".imprevisible__header", 
-        { height: '100vh' }, "<") 
-    .from(".imprevisible__title", 
-        { scale: 1.3}, "<")  
-    .from(".imprevisible__logo", 
-        { scale: 1.3, paddingRight: '4%' }, "<");}
-
-  }
 
 
 if (pourcent) {
