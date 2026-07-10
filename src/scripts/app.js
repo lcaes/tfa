@@ -182,7 +182,7 @@ function AddChat(e) {
         newProfil.classList.add('fapsl__profile');
         
         const imgUser = document.createElement('img');
-        imgUser.src = 'assets/images/bc.png';
+        imgUser.src = 'assets/images/bc.webp';
         imgUser.alt = 'avatar';
         
         const pseudo = document.createElement('h3');
