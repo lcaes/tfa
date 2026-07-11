@@ -755,6 +755,7 @@ p {
   flex-direction: column;
   gap: 40px;
   margin: 40px 5%;
+  max-width: 1200px;
 }
 @media (min-width: 1200px) {
   .fapsl__main {
@@ -767,20 +768,23 @@ p {
   background-size: cover;
   background-position: center;
   border-radius: 30px;
-  padding: clamp(40px, 28px + 3vw, 70px) clamp(10px, -66px + 19vw, 200px);
+  max-width: 1200px;
   box-shadow: 10px 15px 9.3px rgba(63, 34, 48, 0.25);
   display: flex;
   justify-content: center;
   flex-direction: column;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
   gap: 5px;
+  width: 100%;
   align-self: center;
   font-family: "Diplomata SC", serif;
   font-size: clamp(1.5625rem, 0.1563rem + 3.75vw, 3.4375rem);
   color: #DCBFFD;
-  margin: 0;
+  margin: 0 auto;
+  padding: 50px 0;
+}
+.fapsl__name span {
+  letter-spacing: -2px;
+  align-self: center;
 }
 .fapsl__name span::first-letter {
   font-size: clamp(3.125rem, 0.1563rem + 6.25vw, 6.25rem);
@@ -788,7 +792,7 @@ p {
 @media (min-width: 700px) {
   .fapsl__name {
     display: grid;
-    grid-template-columns: repeat(5, 50px) 1fr;
+    grid-template-columns: repeat(5, 50px) auto;
     grid-template-rows: repeat(5, 1fr);
     margin: 40px auto;
   }
@@ -814,7 +818,7 @@ p {
 }
 @media (min-width: 1450px) {
   .fapsl__name {
-    grid-template-columns: repeat(5, 75px) 1fr;
+    grid-template-columns: repeat(5, 75px) auto;
     grid-template-rows: repeat(5, 1fr);
     row-gap: 20px;
     -moz-column-gap: 10px;
@@ -964,6 +968,11 @@ p {
 .fapsl__message textarea::placeholder {
   color: rgba(24, 12, 53, 0.7);
 }
+@media (min-width: 700px) {
+  .fapsl__message textarea {
+    width: 50ch;
+  }
+}
 
 .fapsl__send {
   border: none;
@@ -1035,12 +1044,28 @@ p {
   background: none;
   border: none;
   cursor: pointer;
-  padding: 20px;
+  padding: 10px;
   pointer-events: auto;
   transition: 0.3s;
+  position: absolute;
+  top: 12%;
+  left: 1%;
+  z-index: 100;
+}
+@media (min-width: 700px) {
+  .fapsl__nav .btn__close {
+    top: 15%;
+    left: 2%;
+  }
+}
+@media (min-width: 1200px) {
+  .fapsl__nav .btn__close {
+    top: 17%;
+    left: 2%;
+  }
 }
 .fapsl__nav .btn__close svg {
-  width: 30px;
+  width: clamp(1.875rem, 1.1932rem + 3.4091vw, 3.75rem);
   fill: #180C35;
 }
 .fapsl__nav .btn__close svg:hover, .fapsl__nav .btn__close svg:focus {
@@ -1054,7 +1079,7 @@ p {
   width: -moz-fit-content;
   width: fit-content;
   display: flex;
-  margin: -60px auto 0 auto;
+  margin: 30px auto;
   text-align: center;
   flex-direction: column;
   justify-content: center;
@@ -1089,6 +1114,47 @@ p {
   background: none;
   border: none;
   cursor: pointer;
+}
+.fapsl__fonction:hover svg, .fapsl__fonction:focus svg {
+  fill: #CE109B;
+}
+
+.fapsl__popup {
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  display: flex;
+}
+.fapsl__popup.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.fapsl__bgpopup {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.fapsl__popup-content {
+  position: relative;
+  z-index: 101;
+  background-color: #F7EFFF;
+  border: 5px solid #AC6BF6;
+  border-radius: 15px;
+  padding: 20px;
+  margin: 20px;
 }
 
 .lunas {

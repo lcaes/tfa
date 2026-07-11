@@ -20,7 +20,28 @@ const mondeBtns = document.querySelector('.monde__btns');
 const navMonde= document.querySelector('.monde__nav')
 const burgerMonde =document.querySelector('.monde__burger')
 const imprevisibleMain = document.querySelector('.imprevisible__main');
+const fapslBgPopup = document.querySelector('.fapsl__bgpopup');
+const faapslFonctionBtns = document.querySelectorAll('.fapsl__fonction');
+const fapslPopup = document.querySelector('.fapsl__popup');
 
+if (faapslFonctionBtns && fapslPopup) {
+    faapslFonctionBtns.forEach(btn => {
+        btn.addEventListener('click', openPopup);
+    });
+
+    function openPopup(e) {
+        e.preventDefault();
+        fapslPopup.classList.add('active');
+    }
+}
+
+if (fapslBgPopup && fapslPopup) {
+    fapslBgPopup.addEventListener('click', closePopup);
+
+    function closePopup() {
+        fapslPopup.classList.remove('active');
+    }
+}
 if (lunasBurger) {
     lunasBurger.addEventListener('click', openNavLunas)
     function openNavLunas(){

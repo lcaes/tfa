@@ -29,6 +29,28 @@ var mondeBtns = document.querySelector('.monde__btns');
 var navMonde = document.querySelector('.monde__nav');
 var burgerMonde = document.querySelector('.monde__burger');
 var imprevisibleMain = document.querySelector('.imprevisible__main');
+var fapslBgPopup = document.querySelector('.fapsl__bgpopup');
+var faapslFonctionBtns = document.querySelectorAll('.fapsl__fonction');
+var fapslPopup = document.querySelector('.fapsl__popup');
+
+if (faapslFonctionBtns && fapslPopup) {
+  var openPopup = function openPopup(e) {
+    e.preventDefault();
+    fapslPopup.classList.add('active');
+  };
+
+  faapslFonctionBtns.forEach(function (btn) {
+    btn.addEventListener('click', openPopup);
+  });
+}
+
+if (fapslBgPopup && fapslPopup) {
+  var closePopup = function closePopup() {
+    fapslPopup.classList.remove('active');
+  };
+
+  fapslBgPopup.addEventListener('click', closePopup);
+}
 
 if (lunasBurger) {
   var openNavLunas = function openNavLunas() {
