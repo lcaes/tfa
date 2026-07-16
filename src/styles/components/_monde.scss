@@ -221,3 +221,8 @@ transition: 0.3s;
      border: $c-fapsl-bg-second solid 1px;
 }}
 }
+.monde__el--active{
+    a{
+        color: $c-bg-imprevisible;
+    }
+}

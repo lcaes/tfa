@@ -453,6 +453,12 @@ p {
   border-radius: 5px;
   transition: 0.5s ease-in;
 }
+.blog__nel--active .blog__nav--line {
+  background: #6AD6FE;
+}
+.blog__nel--active p {
+  color: #6AD6FE;
+}
 .blog__nel:hover .blog__nav--line, .blog__nel:focus .blog__nav--line {
   width: 70%;
 }
@@ -708,6 +714,10 @@ p {
 .monde__burger button:hover {
   color: #F7EFFF;
   border: #F7EFFF solid 1px;
+}
+
+.monde__el--active a {
+  color: #2B2626;
 }
 
 .fapsl {
@@ -1446,8 +1456,13 @@ p {
   display: flex;
   margin: 50px auto;
 }
-
-.interupteur__default {
+.interupteur:hover, .interupteur:focus {
+  border: #EA00FF solid 2px;
+}
+.interupteur:hover .interupteur__default, .interupteur:focus .interupteur__default {
+  background-color: #EA00FF;
+}
+.interupteur .interupteur__default {
   width: 35px;
   height: 35px;
   border-radius: 50%;
@@ -1455,7 +1470,7 @@ p {
   border: #5795E2 solid 1px;
   transition: 0.3s;
 }
-.interupteur__default.active {
+.interupteur .interupteur__default.active {
   transform: translatex(50px);
 }
 
@@ -1563,6 +1578,12 @@ p {
   transition: 0.3s;
 }
 .lunas__nav a:hover, .lunas__nav a:focus {
+  color: #EA00FF;
+}
+.lunas__nav .lunas__el--active a {
+  color: #6AD6FE;
+}
+.lunas__nav .lunas__el--active:hover a, .lunas__nav .lunas__el--active:focus a {
   color: #EA00FF;
 }
 .lunas__nav.open {

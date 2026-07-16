@@ -232,6 +232,16 @@ h1{
         transition: 0.5s ease-in;
         
     }
+        &--active{
+        .blog__nav--line{
+            background: #6AD6FE;
+
+        }
+        p{
+            color: #6AD6FE;
+           
+        }
+    }
     &:hover, &:focus {
         .blog__nav--line{
             width: 70%;
@@ -240,6 +250,7 @@ h1{
             color: $c-fapsl-title;
         }
     }
+
 
 }
 

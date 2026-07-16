@@ -248,7 +248,13 @@
     display: flex;
     margin: 50px auto;
 
-}
+    &:hover, &:focus{
+        border: $c-lunas-hover solid 2px;
+        .interupteur__default{
+            background-color: $c-lunas-hover;
+        }
+    }
+
     
 .interupteur__default{
         width: 35px;
@@ -260,7 +266,7 @@
        &.active{
         transform: translatex(50px);
        }
-    }
+    }}
 .lunas__carrousel{
     position: relative;
     min-height: clamp(12.5rem, 0rem + 50vw, 43.75rem);
@@ -374,7 +380,16 @@ position: absolute;
             color: $c-lunas-hover;
         }
     }
-
+    .lunas__el--active{
+        a{
+            color: $color-monde;
+        }
+        &:hover, &:focus{
+            a{
+                color: $c-lunas-hover;
+            }
+        }d
+    }
     &.open {
         visibility: visible;
         opacity: 1;
