@@ -10,15 +10,22 @@
     align-items: center;     
     gap: 15px;
     color: $c-title-imprevisible;
-    width: 100%;
     z-index: 100;
     background-color: $c-bg-imprevisible;
     box-sizing: border-box; 
-    padding: 0; 
-    height: 100vh;
-    position: fixed;
-    height: 100px;
-    top: 0;
+    padding: 20px;
+
+
+    @media (min-width: $tablet-size) {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 10;
+        transform: translate(-50%, -50%);
+        padding: 60px 30px;
+        border-radius: 50%;
+        border: $c-fapsl-bg-second solid 5px;
+    }
 }
 
 .imprevisible__title {
@@ -26,8 +33,11 @@
     letter-spacing: 1px;
     line-height: 80%;
     will-change: transform, opacity;
-    font-size: clamp(2.0625rem, 1.2188rem + 3.375vw, 3.75rem);
+    font-size: clamp(2.0625rem, -0.9375rem + 6.25vw, 3.75rem);;
     margin: 0; 
+    span{
+        display: block;
+    }
 }
 
 .imprevisible__logo {
@@ -45,30 +55,24 @@
             color: $c-fapsl-title;
         }
     }
-    margin: 80px 3%;
+    margin: 20px 3%;
         display: flex;
         list-style: none;
         flex-direction: column;
         padding: 0;
-        gap: 50px;
+        gap: 5px;
         justify-self: center;
+
         @media (min-width: $tablet-size) {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
-            li{
-              display: flex;
-              justify-self: center;
-              align-self: center;
-            }
+            gap: 0px;
+            max-width: 1300px;
+           width: 90%;
+            position: relative;
+            height: 98vh;
+            margin: 10px 3%;
         }
-    
-    @media (min-width: $desktop-size) {
-        display: flex;
-        flex-direction: row;
-        margin: 50px 100px;
-        
-    }
 
 }
 
@@ -80,23 +84,26 @@
 }
 
 .imprevisible__el {
-    max-width: 300px;
     position: relative;
-
+    border: $c-fapsl-bg-second solid 5px;
+    height: fit-content;
     img {
         transition: filter 0.4s ease;
-        filter: blur(8px);
-
+        filter: blur(14px);
+        width: 100%;
     }
     div{
         position: absolute;
         z-index: 10;
-        bottom:  10%;
+        bottom:  20%;
         left: 50%;
-        transform: translateX(-50%); 
+        transform: translate(-50%); 
         opacity: 0;
         transition: opacity 0.4s ease;
         width: fit-content;
+    }
+    &--top{
+        align-self: self-end;
     }
 
     &:hover, &:focus {
@@ -164,24 +171,7 @@
         --angle: 360deg;
     }  
 }
-.imprevisible__explication{
-    margin: 20px 2%;
-    max-width: 50ch;
-    font-size: clamp(1.5rem, 0.9375rem + 2.25vw, 2.625rem);
-    padding: 80% 50px 100px 50px;
-    display: flex;
-    align-self: center;
-    justify-self: center;
-        @media (min-width: $tablet-size) {
-            padding: 60% 50px 100px 50px;
-            margin: 20px auto;
-        }
-        @media (min-width: $desktop-size) {
-            padding: 30% 50px 100px 50px;
-        }
 
-    
-}
 .imprevisible__contact{
    display: flex;
         list-style: none;

@@ -58,9 +58,14 @@ p{
 .footer{
   display: flex;
   flex-direction: column;
-  align-items: center;
+
   gap: 20px;
   padding: 50px 20px;
+      small{
+        display: flex;
+        justify-self: end;
+        align-self: flex-end;
+    }
    a{
         text-decoration: none;
         text-align: center;
@@ -86,25 +91,16 @@ p{
   &--monde{
     background: $color-monde;
         padding: 20px 5%;
+
     .mention{
         font-size: 15px;
         margin-top: 10px;
         max-width: 40ch;
-    }
-    small{
-        display: block;
-        margin-top: 10px;
-    
     }}
   &--lunas{
 background-color: $c-blue-lunas;
     color: $c-bg-lunas;
     padding: 20px 30px;
-    small{
-        display: flex;
-        justify-self: end;
-        align-self: flex-end;
-    }
     h2{
         margin-bottom: 0;
     }
@@ -159,6 +155,7 @@ background-color: $c-blue-lunas;
     align-items: flex-start;
     &-home{
       align-items: center;
+ 
   
     }
     &--fapsl{

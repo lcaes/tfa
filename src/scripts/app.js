@@ -24,6 +24,8 @@ const fapslBgPopup = document.querySelector('.fapsl__bgpopup');
 const faapslFonctionBtns = document.querySelectorAll('.fapsl__fonction');
 const fapslPopup = document.querySelector('.fapsl__popup');
 
+let lastScroll = 0;
+
 if (faapslFonctionBtns && fapslPopup) {
     faapslFonctionBtns.forEach(btn => {
         btn.addEventListener('click', openPopup);
@@ -170,11 +172,12 @@ function opennav() {
 
 
 if (bntMobile) {
-    window.addEventListener('scroll', showBTN);
+    window.addEventListener('scroll', showBTN)
 
     function showBTN() {
         
         const isMobile = window.innerWidth < 1200;
+        const scrollCurrent = window.scrollY;
         if(navMonde){
             if(navMonde.classList.contains('monde__nav--active')){
                 navMonde.classList.remove('monde__nav--active')}
