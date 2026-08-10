@@ -68,8 +68,9 @@
     }
     li{
         margin: 20px 10px;
-        font-size: clamp(1.625rem, 1.475rem + 0.6vw, 2rem);
+        font-weight: bold;
         line-height: 110%;
+        font-size: clamp(1.25rem, 1.1364rem + 0.5682vw, 1.5625rem);
     }
    @media (min-width: $tablet-size){
     h2{

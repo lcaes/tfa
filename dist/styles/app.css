@@ -191,7 +191,7 @@ p {
   opacity: 1;
   visibility: visible;
 }
-@media (min-widtn: 1200px) {
+@media (min-widtn: 1024px) {
   .zone--click {
     width: -webkit-fit-content;
     width: -moz-fit-content;
@@ -207,6 +207,7 @@ p {
   font-family: "Open Sans", sans-serif;
   line-height: 160%;
   margin: 0%;
+  max-width: 1500px;
 }
 
 .blog__allcontent {
@@ -214,7 +215,7 @@ p {
   flex-direction: column;
   gap: 150px;
 }
-@media (min-width: 1200px) {
+@media (min-width: 1024px) {
   .blog__allcontent {
     grid-column: 1/4;
     grid-row: 3;
@@ -228,13 +229,13 @@ p {
 }
 .blog__content h2 {
   color: #00AEEF;
-  font-size: clamp(2.5rem, 2.3295rem + 0.9091vw, 3.125rem);
+  font-size: clamp(1.375rem, 0.9432rem + 2.1591vw, 2.5625rem);
   line-height: 100%;
   margin: 0;
 }
 .blog__content h3 {
   color: #00AEEF;
-  font-size: clamp(1.75rem, 1.6307rem + 0.6364vw, 2.1875rem);
+  font-size: clamp(1.125rem, 0.8295rem + 1.4773vw, 1.9375rem);
   line-height: 120%;
   margin: 0;
 }
@@ -260,12 +261,19 @@ p {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: clamp(3rem, 2.7955rem + 1.0909vw, 3.75rem);
+  font-size: clamp(1.8125rem, 1.017rem + 3.9773vw, 4rem);
   font-family: "Koulen";
-  line-height: 80%;
+  line-height: 110%;
   text-align: center;
   grid-column: 1/-1;
   margin-bottom: 5px;
+  max-width: 33ch;
+  justify-self: center;
+}
+@media (min-width: 1024px) {
+  .blog__title {
+    line-height: 100%;
+  }
 }
 
 .blog__containner {
@@ -273,7 +281,7 @@ p {
   flex-direction: column;
   margin: 20px 2% 50px 2%;
 }
-@media (min-width: 1200px) {
+@media (min-width: 1024px) {
   .blog__containner {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -289,7 +297,7 @@ p {
   margin: 0;
   align-self: flex-end;
 }
-@media (min-width: 1200px) {
+@media (min-width: 1024px) {
   .blog__signature {
     grid-column: 3;
   }
@@ -308,7 +316,7 @@ p {
 .blog__header h1 {
   font-family: "Holtwood One SC";
   line-height: 100%;
-  font-size: clamp(3rem, 2.2007rem + 2.8421vw, 4.6875rem);
+  font-size: clamp(2.1875rem, 1.2102rem + 4.8864vw, 4.875rem);
   text-align: center;
   max-width: 10ch;
   display: flex;
@@ -322,7 +330,7 @@ p {
 .blog__header .blog__hacker {
   margin-top: -15%;
 }
-@media (min-width: 1200px) {
+@media (min-width: 1100px) {
   .blog__header {
     display: flex;
     flex-direction: row-reverse;
@@ -333,6 +341,7 @@ p {
   .blog__header h1 {
     justify-self: start;
     margin-left: -22%;
+    padding-right: 20px;
   }
 }
 
@@ -356,30 +365,29 @@ p {
 .blog__nav {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
   margin: 20px auto;
   max-width: 400px;
+  position: fixed;
+  z-index: 100;
+  top: 20px;
+  left: 50%;
+  transform: translate(-50%);
+  background-color: rgba(38, 40, 163, 0.6);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 15px;
+  opacity: 0;
+  visibility: hidden;
+  scale: 0.5;
+  transition: all 0.5s ease;
+  pointer-events: none;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
-@media (max-width: 1200px) {
-  .blog__nav {
-    position: fixed;
-    z-index: 100;
-    top: 20px;
-    left: 50%;
-    transform: translate(-50%);
-    background-color: rgba(38, 40, 163, 0.6);
-    -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
-    padding: 20px;
-    border-radius: 15px;
-    opacity: 0;
-    visibility: hidden;
-    scale: 0.5;
-    transition: all 0.5s ease;
-    pointer-events: none;
-  }
-}
-@media (min-width: 1200px) {
+@media (min-width: 1024px) {
   .blog__nav {
     opacity: 1;
     visibility: visible;
@@ -393,6 +401,9 @@ p {
     top: 100px;
     pointer-events: auto;
     scale: 1;
+    left: 0;
+    transform: translate(0);
+    background: transparent;
   }
 }
 .blog__nav ul {
@@ -409,18 +420,22 @@ p {
   line-height: 120%;
   margin: 0;
 }
-@media (max-width: 1200px) {
+.blog__nav a p {
+  min-width: 15ch;
+}
+@media (max-width: 1024px) {
   .blog__nav--active {
     opacity: 1;
     visibility: visible;
     scale: 1;
     pointer-events: auto;
+    right: 0;
   }
 }
 
 .blog__nel {
   display: grid;
-  grid-template-columns: 100px 1fr;
+  grid-template-columns: 50px 1fr;
   grid-template-rows: auto;
   -moz-column-gap: 12px;
        column-gap: 12px;
@@ -437,7 +452,12 @@ p {
   color: #ffffff;
   align-self: end;
   transition: 0, 5s ease-in;
-  min-width: 10ch;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.blog__nel p span {
+  display: block;
 }
 .blog__nel .blog__nav--line {
   grid-column: 2;
@@ -453,6 +473,12 @@ p {
 }
 .blog__nel--active p {
   color: #6AD6FE;
+  min-width: 12ch;
+}
+@media (min-width: 1024px) {
+  .blog__nel {
+    grid-template-columns: 100px 1fr;
+  }
 }
 .blog__nel:hover .blog__nav--line, .blog__nel:focus .blog__nav--line {
   width: 70%;
@@ -518,7 +544,7 @@ p {
 .monde__container {
   margin: 20px 0;
 }
-@media (min-width: 1200px) {
+@media (min-width: 1024px) {
   .monde__container {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -553,8 +579,9 @@ p {
 }
 .monde__content li {
   margin: 20px 10px;
-  font-size: clamp(1.625rem, 1.475rem + 0.6vw, 2rem);
+  font-weight: bold;
   line-height: 110%;
+  font-size: clamp(1.25rem, 1.1364rem + 0.5682vw, 1.5625rem);
 }
 @media (min-width: 700px) {
   .monde__content h2 {
@@ -571,7 +598,7 @@ p {
   margin-left: 0;
   list-style-position: outside;
 }
-@media (min-width: 1200px) {
+@media (min-width: 1024px) {
   .monde__content {
     grid-column: 1/5;
     grid-row: 1;
@@ -651,7 +678,7 @@ p {
 .monde__nav a:hover, .monde__nav a:focus {
   color: #007981;
 }
-@media (min-width: 1200px) {
+@media (min-width: 1024px) {
   .monde__nav {
     opacity: 1;
     visibility: visible;
@@ -762,7 +789,7 @@ p {
   margin: 40px 5%;
   max-width: 1200px;
 }
-@media (min-width: 1200px) {
+@media (min-width: 1024px) {
   .fapsl__main {
     margin: 40px 150px;
   }
@@ -1063,7 +1090,7 @@ p {
     left: 2%;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 1024px) {
   .fapsl__nav .btn__close {
     top: 17%;
     left: 2%;

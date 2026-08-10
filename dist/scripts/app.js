@@ -177,7 +177,7 @@ function opennav() {
 
 if (bntMobile) {
   var showBTN = function showBTN() {
-    var isMobile = window.innerWidth < 1200;
+    var isMobile = window.innerWidth < 1024;
     var scrollCurrent = window.scrollY;
 
     if (navMonde) {

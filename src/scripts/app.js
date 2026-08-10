@@ -176,7 +176,7 @@ if (bntMobile) {
 
     function showBTN() {
         
-        const isMobile = window.innerWidth < 1200;
+        const isMobile = window.innerWidth < 1024;
         const scrollCurrent = window.scrollY;
         if(navMonde){
             if(navMonde.classList.contains('monde__nav--active')){
