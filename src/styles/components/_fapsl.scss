@@ -7,7 +7,8 @@
         text-align: center;
         font-size: clamp(1.125rem, 0.8906rem + 0.625vw, 1.4375rem);
         margin: 0;
-        font-weight: bold;
+        font-weight: 800;
+        color: black;
 
     }
 }
@@ -34,9 +35,8 @@ h1 {
         rgba(#180C35, 0) 90%
     );
     width: fit-content;
-    padding: 10px 0;
+    padding: 10px ;
     line-height: 100%; 
-    padding: 20px; 
 }
 }
 .fapsl__main{
@@ -65,7 +65,7 @@ h1 {
     width: 100%;
     align-self: center;
       font-family: "Diplomata SC", serif;
-        font-size: clamp(1.5625rem, 0.1563rem + 3.75vw, 3.4375rem);
+        font-size: clamp(1.375rem, 0.875rem + 2.5vw, 2.75rem);
         color: $c-fapsl-title;
         margin: 0 auto;
     padding: 50px 0;
@@ -73,7 +73,8 @@ h1 {
             letter-spacing: -2px;
             align-self: center;
         &::first-letter{
-            font-size: clamp(3.125rem, 0.1563rem + 6.25vw, 6.25rem);
+            font-size: clamp(2.1875rem, 1.233rem + 4.7727vw, 4.8125rem);
+            
         }}
     
     @media (min-width: $tablet-size) {
@@ -158,7 +159,7 @@ h1 {
 
 }    
 .faspsl__date{
-        color: rgba($c-fapsl-text, 0.7);
+        color: rgba($c-fapsl-text, 0.5);
         margin: 0;
         font-size: clamp(0.875rem, 0.7344rem + 0.375vw, 1.0625rem);
         text-align: right;
@@ -178,7 +179,7 @@ h1 {
 .fapsl__compte{
     display: flex;
     flex-direction: row;
-    gap: 30px;
+    gap: 20px;
     align-self: end;
     
     img{
@@ -233,10 +234,18 @@ h1 {
     max-width: 50ch;
     margin: 0 ;
     color: $c-fapsl-text;
+
     &::placeholder{
-        color: rgba($c-fapsl-text, 0.7);
+        color: rgba($c-fapsl-text, 0.5);
+        transition: color 0.3s ease;
 
 }
+ &:focus, &:active, &:hover{
+        &::placeholder{
+        color: rgba(#7F34CE, 0.7);
+
+}}
+
     @media (min-width: $tablet-size) {
         width: 50ch;
     }
@@ -384,6 +393,9 @@ h1 {
  background: none;
  border: none;
  cursor: pointer;
+ svg{
+    width: 25px;
+ }
 &:hover, &:focus{
     svg{
         fill: $c-fapsl-hover;

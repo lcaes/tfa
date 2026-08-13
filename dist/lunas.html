@@ -52,15 +52,17 @@
                 <img class="logo logo--monde" src="assets/images/logo-lunas.svg" alt="logo imprévisible">
             </a>
             <h1>Lunas</h1>
-            <img class="lunas__lunette" src="assets/images/lunette.webp" alt="image de lumettes">
-            <h2>Des lunettes qui créent des relations</h2>
         </header>
         <main class="lunas__container">
-            <section>
+            <section class="lunas__section lunas__section--active" id="lunas__intro">
+            <img class="lunas__lunette" src="assets/images/lunette.webp" alt="image de lumettes">
+            <h2>Des lunettes qui créent des relations</h2>
+        </section>
+            <section class="lunas__section" id="lunas__commandes">
                 <h3 class="lunas__stitle">Ses commandes</h3>
                 <img src="assets/images/lunas-commande.jpg" alt="fonctionnalité des diffèrents bouton">
             </section>
-            <section>
+            <section class="lunas__section" id="lunas__interface">
                 <h3 class="lunas__stitle lunas__stitle--center">L’interface de vos Lunas</h3>
                 <div class="lunas__carrousel">
                     <div class="carrousel__fixe">
@@ -76,7 +78,7 @@
                     <div class="interupteur__default"></div>
                 </div>
             </section>
-            <section>
+            <section class="lunas__section" id="lunas__compatibility">
                 <h3 class="lunas__stitle">Le code couleurs en mode compatibilité</h3>
                 <div class="lunas__compability">
                     <img src="assets/images/lunas-compabili$.jpg"  alt="image d'une femme a lunnette">
@@ -87,7 +89,7 @@
                     <input type="number" min="0" max="100" value="" class="lunas__input" placeholder="Entrez un pourcentage">
                 </form>
             </section>
-            <section class="section__app">
+            <section class="lunas__section" id="lunas__app">
                 <h3 class="lunas__stitle lunas__stitle--center">Notre app</h3>
                 <div>
                     <p>Retrouvez l’historique quotidien de vos rencontres sur notre application. Vous pourrez accéder à toutes les informations sur les personnes croisées et même les ajouter à vos favoris.</p>
@@ -97,9 +99,21 @@
                         <li><img src="assets/images/lunas-appllestore.jpg" alt="App Store"></li>
                         <li><img src="assets/images/lunas-googlestore.jpg" alt="Google Play"></li>
                     </ul>
+
                 </div>
                 <img src="assets/images/lunas-app.webp" class="img__app" alt="capture d'ecran de l'application Lunas">
             </section>
+            <div class="lunas__pagination">
+                <button class="lunas__btn lunas__btn--prev ">precedent</button>
+                <ul class="pagination__list">  
+                    <li class="pagination__el pagination__el--active"><a href="#lunas__intro">1</a></li>
+                    <li class="pagination__el"><a href="#lunas__commandes">2</a></li>
+                    <li class="pagination__el"><a href="#lunas__interface">3</a></li>
+                    <li class="pagination__el "><a href="#lunas__compatibility">4</a></li>
+                    <li class="pagination__el "><a href="#lunas__app">5</a></li>
+                </ul>
+                <button class="lunas__btn lunas__btn--next">suivant</button>
+            </div>
         </main>
         <footer class="footer footer--lunas">
             <div>

@@ -23,8 +23,101 @@ const imprevisibleMain = document.querySelector('.imprevisible__main');
 const fapslBgPopup = document.querySelector('.fapsl__bgpopup');
 const faapslFonctionBtns = document.querySelectorAll('.fapsl__fonction');
 const fapslPopup = document.querySelector('.fapsl__popup');
+const lunasPagination = document.querySelector('.lunas__pagination');
+const lunasBtnPrev = document.querySelector('.lunas__btn--prev');
+const lunasBtnNext = document.querySelector('.lunas__btn--next');
+const paginationList = document.querySelector('.pagination__list');
+const currentActive = document.querySelector('.pagination__el--active')
+const paginationLinks = document.querySelectorAll('.pagination__el a');
+
+
 
 let lastScroll = 0;
+
+
+if (lunasPagination && paginationList) {
+    paginationLinks.forEach(link => {
+        link.addEventListener('click', changePage);
+    });
+   function changePage(e) {
+        e.preventDefault();
+
+
+        const currentActiveLi = paginationList.querySelector('.pagination__el--active');
+        if (currentActiveLi) {
+            currentActiveLi.classList.remove('pagination__el--active');
+        }
+ 
+        const clickedLi = event.currentTarget.parentElement;
+        clickedLi.classList.add('pagination__el--active');
+
+        const lunasSectionActive = document.querySelector('.lunas__section--active');
+        if (lunasSectionActive) {
+            lunasSectionActive.classList.remove('lunas__section--active');
+        }
+
+        const sectionId = e.currentTarget.getAttribute('href');
+        const sectionSelect = document.querySelector(sectionId);
+
+        if (sectionSelect) {
+            sectionSelect.classList.add('lunas__section--active');
+        }
+        updateButtons()}
+    function updateButtons() {
+        const currentActive = paginationList.querySelector('.pagination__el--active');
+        if (!currentActive) return;
+
+        const isFirst = paginationList.firstElementChild === currentActive;
+        const isLast = paginationList.lastElementChild === currentActive;
+
+        lunasBtnPrev.classList.toggle('disabled', isFirst);
+        lunasBtnPrev.disabled = isFirst;
+
+        lunasBtnNext.classList.toggle('disabled', isLast);
+        lunasBtnNext.disabled = isLast;
+    }
+
+ 
+    function goToPrevPage(e) {
+          e.preventDefault();
+        const currentActive = paginationList.querySelector('.pagination__el--active');
+        const prevLi = currentActive ? currentActive.previousElementSibling : null;
+        const lunasSeectionActive = document.querySelector(".lunas__section--active")
+        const lunasSectionPrev = lunasSeectionActive.previousElementSibling;
+
+        if (prevLi) {
+            currentActive.classList.remove('pagination__el--active');
+            prevLi.classList.add('pagination__el--active');
+            lunasSeectionActive.classList.remove('lunas__section--active')
+            lunasSectionPrev.classList.add('lunas__section--active')
+            updateButtons();
+        }
+
+    }
+
+    function goToNextPage(e) {
+          e.preventDefault();
+        const currentActive = paginationList.querySelector('.pagination__el--active');
+        const nextLi = currentActive ? currentActive.nextElementSibling : null;
+        const lunasSeectionActive = document.querySelector(".lunas__section--active")
+        const lunasSectionNext = lunasSeectionActive.nextElementSibling;
+
+        if (nextLi) {
+            currentActive.classList.remove('pagination__el--active');
+            nextLi.classList.add('pagination__el--active');
+            lunasSeectionActive.classList.remove('lunas__section--active')
+            lunasSectionNext.classList.add('lunas__section--active')
+
+
+            updateButtons();
+        }
+    }
+
+    lunasBtnPrev.addEventListener('click', goToPrevPage);
+    lunasBtnNext.addEventListener('click', goToNextPage);
+
+    updateButtons();
+}
 
 if (faapslFonctionBtns && fapslPopup) {
     faapslFonctionBtns.forEach(btn => {

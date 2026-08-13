@@ -32,7 +32,91 @@ var imprevisibleMain = document.querySelector('.imprevisible__main');
 var fapslBgPopup = document.querySelector('.fapsl__bgpopup');
 var faapslFonctionBtns = document.querySelectorAll('.fapsl__fonction');
 var fapslPopup = document.querySelector('.fapsl__popup');
+var lunasPagination = document.querySelector('.lunas__pagination');
+var lunasBtnPrev = document.querySelector('.lunas__btn--prev');
+var lunasBtnNext = document.querySelector('.lunas__btn--next');
+var paginationList = document.querySelector('.pagination__list');
+var currentActive = document.querySelector('.pagination__el--active');
+var paginationLinks = document.querySelectorAll('.pagination__el a');
 var lastScroll = 0;
+
+if (lunasPagination && paginationList) {
+  var changePage = function changePage(e) {
+    e.preventDefault();
+    var currentActiveLi = paginationList.querySelector('.pagination__el--active');
+
+    if (currentActiveLi) {
+      currentActiveLi.classList.remove('pagination__el--active');
+    }
+
+    var clickedLi = event.currentTarget.parentElement;
+    clickedLi.classList.add('pagination__el--active');
+    var lunasSectionActive = document.querySelector('.lunas__section--active');
+
+    if (lunasSectionActive) {
+      lunasSectionActive.classList.remove('lunas__section--active');
+    }
+
+    var sectionId = e.currentTarget.getAttribute('href');
+    var sectionSelect = document.querySelector(sectionId);
+
+    if (sectionSelect) {
+      sectionSelect.classList.add('lunas__section--active');
+    }
+
+    updateButtons();
+  };
+
+  var updateButtons = function updateButtons() {
+    var currentActive = paginationList.querySelector('.pagination__el--active');
+    if (!currentActive) return;
+    var isFirst = paginationList.firstElementChild === currentActive;
+    var isLast = paginationList.lastElementChild === currentActive;
+    lunasBtnPrev.classList.toggle('disabled', isFirst);
+    lunasBtnPrev.disabled = isFirst;
+    lunasBtnNext.classList.toggle('disabled', isLast);
+    lunasBtnNext.disabled = isLast;
+  };
+
+  var goToPrevPage = function goToPrevPage(e) {
+    e.preventDefault();
+    var currentActive = paginationList.querySelector('.pagination__el--active');
+    var prevLi = currentActive ? currentActive.previousElementSibling : null;
+    var lunasSeectionActive = document.querySelector(".lunas__section--active");
+    var lunasSectionPrev = lunasSeectionActive.previousElementSibling;
+
+    if (prevLi) {
+      currentActive.classList.remove('pagination__el--active');
+      prevLi.classList.add('pagination__el--active');
+      lunasSeectionActive.classList.remove('lunas__section--active');
+      lunasSectionPrev.classList.add('lunas__section--active');
+      updateButtons();
+    }
+  };
+
+  var goToNextPage = function goToNextPage(e) {
+    e.preventDefault();
+    var currentActive = paginationList.querySelector('.pagination__el--active');
+    var nextLi = currentActive ? currentActive.nextElementSibling : null;
+    var lunasSeectionActive = document.querySelector(".lunas__section--active");
+    var lunasSectionNext = lunasSeectionActive.nextElementSibling;
+
+    if (nextLi) {
+      currentActive.classList.remove('pagination__el--active');
+      nextLi.classList.add('pagination__el--active');
+      lunasSeectionActive.classList.remove('lunas__section--active');
+      lunasSectionNext.classList.add('lunas__section--active');
+      updateButtons();
+    }
+  };
+
+  paginationLinks.forEach(function (link) {
+    link.addEventListener('click', changePage);
+  });
+  lunasBtnPrev.addEventListener('click', goToPrevPage);
+  lunasBtnNext.addEventListener('click', goToNextPage);
+  updateButtons();
+}
 
 if (faapslFonctionBtns && fapslPopup) {
   var openPopup = function openPopup(e) {
