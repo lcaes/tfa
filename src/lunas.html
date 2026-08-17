@@ -49,31 +49,31 @@
         </nav>
         <header class="lunas__header">
             <a href="index.html">
-                <img class="logo logo--monde" src="assets/images/logo-lunas.svg" alt="logo imprévisible">
+                <img class="logo " src="assets/images/logo-lunas.svg" alt="logo imprévisible">
             </a>
             <h1>Lunas</h1>
         </header>
         <main class="lunas__container">
             <section class="lunas__section lunas__section--active" id="lunas__intro">
-            <img class="lunas__lunette" src="assets/images/lunette.webp" alt="image de lumettes">
-            <h2>Des lunettes qui créent des relations</h2>
-        </section>
+                <h2 class="lunas__mode">Mode <span>d'emploi</span></h2>
+                <img class="lunas__lunette" src="assets/images/lunette.webp" alt="image de lumettes">
+            </section>
             <section class="lunas__section" id="lunas__commandes">
-                <h3 class="lunas__stitle">Ses commandes</h3>
-                <img src="assets/images/lunas-commande.jpg" alt="fonctionnalité des diffèrents bouton">
+                <h2 class="lunas__stitle">Ses commandes</h2>
+                <img class="lunas__img" src="assets/images/lunas-commande.jpg" alt="fonctionnalité des diffèrents bouton">
             </section>
             <section class="lunas__section" id="lunas__interface">
-                <h3 class="lunas__stitle lunas__stitle--center">L’interface de vos Lunas</h3>
-                <div class="lunas__carrousel">
-                    <div class="carrousel__fixe">
-                    <img src="assets/images/lunas-interface.jpg" alt="la vue a travers lunette quand vous aviez quelqu'un en face de vous et rien n'est active">
-                    <p>L'interface par défaut</p>
-                    </div>
-                    <div class="carrousel__anim">
+                <h2 class="lunas__stitle ">L’interface de vos Lunas</h2>
+                <ul class="lunas__carrousel">
+                    <li class="carrousel__el carrousel__default">
+                        <img src="assets/images/lunas-interface.jpg" alt="la vue a travers lunette quand vous aviez quelqu'un en face de vous et rien n'est active">
+                        <p>L'interface par défaut</p>
+                    </li>
+                    <li class="carrousel__el carrousel__anim">
                         <img src="assets/images/lunas-onglet.jpg" alt="la vue a travers lunette quand vous aviez quelqu'un en face de vous et onglet + est ouvert">
-                        <p>L'interface avec l'onglet « profil de la personne » ouvert</p>
-                    </div>
-                </div>
+                        <p>L'interface avec l'onglet <span>« profil de la personne » ouvert</span></p>
+                    </li>
+                </ul>
                 <div class="interupteur"> 
                     <div class="interupteur__default"></div>
                 </div>
@@ -89,22 +89,25 @@
                     <input type="number" min="0" max="100" value="" class="lunas__input" placeholder="Entrez un pourcentage">
                 </form>
             </section>
-            <section class="lunas__section" id="lunas__app">
-                <h3 class="lunas__stitle lunas__stitle--center">Notre app</h3>
+            <section class="lunas__section lunas__section--app" id="lunas__app">
+                <h2 class="lunas__stitle">Notre app</h2>
                 <div>
                     <p>Retrouvez l’historique quotidien de vos rencontres sur notre application. Vous pourrez accéder à toutes les informations sur les personnes croisées et même les ajouter à vos favoris.</p>
                     <h4>Retrouvez notre application</h4>
                     <img src="assets/images/lunas-logo.svg" class="lunas__logo" alt="logo Lunas, illustration de lunettes avec un fond bleu clair">
                     <ul class="lunas__avaible">
-                        <li><img src="assets/images/lunas-appllestore.jpg" alt="App Store"></li>
-                        <li><img src="assets/images/lunas-googlestore.jpg" alt="Google Play"></li>
+                        <li><img src="assets/images/lunas-appllestore.svg" alt="App Store"></li>
+                        <li><img src="assets/images/lunas-googlestore.svg" alt="Google Play"></li>
                     </ul>
 
                 </div>
                 <img src="assets/images/lunas-app.webp" class="img__app" alt="capture d'ecran de l'application Lunas">
             </section>
             <div class="lunas__pagination">
-                <button class="lunas__btn lunas__btn--prev ">precedent</button>
+                <button class="lunas__btn lunas__btn--prev ">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-badge-left"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M11 17h6l-4 -5l4 -5h-6l-4 5l4 5" /></svg>       
+
+                </button>
                 <ul class="pagination__list">  
                     <li class="pagination__el pagination__el--active"><a href="#lunas__intro">1</a></li>
                     <li class="pagination__el"><a href="#lunas__commandes">2</a></li>
@@ -112,12 +115,13 @@
                     <li class="pagination__el "><a href="#lunas__compatibility">4</a></li>
                     <li class="pagination__el "><a href="#lunas__app">5</a></li>
                 </ul>
-                <button class="lunas__btn lunas__btn--next">suivant</button>
-            </div>
+                <button class="lunas__btn lunas__btn--next">
+                   
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-badge-right"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M13 7h-6l4 5l-4 5h6l4 -5l-4 -5" /></svg>            </div>
         </main>
         <footer class="footer footer--lunas">
             <div>
-                <h2>Un problème avec vos Lunas? </h2>
+                <h3>Un problème avec vos Lunas? </h3>
                 <ul class="lunas__contact">
                     <li><a href="mailto:support@lunas.com">assistance@lunas.com</a></li>
                     <li><a href="tel:0800-00">0800-00</a></li>

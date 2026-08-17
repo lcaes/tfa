@@ -328,18 +328,14 @@ h1 {
         pointer-events: auto;
         transition: 0.3s;
         position: absolute;
-        top: 12%;
+        top: clamp(5.625rem, 4.4886rem + 5.6818vw, 8.75rem);
         left: 1%;
         z-index: 100;
 
         @media (min-width: $tablet-size) {
-            top: 15%;
             left: 2%;
         }
-        @media (min-width: $desktop-size) {
-            top: 17%;
-            left: 2%;
-        }
+
         svg {
             width: clamp(1.875rem, 1.1932rem + 3.4091vw, 3.75rem);
             fill: $c-fapsl-text; 

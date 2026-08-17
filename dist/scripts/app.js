@@ -141,6 +141,7 @@ if (lunasBurger) {
   var openNavLunas = function openNavLunas() {
     lunasBurger.classList.toggle('open');
     lunasNav.classList.toggle('open');
+    document.body.classList.toggle('noScroll');
   };
 
   lunasBurger.addEventListener('click', openNavLunas);
@@ -159,6 +160,7 @@ if (btnOpenNavFapsl) {
   var opennavFapsl = function opennavFapsl() {
     navFapsl.classList.add('active');
     hearderFapsl.classList.add('show');
+    document.body.classList.add('noScroll');
   };
 
   btnOpenNavFapsl.addEventListener('click', opennavFapsl);
@@ -168,6 +170,7 @@ if (btnCloseNavFapsl) {
   var closenavFapsl = function closenavFapsl() {
     navFapsl.classList.remove('active');
     hearderFapsl.classList.remove('show');
+    document.body.classList.remove('noScroll');
   };
 
   btnCloseNavFapsl.addEventListener('click', closenavFapsl);

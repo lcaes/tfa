@@ -1,5 +1,9 @@
 body{
   margin: 0;
+  &.noScroll{
+    overflow: hidden;
+
+  }
 }
 html{
   scroll-behavior: smooth;
@@ -13,7 +17,6 @@ p{
 }
 .logo{
     width: 70px;
-    height: 70px;
     z-index: 100;
     width: clamp(35px, calc(17.5px + 4.375vw), 70px);
     transition: 1s;
@@ -100,16 +103,16 @@ p{
   &--lunas{
 background-color: $c-blue-lunas;
     color: $c-bg-lunas;
-    padding: 20px 30px;
-    h2{
-        margin-bottom: 0;
+    padding: 10px 30px;
+    h3{
+        margin: 0;
     }
     p{
         max-width: 30ch;
         display: flex;
-        margin: 10px auto;
+        margin: 0 auto;
         font-size: clamp(0.75rem, 0.65rem + 0.4vw, 1rem);
-        align-self: center;
+        align-self: flex-end;
     }
     div{
         margin: 0;
@@ -152,11 +155,12 @@ background-color: $c-blue-lunas;
     flex-direction: row;
     justify-content: space-between;
     padding: 50px 5%;
-    align-items: flex-start;
+    &--lunas{
+      padding: 20px 20px;
+    }
     &-home{
       align-items: center;
  
-  
     }
     &--fapsl{
         padding: 200px 5% 10px 5%;
@@ -165,27 +169,10 @@ background-color: $c-blue-lunas;
           align-self: center;
         }
         
-    }}
-  :last-child{
+    }
+  small{
     align-self: flex-end;
-  }}
+  }
+  }
 
-  .zone--click{
-        width: 100%;
-    height: 100vh;
-    position: absolute;
-    z-index: 1000;
-    opacity: 0;
-    transition: 0.3s;
-    visibility: hidden;
-    top:0;
-    &.show{
-        opacity: 1;
-        visibility: visible ;
-    }
-    @media (min-widtn: $desktop-size) {
-      width: fit-content;
-      opacity: 1;
-      visibility: visible;
-    }
   }
