@@ -51,14 +51,59 @@
         margin: 0 10px;
         width: fit-content;
         color: $c-blue-lunas;
-        font-size: clamp(2.75rem, 2.0909rem + 3.2955vw, 4.5625rem);
+        font-size: clamp(3.4375rem, 3.0284rem + 2.0455vw, 4.5625rem);
 
-    }
-}
+    }}
 .lunas__section {
     display: none;
+
     &--active {
         display: block;
+    }
+
+    &--app {
+        margin: 10px 2%;
+        max-width: 800px;
+        justify-self: center;
+
+        .img__app {
+            width: 50%;
+            height: auto;
+            border-radius: 12%;
+            margin: 20px auto;
+            display: flex;
+        }
+        p{
+            max-width: 40ch;
+            margin: 10px auto;
+        }
+        h3 {
+            font-family: "fabulosa", sans-serif;
+            text-align: center;
+            color: $c-blue-lunas;
+        }
+
+        @media (min-width: $desktop-size) {
+            &.lunas__section--active {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: fit-content;
+            }
+
+            .img__app {
+                grid-column: 2;
+                width: 50%;
+                height: auto;
+            }
+
+            h2 {
+                grid-column: 1 / -1;
+            }
+
+            p {
+                margin: 40px auto;
+            }
+        }
     }
 }
 .lunas__pagination{
@@ -145,25 +190,30 @@
 }
 .lunas__compability{
     position: relative;
+    max-width: 900px;
+    margin: 10px 2%;
+    justify-self: center;
     p{
         text-align: center;
+        width: 100%;
         position: absolute;
         z-index: 100;
         bottom: 10px;
         bottom: 20px;
         color: $c-bg-lunas;
         margin: 0 ;
-;
         display: flex;
         align-items: center;
         flex-direction: column;
-        gap: 10px;
-        min-width: 30ch;
+        gap: 3px;
+        font-size: clamp(1.3125rem, 0.7216rem + 2.9545vw, 2.9375rem);
     }   
     span{
 
         color: rgb(61, 0, 87);
-        margin-left:10px ;
+        font-weight: bolder;
+        font-size: clamp(1.75rem, 1.1364rem + 3.0682vw, 3.4375rem);
+
     }}
     .lunas__input{
     width: 220px;
@@ -216,36 +266,6 @@
     }
 
 }
-.interupteur{
-    aspect-ratio: 2/1;
-    padding: 4px 2px;
-    background-color: #B3D2F7;
-    border: $c-blue-lunas solid 2px;
-    border-radius: 30px;
-    display: flex;
-    margin: 50px auto;
-   width: clamp(2.8125rem, 1.7898rem + 5.1136vw, 5.625rem);
-    &:hover, &:focus{
-        border: $c-lunas-hover solid 2px;
-        .interupteur__default{
-            background-color: $c-lunas-hover;
-        }
-    }
-
-    
-.interupteur__default{
-        width: clamp(1.5625rem, 1.3352rem + 1.1364vw, 2.1875rem);
-        height:clamp(1.5625rem, 1.3352rem + 1.1364vw, 2.1875rem);
-        border-radius: 50%;
-        background-color: $c-blue-lunas;
-        border: #5795E2 solid 1px;
-        transition: 0.3s;
-        
-       &.active{
-        transform: translatex(100%);
-       }
-    }}
-
 
 .lunas__burger {
     position: fixed;
@@ -351,7 +371,7 @@
         font-family: "fabulosa", sans-serif;
         color: $c-blue-lunas;
         text-align: center;
-        font-size: clamp(1.5625rem, 1.1989rem + 1.8182vw, 2.5625rem);
+        font-size: clamp(2.0625rem, 1.5625rem + 2.5vw, 3.4375rem);
 }
 .lunas__carrousel{
     list-style: none;
@@ -401,62 +421,119 @@
 .lunas__avaible{
     display: flex;
     list-style: none;
-    flex-direction: column;
     gap: 20px;
     justify-content: center;
     padding: 0;
-    margin: 10px 10%;
+    margin: 10px auto;
     img{
-        width: 160px;
-        border-radius: 10px;
+        width: clamp(5rem, 3.1818rem + 9.0909vw, 10rem);;
+        border-radius: 10px;}
 
-    }
-    @media (min-width:$tablet-size){
-        flex-direction: row;
-    }
-    @media (min-width:$desktop-size) {
-        margin: 10px 0;
-        
-    }
-}
-
-.lunas__section--app{
-    margin: 10px 2%;
-    max-width: 900px;
-    justify-self: center;
-      .img__app{
-            width: 50%;
-            height: auto;
-            border-radius: 12%;
-            margin: 20px auto;
-            display: flex;
-        }
-        h3{
-            
-        }
-    @media (min-width: $desktop-size) {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: fit-content;
-       .img__app{
-            grid-column: 2;
-            height: fit-content;
-            width: 50%;
-            height: auto;
-        }
-        
-        h2{
-            grid-column: 1 /-1;
-    
-        }
-        p{
-            margin: 50px auto;
-         }
 
 }
-}
+
+
+
 .lunas__logo{
-    width: 100px;
+    width:  clamp(3.75rem, 2.3864rem + 6.8182vw, 7.5rem);
     display: flex;
     margin: 20px auto;
+}
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+    display: flex;
+    margin: 30px auto;
+    &:hover, &:focus{
+        .slider::before{
+            background-color: $c-lunas-hover;
+        }
+    }
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle-switch .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #eafbff;
+    border-radius: 50px;
+    transition: background-color 0.3s ease;
+}
+
+.toggle-switch .slider::before {
+    content: "";
+    position: absolute;
+    height: 21px;
+    width: 21px;
+    left: 2px;
+    bottom: 2px;
+    background-color: #0e607c;
+    border-radius: 45px;
+    transform: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-switch input:checked + .slider {
+    background-color: #69c6e2;
+}
+
+.toggle-switch input:checked + .slider::before {
+    transform: translateX(25px);
+}
+@media (min-width: $tablet-size) {
+    .toggle-switch {
+    width: 65px;
+    height: 33px;
+}
+
+.toggle-switch .slider {
+    border-radius: 50px;
+}
+
+.toggle-switch .slider::before {
+    content: "";
+    height: 29px;
+    width: 29px;
+    border-radius: 45px;
+
+}
+
+.toggle-switch input:checked + .slider::before {
+    transform: translateX(32px);
+}
+}
+@media (min-width: $desktop-size) {
+    .toggle-switch {
+
+    width: 80px;
+    height: 40px;
+}
+
+.toggle-switch .slider {
+    border-radius: 50px;
+
+}
+
+.toggle-switch .slider::before {
+
+    height: 36px;
+    width: 36px;
+
+
+}
+
+.toggle-switch input:checked + .slider::before {
+    transform: translateX(40px);
+}
 }

@@ -16,8 +16,6 @@ var containnerChat = document.querySelector('.fapsl__chats');
 var filterCompability = document.querySelector('.filter__compability');
 var lunasInput = document.querySelector('.lunas__input');
 var pourcent = document.querySelector('.lunas__compatibility--level');
-var btnCarrousel = document.querySelector('.interupteur');
-var btnCarrouselEtat = document.querySelector('.interupteur__default');
 var btnOpenNavFapsl = document.querySelector('.fapsl__button--nav');
 var btnCloseNavFapsl = document.querySelector('.btn__close');
 var navFapsl = document.querySelector('.fapsl__nav');
@@ -38,7 +36,20 @@ var lunasBtnNext = document.querySelector('.lunas__btn--next');
 var paginationList = document.querySelector('.pagination__list');
 var currentActive = document.querySelector('.pagination__el--active');
 var paginationLinks = document.querySelectorAll('.pagination__el a');
+var btnCarrousel = document.querySelector('.toggle-switch input[type="checkbox"]');
 var lastScroll = 0;
+
+if (btnCarrousel) {
+  var carroussel = function carroussel() {
+    var currentAnim = document.querySelector('.carrousel__anim');
+
+    if (currentAnim) {
+      currentAnim.classList.toggle('active', btnCarrousel.checked);
+    }
+  };
+
+  btnCarrousel.addEventListener('change', carroussel);
+}
 
 if (lunasPagination && paginationList) {
   var changePage = function changePage(e) {
@@ -174,16 +185,6 @@ if (btnCloseNavFapsl) {
   };
 
   btnCloseNavFapsl.addEventListener('click', closenavFapsl);
-}
-
-if (btnCarrousel) {
-  var carroussel = function carroussel() {
-    var currentAnim = document.querySelector('.carrousel__anim');
-    currentAnim.classList.toggle('active');
-    btnCarrouselEtat.classList.toggle('active');
-  };
-
-  btnCarrousel.addEventListener('click', carroussel);
 }
 
 if (pourcent) {

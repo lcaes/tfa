@@ -7,8 +7,6 @@ const containnerChat = document.querySelector('.fapsl__chats');
 const filterCompability = document.querySelector('.filter__compability');
 const lunasInput = document.querySelector('.lunas__input');
 const pourcent = document.querySelector('.lunas__compatibility--level');
-const btnCarrousel = document.querySelector('.interupteur');
-const btnCarrouselEtat = document.querySelector('.interupteur__default');
 const btnOpenNavFapsl = document.querySelector ('.fapsl__button--nav');
 const btnCloseNavFapsl = document.querySelector('.btn__close');
 const navFapsl= document.querySelector('.fapsl__nav');
@@ -29,12 +27,21 @@ const lunasBtnNext = document.querySelector('.lunas__btn--next');
 const paginationList = document.querySelector('.pagination__list');
 const currentActive = document.querySelector('.pagination__el--active')
 const paginationLinks = document.querySelectorAll('.pagination__el a');
-
+const btnCarrousel = document.querySelector('.toggle-switch input[type="checkbox"]');
 
 
 let lastScroll = 0;
 
+if (btnCarrousel) {
+    btnCarrousel.addEventListener('change', carroussel);
 
+    function carroussel() {
+        const currentAnim = document.querySelector('.carrousel__anim');
+        if (currentAnim) {
+            currentAnim.classList.toggle('active', btnCarrousel.checked);
+        }
+    }
+}
 if (lunasPagination && paginationList) {
     paginationLinks.forEach(link => {
         link.addEventListener('click', changePage);
@@ -168,18 +175,6 @@ if(btnCloseNavFapsl){
         document.body.classList.remove('noScroll')
     }
 }
-if (btnCarrousel) {
-    btnCarrousel.addEventListener('click', carroussel);
-
-    function carroussel() {
-        
-        const currentAnim = document.querySelector('.carrousel__anim');
-        currentAnim.classList.toggle('active');
-        btnCarrouselEtat.classList.toggle('active');
-       
-    }
-}
-
 
 
 if (pourcent) {
