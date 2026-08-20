@@ -75,6 +75,7 @@ p{
         transition: 0.3s;
         color: $c-fapsl-bg-second;
         width: fit-content;
+        align-self: center;
         &:hover{
             color: $c-lunas-hover;
         }
@@ -94,11 +95,14 @@ p{
   &--monde{
     background: $color-monde;
         padding: 20px 5%;
+        text-align: center;
+        
 
     .mention{
         font-size: 15px;
-        margin-top: 10px;
+        margin: 10px auto;
         max-width: 40ch;
+        ;
     }}
   &--lunas{
 background-color: $c-blue-lunas;
@@ -115,7 +119,7 @@ background-color: $c-blue-lunas;
         align-self: flex-end;
     }
     div{
-        margin: 0;
+        margin: 0 auto;
     }}
   &--blog{
     background: $c-bg-degrade-blog;
@@ -151,7 +155,14 @@ background-color: $c-blue-lunas;
         fill:#F708FF;
     }}  
   }
-  @media (min-width: $tablet-size) {
+  @media (min-width: 500px) {
+    &--home{
+    flex-direction: row;
+    justify-content: space-between;
+    }
+  }
+  @media (min-width: $desktop-size) {
+
     flex-direction: row;
     justify-content: space-between;
     padding: 50px 5%;
@@ -159,7 +170,7 @@ background-color: $c-blue-lunas;
       padding: 20px 20px;
     }
     &-home{
-      align-items: center;
+      align-content: center;
  
     }
     &--fapsl{

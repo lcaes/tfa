@@ -185,7 +185,7 @@
     mask-image: url('../assets/images/lunas-compabili$.svg');
     mask-repeat: no-repeat; 
     mask-size: contain;
-    mask-position: 64%;
+    mask-position:  64% 0;
  
 }
 .lunas__compability{
@@ -406,7 +406,7 @@
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
  
     span{
         display: block;
@@ -480,7 +480,7 @@
     bottom: 2px;
     background-color: #0e607c;
     border-radius: 45px;
-    transform: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transform: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 

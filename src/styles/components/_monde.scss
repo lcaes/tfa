@@ -43,6 +43,7 @@
        margin: 20px 0;
         grid-column-gap: 40px;
         grid-template-rows: 1fr;
+
     }
 }
 .monde__content{
@@ -89,9 +90,14 @@
     @media (min-width: $desktop-size){
         grid-column: 1/ 5;
         grid-row: 1;
+
         section{
             display: grid;
-            grid-template-columns: repeat(4, 1fr);    
+            grid-template-columns: repeat(4, 1fr);  
+            width: 100%;
+        max-width: 800px;
+
+
     }
         
         h2 {
@@ -99,7 +105,7 @@
             display: flex;
             align-content: center;   
             justify-content: flex-end; 
-            padding: 30px 20px 30px 25pc;
+            padding: 30px 20px 30px 25%;
             margin: 0;
             grid-column: 1 / 5;
             max-width: 25ch;
@@ -107,6 +113,7 @@
             display: flex;
             justify-self: end;
             min-width: 15ch;
+            width: 100%;
    
  
     }
@@ -225,5 +232,19 @@ transition: 0.3s;
 .monde__el--active{
     a{
         color: $c-bg-imprevisible;
+    }
+}
+.monde__correct{
+    list-style: none;
+    padding: 0;
+
+    
+    li{
+        height: fit-content;
+        margin: 0;
+    }
+    @media (min-width: $tablet-size) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
     }
 }
